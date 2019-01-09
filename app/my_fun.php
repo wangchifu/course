@@ -142,3 +142,9 @@ function getBrowserVer(){
     else
         return 'unknow';
 }
+
+function show_pass($n){
+    if($n===1) return "<span class='text-success'>符合</span>";
+    if($n===0) return "<span class='text-danger'>不符合</span>";
+
+}

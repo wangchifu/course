@@ -183,7 +183,7 @@ Route::group(['middleware' => 'first'],function(){
 
 
 
-    //Route::get('firsts/{course_id}/{page}/show' , 'FirstController@show')->name('firsts.show');
+    Route::get('firsts/{course_id}/{page}/show' , 'FirstController@show')->name('firsts.show');
 
     //Route::get('firsts/{course_id}/{page}/edit' , 'FirstController@edit')->name('firsts.edit');
     //Route::post('firsts/update' , 'FirstController@update')->name('firsts.update');
