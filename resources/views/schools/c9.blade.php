@@ -50,7 +50,7 @@
         <td>
             <?php $files_c9_1 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_1')); ?>
             @if(count($files_c9_1))
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                 <br>
                 @foreach($files_c9_1 as $v)
                     <?php $file_path = $year->year."&".auth()->user()->code."&c9_1&".$v; ?>
@@ -65,7 +65,7 @@
         <td>
             <?php $files_c9_2 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_2')); ?>
             @if(count($files_c9_2))
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                 <br>
                 @foreach($files_c9_2 as $v)
                     <?php $file_path = $year->year."&".auth()->user()->code."&c9_2&".$v; ?>
@@ -80,7 +80,7 @@
         <td>
             <?php $files_c9_3 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_3')); ?>
             @if(count($files_c9_3))
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                 <br>
                 @foreach($files_c9_3 as $v)
                     <?php $file_path = $year->year."&".auth()->user()->code."&c9_3&".$v; ?>
@@ -96,7 +96,7 @@
             <td>
                 <?php $files_c9_4 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_4')); ?>
                 @if(count($files_c9_4))
-                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('四')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('四')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                     <br>
                     @foreach($files_c9_4 as $v)
                         <?php $file_path = $year->year."&".auth()->user()->code."&c9_4&".$v; ?>
@@ -111,7 +111,7 @@
             <td>
                 <?php $files_c9_5 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_5')); ?>
                 @if(count($files_c9_5))
-                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('五')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('五')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                     <br>
                     @foreach($files_c9_5 as $v)
                         <?php $file_path = $year->year."&".auth()->user()->code."&c9_5&".$v; ?>
@@ -126,7 +126,7 @@
             <td>
                 <?php $files_c9_6 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_6')); ?>
                 @if(count($files_c9_6))
-                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('六')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('六')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                     <br>
                     @foreach($files_c9_6 as $v)
                         <?php $file_path = $year->year."&".auth()->user()->code."&c9_6&".$v; ?>

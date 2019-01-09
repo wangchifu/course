@@ -34,7 +34,7 @@
         </td>
         <td>
             @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c7_1_1.pdf')))
-                <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                 <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_1']) }}"><i class="fas fa-download"></i></a>
                 <a href="{{ route('schools.delfile',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_1']) }}" onclick="return confirm('確定刪除？')"><i class="far fa-trash-alt text-info"></i></a>
             @else
@@ -43,7 +43,7 @@
         </td>
         <td>
             @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c7_1_2.pdf')))
-                <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                 <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_2']) }}"><i class="fas fa-download"></i></a>
                 <a href="{{ route('schools.delfile',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_2']) }}" onclick="return confirm('確定刪除？')"><i class="far fa-trash-alt text-info"></i></a>
             @else
@@ -52,7 +52,7 @@
         </td>
         <td>
             @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c7_1_3.pdf')))
-                <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                 <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_3']) }}"><i class="fas fa-download"></i></a>
                 <a href="{{ route('schools.delfile',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_3']) }}" onclick="return confirm('確定刪除？')"><i class="far fa-trash-alt text-info"></i></a>
             @else
@@ -62,7 +62,7 @@
         @if(auth()->user()->group_id==1)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c7_1_4.pdf')))
-                    <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('四')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                    <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('四')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                     <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_4']) }}"><i class="fas fa-download"></i></a>
                     <a href="{{ route('schools.delfile',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_4']) }}" onclick="return confirm('確定刪除？')"><i class="far fa-trash-alt text-info"></i></a>
                 @else
@@ -71,7 +71,7 @@
             </td>
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c7_1_5.pdf')))
-                    <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('五')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                    <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('五')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                     <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_5']) }}"><i class="fas fa-download"></i></a>
                     <a href="{{ route('schools.delfile',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_5']) }}" onclick="return confirm('確定刪除？')"><i class="far fa-trash-alt text-info"></i></a>
                 @else
@@ -80,7 +80,7 @@
             </td>
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c7_1_6.pdf')))
-                    <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('六')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
+                    <a href="javascript:open_upload('{{ route('schools.c7_1_upload',['select_year'=>$year->year,'order'=>'c7_1','grade'=>cht2num('六')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
                     <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_6']) }}"><i class="fas fa-download"></i></a>
                     <a href="{{ route('schools.delfile',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c7_1_6']) }}" onclick="return confirm('確定刪除？')"><i class="far fa-trash-alt text-info"></i></a>
                 @else

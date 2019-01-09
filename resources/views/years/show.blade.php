@@ -12,6 +12,12 @@
                 @include('years.side')
             </div>
             <div class="col-md-9">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('years.index') }}">年度管理</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">年度詳細內容</li>
+                    </ol>
+                </nav>
                 <div class="card">
                     <div class="card-header">
                         <h5>

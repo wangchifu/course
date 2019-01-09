@@ -9,9 +9,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('index') }}">公告首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">公告內容</li>
+                </ol>
+            </nav>
             <h2>{{ $post->title }}</h2>
             <small>發布單位： {{ $post->user->name }} ｜ 發布日期： {{ substr($post->created_at,0,10) }} ｜ 點閱： {{ $post->views }}</small>
-
             @auth
                 @if(auth()->user()->admin =="1")
                     <a href="{{ route('posts.edit',$post->id) }}"><span class="badge badge-primary">編輯</span></a>

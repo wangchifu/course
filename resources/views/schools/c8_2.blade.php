@@ -29,7 +29,7 @@ if($course->c8_2 == "1"){
             <br>
             <input type="file" name="files[]" id="file_c8_2">
             @if($course->c8_2==1)
-                <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c8_2']) }}" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> 下載c8_2.pdf</a>
+                <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c8_2']) }}" class="badge badge-primary"><i class="fas fa-download"></i> 下載c8_2.pdf</a>
                 <a href="{{ route('schools.delfile',['year'=>$year->year,'school_code'=>auth()->user()->code,'file'=>'c8_2']) }}" onclick="return confirm('確定刪除？')"><i class="far fa-trash-alt text-info"></i></a>
             @endif
         </td>

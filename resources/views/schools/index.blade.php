@@ -87,12 +87,7 @@
                             </tr>
                         </table>
                         <br>
-                        <?php
-                        $school_name = auth()->user()->school;
-                        $school_code = auth()->user()->code;
-                        $group_id = auth()->user()->group_id;
-                        ?>
-                        @include('schools.school_course')
+                        @include('layouts.school_course')
                     @endif
                 </div>
             </div>

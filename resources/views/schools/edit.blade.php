@@ -9,10 +9,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('schools.index') }}">學校專區</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">編輯年度課程計畫</li>
+                </ol>
+            </nav>
+            <h5 class="text-info">完成後，請按最下方「確認送出審查」</h5>
             <h1>{{ auth()->user()->school }} {{ $select_year }} 學年度課程計畫</h1>
         </div>
         <?php
-        
             $c1_1_bg = null;
             $c1_1_text = null;
             $c1_2_bg = null;
@@ -96,7 +102,7 @@
             <input type="hidden" name="select_year" value="{{ $select_year }}">
             <br>
             <a href="#" class="btn btn-secondary btn-sm" onclick="history.back()"><i class="fas fa-backward"></i> 返回</a>
-            <button type="submit" class="btn btn-danger btn-sm" onclick="check_red()">以上確認不再更改，送出審核！</button>
+            <button type="submit" class="btn btn-danger btn-sm" onclick="check_red()">以上確認不再更改，送出審查！</button>
         </form>
     </div>
 </div>

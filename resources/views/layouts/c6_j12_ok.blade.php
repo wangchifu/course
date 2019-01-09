@@ -19,7 +19,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_mandarin.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_mandarin']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_mandarin'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -33,7 +34,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_english.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_english']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_english'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -47,7 +49,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_mathematics.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_mathematics']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_mathematics'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -61,7 +64,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_social_studies.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_social_studies']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_social_studies'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -75,7 +79,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_science.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_science']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_science'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -89,7 +94,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_arts_humanities.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_arts_humanities']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_arts_humanities'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -103,7 +109,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_integrative_activities.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_integrative_activities']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_integrative_activities'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -117,7 +124,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_technology.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_technology']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_technology'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif
@@ -131,7 +139,8 @@
         @foreach($year12 as $v)
             <td>
                 @if(file_exists(storage_path('app/public/upload/'.$year->year.'/'.$school_code.'/c6_'.cht2num($v).'_health_physical.pdf')))
-                    <a href="{{ route('schools.download',['year'=>$year->year,'school_code'=>$school_code,'file'=>'c6_'.cht2num($v).'_health_physical']) }}"><i class="fas fa-download"></i> 已傳</a>
+                    <?php $file_path = $year->year."&".$school_code."&c6_".cht2num($v).'_health_physical'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
                     <span class="text-danger">未傳</span>
                 @endif

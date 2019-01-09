@@ -14,8 +14,8 @@
         @endif
         學校課程發展委員會紀錄({{ $year->year }}學年度上學期第1次)
         @if($course->c10_2_1)
-            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_1']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
-            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_1']) }}" class="btn btn-primary btn-sm">
+            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_1']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_1']) }}" class="badge badge-primary">
                 <i class="fas fa-download"></i> 下載c10_2_1.pdf</a>
             <a href="{{ route('schools.delfile',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_1']) }}" onclick="return confirm('確定刪除？')">
                 <i class="far fa-trash-alt text-info"></i></a>
@@ -32,8 +32,8 @@
         @endif
         學校課程發展委員會紀錄({{ $year->year }}學年度上學期第2次)
         @if($course->c10_2_2)
-            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_2']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
-            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_2']) }}" class="btn btn-primary btn-sm">
+            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_2']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_2']) }}" class="badge badge-primary">
                 <i class="fas fa-download"></i> 下載c10_2_2.pdf</a>
             <a href="{{ route('schools.delfile',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_2']) }}" onclick="return confirm('確定刪除？')">
                 <i class="far fa-trash-alt text-info"></i></a>
@@ -51,8 +51,8 @@
         @endif
         學校課程發展委員會紀錄({{ $year->year }}學年度下學期第1次)
         @if($course->c10_2_3)
-            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_3']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
-            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_3']) }}" class="btn btn-primary btn-sm">
+            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_3']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_3']) }}" class="badge badge-primary">
                 <i class="fas fa-download"></i> 下載c10_2_3.pdf</a>
             <a href="{{ route('schools.delfile',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_3']) }}" onclick="return confirm('確定刪除？')">
                 <i class="far fa-trash-alt text-info"></i></a>
@@ -70,8 +70,8 @@
         @endif
         學校課程發展委員會紀錄({{ $year->year }}學年度下學期第2次)
         @if($course->c10_2_4)
-            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_4']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 已傳</a>
-            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_4']) }}" class="btn btn-primary btn-sm">
+            <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_4']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+            <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_4']) }}" class="badge badge-primary">
                 <i class="fas fa-download"></i> 下載c10_2_4.pdf</a>
             <a href="{{ route('schools.delfile',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_4']) }}" onclick="return confirm('確定刪除？')">
                 <i class="far fa-trash-alt text-info"></i></a>

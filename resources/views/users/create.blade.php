@@ -12,6 +12,12 @@
                 @include('users.side')
             </div>
             <div class="col-md-9">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('users.index') }}">使用者管理</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">新增使用者</li>
+                    </ol>
+                </nav>
                 <div class="card">
                     <div class="card-header">
                         <h5>

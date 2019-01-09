@@ -9,6 +9,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ route('index') }}">公告首頁</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">修改公告</li>
+                </ol>
+            </nav>
             <h1>修改公告</h1>
             {{ Form::model($post,['route' => ['posts.update',$post->id], 'method' => 'PATCH','id'=>'setup', 'files' => true]) }}
             <div class="card my-4">

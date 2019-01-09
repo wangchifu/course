@@ -51,6 +51,9 @@ Route::get('file/{file}', 'FileController@getFile');
 Route::group(['middleware' => 'auth'],function(){
     Route::get('resetPwd' , 'HomeController@reset_pwd')->name('reset_pwd');
     Route::patch('updatePWD' , 'HomeController@update_pwd')->name('update_pwd');
+
+    //打開檔案
+    Route::get('file/{file_path}/open' , 'FileController@open')->name('file.open');
 });
 
 //管理者可用
@@ -117,13 +120,12 @@ Route::group(['middleware' => 'school'],function(){
     Route::post('schools/upload' , 'SchoolController@upload')->name('schools.upload');
 
     //下載課程計畫的檔案
-    Route::get('schools/{year}/{school_code}/{file_name}/download' , 'SchoolController@download')->name('schools.download');
+    Route::get('schools/{year}/{school_code}/{file_name}/download' , 'FileController@download')->name('schools.download');
+    //下載課程計畫的檔案2
+    Route::get('schools/{file_path}/download2' , 'FileController@download2')->name('schools.download2');
 
-//下載課程計畫的檔案2
-    Route::get('schools/{file_path}/download2' , 'SchoolController@download2')->name('schools.download2');
-
-    Route::get('schools/{year}/{school_code}/{file_name}/delfile' , 'SchoolController@delfile')->name('schools.delfile');
-    Route::get('schools/{file_path}/delfile2' , 'SchoolController@delfile2')->name('schools.delfile2');
+    Route::get('schools/{year}/{school_code}/{file_name}/delfile' , 'FileController@delfile')->name('schools.delfile');
+    Route::get('schools/{file_path}/delfile2' , 'FileController@delfile2')->name('schools.delfile2');
 
 
     Route::get('schools/{select_year}/{order}/normal_upload' , 'SchoolController@normal_upload')->name('schools.normal_upload');
@@ -166,20 +168,23 @@ Route::group(['middleware' => 'school'],function(){
 
 //特教委員
 Route::group(['middleware' => 'special'],function(){
-    //Route::match(['get','post'],'specials/index' , 'SpecialController@index')->name('specials.index');
-    //Route::get('specials/{course_id}/{page}/show' , 'SpecialController@show')->name('specials.show');
-    //Route::get('specials/{file_path}/open' , 'SpecialController@open')->name('specials.open');
-    //Route::post('specials' , 'SpecialController@store')->name('specials.store');
-    //Route::patch('specials/{course}' , 'SpecialController@update')->name('specials.update');
+    Route::match(['get','post'],'specials/index' , 'SpecialController@index')->name('specials.index');
+    Route::get('specials/{course_id}/{page}/create' , 'SpecialController@create')->name('specials.create');
+    Route::post('specials' , 'SpecialController@store')->name('specials.store');
+    Route::patch('specials/{course}' , 'SpecialController@update')->name('specials.update');
 
 });
 
 //初審委員
 Route::group(['middleware' => 'first'],function(){
-    //Route::match(['get','post'],'firsts/index' , 'FirstController@index')->name('firsts.index');
-    //Route::get('firsts/{course_id}/{page}/create' , 'FirstController@create')->name('firsts.create');
+    Route::match(['get','post'],'firsts/index' , 'FirstController@index')->name('firsts.index');
+    Route::post('firsts/store' , 'FirstController@store')->name('firsts.store');
+    Route::get('firsts/{course_id}/{page}/create1' , 'FirstController@create1')->name('firsts.create1');
+
+
+
     //Route::get('firsts/{course_id}/{page}/show' , 'FirstController@show')->name('firsts.show');
-    //Route::post('firsts/store' , 'FirstController@store')->name('firsts.store');
+
     //Route::get('firsts/{course_id}/{page}/edit' , 'FirstController@edit')->name('firsts.edit');
     //Route::post('firsts/update' , 'FirstController@update')->name('firsts.update');
     //Route::get('firsts/{file_path}/open' , 'FirstController@open')->name('firsts.open');
