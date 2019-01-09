@@ -43,9 +43,6 @@
                             <th nowrap>
                                 動作
                             </th>
-                            <th>
-                                結果
-                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -63,17 +60,13 @@
                                     @elseif($course->first_result1=="submit")
                                         <span class="text-primary">已送審</span>
                                     @endif
+                                    @if($course->special_result=="1")
+                                        <span class="text-success">已審</span>
+                                    @endif
                                 </td>
                                 <td>
                                     @if($course->first_result1)
                                         <a href="{{ route('specials.create',['course_id'=>$course->id,'page'=>$page]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i>進行審核</a>
-                                    @endif
-                                </td>
-                                <td>
-                                    @if($course->special_result=="1")
-                                        <span class="text-success">已審</span>
-                                    @else
-
                                     @endif
                                 </td>
                             </tr>

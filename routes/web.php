@@ -160,7 +160,7 @@ Route::group(['middleware' => 'school'],function(){
 
     Route::post('schools/submit' , 'SchoolController@submit')->name('schools.submit');
 
-    //Route::get('schools/{select_year}/show_first_suggest1' , 'SchoolController@show_first_suggest1')->name('schools.show_first_suggest1');
+    Route::get('schools/{select_year}/show_first_suggest' , 'SchoolController@show_first_suggest')->name('schools.show_first_suggest');
     //Route::get('schools/{select_year}/show_first_suggest2' , 'SchoolController@show_first_suggest2')->name('schools.show_first_suggest2');
 
 
@@ -179,20 +179,16 @@ Route::group(['middleware' => 'special'],function(){
 Route::group(['middleware' => 'first'],function(){
     Route::match(['get','post'],'firsts/index' , 'FirstController@index')->name('firsts.index');
     Route::post('firsts/store' , 'FirstController@store')->name('firsts.store');
+
     Route::get('firsts/{course_id}/{page}/create1' , 'FirstController@create1')->name('firsts.create1');
-
-
-
+    Route::get('firsts/{course_id}/{page}/create2' , 'FirstController@create2')->name('firsts.create2');
     Route::get('firsts/{course_id}/{page}/show' , 'FirstController@show')->name('firsts.show');
+    Route::get('firsts/{course_id}/{page}/edit1' , 'FirstController@edit1')->name('firsts.edit1');
+    Route::get('firsts/{course_id}/{page}/edit2' , 'FirstController@edit2')->name('firsts.edit2');
 
-    //Route::get('firsts/{course_id}/{page}/edit' , 'FirstController@edit')->name('firsts.edit');
-    //Route::post('firsts/update' , 'FirstController@update')->name('firsts.update');
-    //Route::get('firsts/{file_path}/open' , 'FirstController@open')->name('firsts.open');
+    Route::post('firsts/update' , 'FirstController@update')->name('firsts.update');
 
-    //Route::get('firsts/{course_id}/{page}/create2' , 'FirstController@create2')->name('firsts.create2');
-    //Route::post('firsts/store2' , 'FirstController@store2')->name('firsts.store2');
-    //Route::get('firsts/{course_id}/{page}/show2' , 'FirstController@show2')->name('firsts.show2');
-    //Route::get('firsts/{course_id}/{page}/edit2' , 'FirstController@edit2')->name('firsts.edit2');
+
 
 });
 

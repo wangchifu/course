@@ -38,6 +38,17 @@
                         <h4>上傳檢核</h4>
                         <table border="1" cellpadding="5">
                             <tr>
+                                <th colspan="3">
+                                    初審委員
+                                    @if($course->first_result1 != null or $course->first_result1 != "submit")
+                                    <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="badge badge-primary">初審詳細意見</a>
+                                    @endif
+                                </th>
+                                <th rowspan="2">
+                                    複審委員
+                                </th>
+                            </tr>
+                            <tr>
                                 <th>
                                     初審
                                 </th>
@@ -46,9 +57,6 @@
                                 </th>
                                 <th>
                                     初審-三傳
-                                </th>
-                                <th>
-                                    複審
                                 </th>
                             </tr>
                             <tr>
@@ -59,23 +67,21 @@
                                         <span class="text-primary">已送審中</span>
                                     @elseif($course->first_result1 == "ok")
                                         <i class="fas fa-check-circle text-success"></i> <span class="text-success">通過審查</span>
-                                        [ <a href="{{ route('schools.show_first_suggest1',$course->year) }}" target="_blank">檢視</a> ]
                                     @elseif($course->first_result1 == "back")
                                         <i class="fas fa-times-circle text-danger"></i> 退回
-                                        [ <a href="{{ route('schools.show_first_suggest1',$course->year) }}" target="_blank">檢視</a> ]
                                     @elseif($course->first_result1 == "excellent")
-                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良</span>
-                                        [ <a href="{{ route('schools.show_first_suggest1',$course->year) }}" target="_blank">檢視</a> ]
+                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優秀，進入複審</span>
                                     @endif
                                 </td>
                                 <td>
-                                    @if($course->first_result1 == "back" and $course->first_result2 ==null)
+                                    @if($course->first_result1=="back" and $course->first_result2 == null)
                                         <span class="text-danger">尚未送審</span>
                                     @elseif($course->first_result2 == "submit")
                                         <span class="text-primary">已送審中</span>
                                     @elseif($course->first_result2 == "ok")
                                         <i class="fas fa-check-circle text-success"></i> <span class="text-success">通過審查</span>
-                                        [ <a href="{{ route('schools.show_first_suggest2',$course->year) }}" target="_blank">檢視</a> ]
+                                    @elseif($course->first_result2 == "back")
+                                        <i class="fas fa-times-circle text-danger"></i> 退回
                                     @endif
                                 </td>
                                 <td>

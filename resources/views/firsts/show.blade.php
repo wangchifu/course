@@ -2,7 +2,7 @@
 
 @section('title','初審作業')
 
-@include('firsts.form_show')
+@include('layouts.form_show')
 
 @section('content')
 <br>
@@ -17,31 +17,96 @@
                     <li class="breadcrumb-item active" aria-current="page">審查 {{ $schools[$course->school_code] }} 結果</li>
                 </ol>
             </nav>
-            @include('layouts.school_course')
-            <table class="table">
-                <tr bgcolor="#cccccc">
-                    <th colspan="2">
-                        初審結果
-                    </th>
-                    <th colspan="3">
-                        審查意見
-                    </th>
-                </tr>
-                <tr bgcolor="#FFEE99">
-                    <td colspan="2">
-                        @if($course->first_result1 == "ok")
-                            <span class="text-success">符合！無需修改！</span>
-                        @elseif($course->first_result1 == "excellent")
-                            <span class="text-success">優秀！進入複審！</span>
-                        @elseif($course->first_result1 == "back")
-                            <span class="text-danger">退回！修改後再審！</span>
-                        @endif
+            <table cellpadding="5">
+                <tr>
+                    <td>
+                        <table border="1">
+                            <tr bgcolor="#cccccc">
+                                <th>
+                                    初審結果
+                                </th>
+                                <th>
+                                    審查意見
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @if($course->first_result1 == "ok")
+                                        <span class="text-success">符合！無需修改！</span>
+                                    @elseif($course->first_result1 == "excellent")
+                                        <span class="text-success">優秀！進入複審！</span>
+                                    @elseif($course->first_result1 == "back")
+                                        <span class="text-danger">退回！修改後再審！</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($course->first_suggest1)
+                                    {{ $course->first_suggest1->reason }}
+                                    @endif
+                                </td>
+                            </tr>
+                        </table>
                     </td>
-                    <td colspan="3">
-                        {{ $course->first_suggest1->reason }}
+                    <td>
+                        <table border="1">
+                            <tr bgcolor="#cccccc">
+                                <th>
+                                    初審-再傳結果
+                                </th>
+                                <th>
+                                    審查意見
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @if($course->first_result2 == "ok")
+                                        <span class="text-success">符合！無需修改！</span>
+                                    @elseif($course->first_result2 == "back")
+                                        <span class="text-danger">退回！修改後再審！</span>
+                                    @else
+                                         -
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($course->first_suggest2)
+                                    {{ $course->first_suggest2->reason }}
+                                    @endif
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table border="1">
+                            <tr bgcolor="#cccccc">
+                                <th>
+                                    初審-三傳結果
+                                </th>
+                                <th>
+                                    審查意見
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @if($course->first_result3 == "ok")
+                                        <span class="text-success">符合！無需修改！</span>
+                                    @elseif($course->first_result3 == "back")
+                                        <span class="text-danger">退回！修改後再審！</span>
+                                    @else
+                                        -
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($course->first_suggest3)
+                                    {{ $course->first_suggest3->reason }}
+                                    @endif
+                                </td>
+                            </tr>
+                        </table>
                     </td>
                 </tr>
             </table>
+            <br>
+            @include('layouts.school_course')
             <br>
             <a href="#" class="btn btn-secondary btn-sm" onclick="history.back();"><i class="fas fa-backward"></i> 返回</a>
         </div>

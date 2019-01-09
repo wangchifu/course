@@ -46,6 +46,9 @@
                             <th>
                                 初審-三傳
                             </th>
+                            <th>
+                                詳細結果
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -60,34 +63,44 @@
                                 <td>
                                     @if($course->first_result1==null)
                                         <span class="text-danger">未送審</span>
-
                                     @elseif($course->first_result1=="submit")
                                         <span class="text-primary">已送審</span>
                                         [<a href="{{ route('firsts.create1',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i>審核</a>]
-                                    @elseif($course->first_result1=="ok")
+                                    @else
+                                        @if($course->first_result1=="ok")
                                         <span class="text-success">通過</span>
-                                        [<a href="{{ route('firsts.show',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-eye"></i>檢視</a>]
-                                    @elseif($course->first_result1=="back")
+                                        @elseif($course->first_result1=="back")
                                         <span class="text-warning">退回</span>
-                                        [<a href="{{ route('firsts.show',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-eye"></i>檢視</a>]
-                                    @elseif($course->first_result1=="excellent")
+                                        @elseif($course->first_result1=="excellent")
                                         <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良</span>
-                                        [<a href="{{ route('firsts.show',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-eye"></i>檢視</a>]
+                                        @endif
+                                            [<a href="{{ route('firsts.edit1',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
                                     @endif
                                 </td>
                                 <td>
-                                    @if($course->first_result1=="back" and $course->first_result2==null)
-                                        <span class="text-danger">未送審</span>
+                                    @if($course->first_result2==null)
+                                        @if($course->first_result1=="back")
+                                            <span class="text-danger">未送審</span>
+                                        @endif
                                     @elseif($course->first_result2=="submit")
                                         <span class="text-primary">已送審</span>
                                         [<a href="{{ route('firsts.create2',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i>審核</a>]
-                                    @elseif($course->first_result2=="ok")
-                                        <span class="text-success">通過</span>
-                                        [<a href="{{ route('firsts.show2',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-eye"></i>檢視</a>]
+                                    @else
+                                        @if($course->first_result2=="ok")
+                                            <span class="text-success">通過</span>
+                                        @elseif($course->first_result2=="back")
+                                            <span class="text-warning">退回</span>
+                                        @endif
+                                        [<a href="{{ route('firsts.edit2',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
                                     @endif
                                 </td>
                                 <td>
 
+                                </td>
+                                <td>
+                                    @if($course->first_result1 != null and $course->first_result1 != "submit")
+                                    <a href="{{ route('firsts.show',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-eye"></i>檢視</a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

@@ -57,9 +57,9 @@ class SpecialController extends Controller
     {
         $att['user_id'] = auth()->user()->id;
         $att['course_id'] = $request->input('course_id');
-        $att['c13_pass'] = ($request->input('c13_pass')=="1")?"1":null;
+        $att['c13_pass'] = ($request->input('c13_pass')=="1")?"1":"0";
         $att['c13'] = $request->input('c13');
-        $att['c13_1_pass'] = ($request->input('c13_1_pass')=="1")?"1":null;
+        $att['c13_1_pass'] = ($request->input('c13_1_pass')=="1")?"1":"0";
         $att['c13_1'] = $request->input('c13_1');
         $special_suggest = SpecialSuggest::create($att);
 
@@ -72,9 +72,9 @@ class SpecialController extends Controller
 
     public function update(Request $request,Course $course)
     {
-        $att['c13_pass'] = ($request->input('c13_pass')=="1")?"1":null;
+        $att['c13_pass'] = ($request->input('c13_pass')=="1")?"1":"0";
         $att['c13'] = $request->input('c13');
-        $att['c13_1_pass'] = ($request->input('c13_1_pass')=="1")?"1":null;
+        $att['c13_1_pass'] = ($request->input('c13_1_pass')=="1")?"1":"0";
         $att['c13_1'] = $request->input('c13_1');
 
         $course->special_suggest->update($att);

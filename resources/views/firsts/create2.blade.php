@@ -53,8 +53,8 @@ $c12 = null;
 ?>
 @extends('layouts.master',['bg'=>'bg-dark'])
 
-@section('title','初審作業')
-@include('firsts.form1')
+@section('title','初審作業-再傳')
+@include('firsts.form2')
 @section('content')
 <br>
 <br>
@@ -65,7 +65,7 @@ $c12 = null;
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ route('firsts.index') }}">初審作業</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">審查 {{ $schools[$course->school_code] }}</li>
+                    <li class="breadcrumb-item active" aria-current="page">審查 {{ $schools[$course->school_code] }} 再傳</li>
                 </ol>
             </nav>
             {{ Form::open(['route'=>'firsts.store','method'=>'post']) }}
@@ -73,7 +73,7 @@ $c12 = null;
             <table class="table">
                 <tr bgcolor="#cccccc">
                     <th colspan="2">
-                        初審結果
+                        初審-再傳結果
                     </th>
                     <th colspan="3">
                         審查意見
@@ -81,7 +81,7 @@ $c12 = null;
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <select name="first_result1" class="form-control" required>
+                        <select name="first_result" class="form-control" required>
                             <option value="" disabled selected>
                                 -----請選擇初審結果-----
                             </option>
@@ -90,9 +90,6 @@ $c12 = null;
                             </option>
                             <option value="back">
                                 退回！修改後再審！
-                            </option>
-                            <option value="excellent">
-                                優秀！進入複審！
                             </option>
                         </select>
                     </td>

@@ -218,7 +218,6 @@ class SchoolController extends Controller
         echo "<body onload='opener.location.reload();window.close();'>";
     }
 
-
     public function c3_1_store(Request $request)
     {
         $mandarin = $request->input('mandarin');
@@ -600,7 +599,6 @@ class SchoolController extends Controller
         return redirect('schools/'. $request->input('select_year').'/edit');
     }
 
-
     public function c8_2_store(UploadRequest $request)
     {
 
@@ -667,7 +665,6 @@ class SchoolController extends Controller
 
     }
 
-
     public function c10_2_date_store(Request $request)
     {
         $select_year = $request->input('select_year');
@@ -719,7 +716,6 @@ class SchoolController extends Controller
 
     }
 
-
     public function submit(Request $request)
     {
         $course = Course::where('year',$request->input('select_year'))
@@ -737,7 +733,22 @@ class SchoolController extends Controller
         return redirect()->route('schools.index');
     }
 
+    public function show_first_suggest($select_year)
+    {
+        $course = Course::where('year',$select_year)
+            ->where('school_code',auth()->user()->code)
+            ->first();
 
+        $data = [
+            'course'=>$course,
+            'select_year'=>$select_year,
+            'school_name'=>auth()->user()->school,
+            'school_code'=>auth()->user()->code,
+            'school_group'=>auth()->user()->group_id,
+        ];
+
+        return view('schools.first_suggest',$data);
+    }
 
 
     //國小九年一貫節數規定
