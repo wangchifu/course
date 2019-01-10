@@ -17,91 +17,54 @@
                     <li class="breadcrumb-item active" aria-current="page">審查 {{ $schools[$course->school_code] }} 結果</li>
                 </ol>
             </nav>
-            <table cellpadding="5">
+            <table cellpadding="5" border="1">
+                <tr bgcolor="#cccccc">
+                    <th>
+                        審查
+                    </th>
+                    <th>
+                        結果
+                    </th>
+                    <th>
+                        意見
+                    </th>
+                </tr>
                 <tr>
-                    <td>
-                        <table border="1">
-                            <tr bgcolor="#cccccc">
-                                <th>
-                                    初審結果
-                                </th>
-                                <th>
-                                    審查意見
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    @if($course->first_result1 == "ok")
-                                        <span class="text-success">符合！無需修改！</span>
-                                    @elseif($course->first_result1 == "excellent")
-                                        <span class="text-success">優秀！進入複審！</span>
-                                    @elseif($course->first_result1 == "back")
-                                        <span class="text-danger">退回！修改後再審！</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    @if($course->first_suggest1)
-                                    {{ $course->first_suggest1->reason }}
-                                    @endif
-                                </td>
-                            </tr>
-                        </table>
+                    <td nowrap>
+                        初審
                     </td>
-                    <td>
-                        <table border="1">
-                            <tr bgcolor="#cccccc">
-                                <th>
-                                    初審-再傳結果
-                                </th>
-                                <th>
-                                    審查意見
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    @if($course->first_result2 == "ok")
-                                        <span class="text-success">符合！無需修改！</span>
-                                    @elseif($course->first_result2 == "back")
-                                        <span class="text-danger">退回！修改後再審！</span>
-                                    @else
-                                         -
-                                    @endif
-                                </td>
-                                <td>
-                                    @if($course->first_suggest2)
-                                    {{ $course->first_suggest2->reason }}
-                                    @endif
-                                </td>
-                            </tr>
-                        </table>
+                    <td nowrap>
+                        @if($course->first_result1 == "ok")
+                            <span class="text-success">符合！無需修改！</span>
+                        @elseif($course->first_result1 == "excellent")
+                            <span class="text-success">優秀！進入複審！</span>
+                        @elseif($course->first_result1 == "back")
+                            <span class="text-danger">退回！修改後再審！</span>
+                        @endif
                     </td>
-                    <td>
-                        <table border="1">
-                            <tr bgcolor="#cccccc">
-                                <th>
-                                    初審-三傳結果
-                                </th>
-                                <th>
-                                    審查意見
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    @if($course->first_result3 == "ok")
-                                        <span class="text-success">符合！無需修改！</span>
-                                    @elseif($course->first_result3 == "back")
-                                        <span class="text-danger">退回！修改後再審！</span>
-                                    @else
-                                        -
-                                    @endif
-                                </td>
-                                <td>
-                                    @if($course->first_suggest3)
-                                    {{ $course->first_suggest3->reason }}
-                                    @endif
-                                </td>
-                            </tr>
-                        </table>
+                    <td style="word-break: break-all;">
+                        @if($course->first_suggest1)
+                            {{ $course->first_suggest1->reason }}
+                        @endif
+                    </td>
+                </tr>
+                <tr>
+                    <td nowrap>
+                        初審-再傳
+                    </td>
+                    <td nowrap>
+                        @if($course->first_result2 == "ok")
+                            <span class="text-success">符合！無需修改！</span>
+                        @elseif($course->first_result2 == "back")
+                            <span class="text-danger">退回！修改後再審！</span>
+                        @else
+                            -
+                        @endif
+                    </td>
+                    <td style="word-break: break-all;">
+                        @if($course->first_suggest2)
+                            {{ $course->first_suggest2->reason }}
+                        @endif
                     </td>
                 </tr>
             </table>

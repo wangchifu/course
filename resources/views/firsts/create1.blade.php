@@ -68,7 +68,7 @@ $c12 = null;
                     <li class="breadcrumb-item active" aria-current="page">審查 {{ $schools[$course->school_code] }}</li>
                 </ol>
             </nav>
-            {{ Form::open(['route'=>'firsts.store','method'=>'post']) }}
+            {{ Form::open(['route'=>'firsts.store1','method'=>'post']) }}
             @include('layouts.school_course')
             <table class="table">
                 <tr bgcolor="#cccccc">

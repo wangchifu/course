@@ -52,40 +52,74 @@
             $c13_1_bg = null;
             $c13_1_text = null;
             if($course->first_suggest1){
-                $c1_1_bg = ($course->first_suggest1->c1_1_pass)?null:"#FF8888";
-                $c1_1_text = ($course->first_suggest1->c1_1_pass)?null:"不符合";
-                $c1_2_bg = ($course->first_suggest1->c1_2_pass)?null:"#FF8888";
-                $c1_2_text = ($course->first_suggest1->c1_2_pass)?null:"不符合";
-                $c2_bg = ($course->first_suggest1->c2_pass)?null:"#FF8888";
-                $c2_text = ($course->first_suggest1->c2_pass)?null:"不符合";
-                $c3_1_bg = ($course->first_suggest1->c3_1_pass)?null:"#FF8888";
-                $c3_1_text = ($course->first_suggest1->c3_1_pass)?null:"不符合";
-                $c3_2_bg = ($course->first_suggest1->c3_2_pass)?null:"#FF8888";
-                $c3_2_text = ($course->first_suggest1->c3_2_pass)?null:"不符合";
-                $c3_3_bg = ($course->first_suggest1->c3_3_pass)?null:"#FF8888";
-                $c3_3_text = ($course->first_suggest1->c3_3_pass)?null:"不符合";
-                $c4_bg = ($course->first_suggest1->c4_pass)?null:"#FF8888";
-                $c4_text = ($course->first_suggest1->c4_pass)?null:"不符合";
-                $c6_bg = ($course->first_suggest1->c6_pass)?null:"#FF8888";
-                $c6_text = ($course->first_suggest1->c6_pass)?null:"不符合";
-                $c8_1_bg = ($course->first_suggest1->c8_1_pass)?null:"#FF8888";
-                $c8_1_text = ($course->first_suggest1->c8_1_pass)?null:"不符合";
-                $c9_bg = ($course->first_suggest1->c9_pass)?null:"#FF8888";
-                $c9_text = ($course->first_suggest1->c9_pass)?null:"不符合";
-                $c10_1_bg = ($course->first_suggest1->c10_1_pass)?null:"#FF8888";
-                $c10_1_text = ($course->first_suggest1->c10_1_pass)?null:"不符合";
-                $c10_2_bg = ($course->first_suggest1->c10_2_pass)?null:"#FF8888";
-                $c10_2_text = ($course->first_suggest1->c10_2_pass)?null:"不符合";
-                $c11_bg = ($course->first_suggest1->c11_pass)?null:"#FF8888";
-                $c11_text = ($course->first_suggest1->c11_pass)?null:"不符合";
-                $c12_bg = ($course->first_suggest1->c12_pass)?null:"#FF8888";
-                $c12_text = ($course->first_suggest1->c12_pass)?null:"不符合";
+                if(!$course->first_suggest2){
+                    $c1_1_bg = ($course->first_suggest1->c1_1_pass===0)?"#FF8888":null;
+                    $c1_1_text = ($course->first_suggest1->c1_1_pass===0)?"不符合":null;
+                    $c1_2_bg = ($course->first_suggest1->c1_2_pass===0)?"#FF8888":null;
+                    $c1_2_text = ($course->first_suggest1->c1_2_pass===0)?"不符合":null;
+                    $c2_bg = ($course->first_suggest1->c2_pass===0)?"#FF8888":null;
+                    $c2_text = ($course->first_suggest1->c2_pass===0)?"不符合":null;
+                    $c3_1_bg = ($course->first_suggest1->c3_1_pass===0)?"#FF8888":null;
+                    $c3_1_text = ($course->first_suggest1->c3_1_pass===0)?"不符合":null;
+                    $c3_2_bg = ($course->first_suggest1->c3_2_pass===0)?"#FF8888":null;
+                    $c3_2_text = ($course->first_suggest1->c3_2_pass===0)?"不符合":null;
+                    $c3_3_bg = ($course->first_suggest1->c3_3_pass===0)?"#FF8888":null;
+                    $c3_3_text = ($course->first_suggest1->c3_3_pass===0)?"不符合":null;
+                    $c4_bg = ($course->first_suggest1->c4_pass===0)?"#FF8888":null;
+                    $c4_text = ($course->first_suggest1->c4_pass===0)?"不符合":null;
+                    $c6_bg = ($course->first_suggest1->c6_pass===0)?"#FF8888":null;
+                    $c6_text = ($course->first_suggest1->c6_pass===0)?"不符合":null;
+                    $c8_1_bg = ($course->first_suggest1->c8_1_pass===0)?"#FF8888":null;
+                    $c8_1_text = ($course->first_suggest1->c8_1_pass===0)?"不符合":null;
+                    $c9_bg = ($course->first_suggest1->c9_pass===0)?"#FF8888":null;
+                    $c9_text = ($course->first_suggest1->c9_pass===0)?"不符合":null;
+                    $c10_1_bg = ($course->first_suggest1->c10_1_pass===0)?"#FF8888":null;
+                    $c10_1_text = ($course->first_suggest1->c10_1_pass===0)?"不符合":null;
+                    $c10_2_bg = ($course->first_suggest1->c10_2_pass===0)?"#FF8888":null;
+                    $c10_2_text = ($course->first_suggest1->c10_2_pass===0)?"不符合":null;
+                    $c11_bg = ($course->first_suggest1->c11_pass===0)?"#FF8888":null;
+                    $c11_text = ($course->first_suggest1->c11_pass===0)?"不符合":null;
+                    $c12_bg = ($course->first_suggest1->c12_pass===0)?"#FF8888":null;
+                    $c12_text = ($course->first_suggest1->c12_pass===0)?"不符合":null;
+                }
             }
+        if($course->first_suggest2){
+            if(!$course->first_suggest3){
+                $c1_1_bg = ($course->first_suggest2->c1_1_pass===0)?"#FF8888":null;
+                $c1_1_text = ($course->first_suggest2->c1_1_pass===0)?"不符合":null;
+                $c1_2_bg = ($course->first_suggest2->c1_2_pass===0)?"#FF8888":null;
+                $c1_2_text = ($course->first_suggest2->c1_2_pass===0)?"不符合":null;
+                $c2_bg = ($course->first_suggest2->c2_pass===0)?"#FF8888":null;
+                $c2_text = ($course->first_suggest2->c2_pass===0)?"不符合":null;
+                $c3_1_bg = ($course->first_suggest2->c3_1_pass===0)?"#FF8888":null;
+                $c3_1_text = ($course->first_suggest2->c3_1_pass===0)?"不符合":null;
+                $c3_2_bg = ($course->first_suggest2->c3_2_pass===0)?"#FF8888":null;
+                $c3_2_text = ($course->first_suggest2->c3_2_pass===0)?"不符合":null;
+                $c3_3_bg = ($course->first_suggest2->c3_3_pass===0)?"#FF8888":null;
+                $c3_3_text = ($course->first_suggest2->c3_3_pass===0)?"不符合":null;
+                $c4_bg = ($course->first_suggest2->c4_pass===0)?"#FF8888":null;
+                $c4_text = ($course->first_suggest2->c4_pass===0)?"不符合":null;
+                $c6_bg = ($course->first_suggest2->c6_pass===0)?"#FF8888":null;
+                $c6_text = ($course->first_suggest2->c6_pass===0)?"不符合":null;
+                $c8_1_bg = ($course->first_suggest2->c8_1_pass===0)?"#FF8888":null;
+                $c8_1_text = ($course->first_suggest2->c8_1_pass===0)?"不符合":null;
+                $c9_bg = ($course->first_suggest2->c9_pass===0)?"#FF8888":null;
+                $c9_text = ($course->first_suggest2->c9_pass===0)?"不符合":null;
+                $c10_1_bg = ($course->first_suggest2->c10_1_pass===0)?"#FF8888":null;
+                $c10_1_text = ($course->first_suggest2->c10_1_pass===0)?"不符合":null;
+                $c10_2_bg = ($course->first_suggest2->c10_2_pass===0)?"#FF8888":null;
+                $c10_2_text = ($course->first_suggest2->c10_2_pass===0)?"不符合":null;
+                $c11_bg = ($course->first_suggest2->c11_pass===0)?"#FF8888":null;
+                $c11_text = ($course->first_suggest2->c11_pass===0)?"不符合":null;
+                $c12_bg = ($course->first_suggest2->c12_pass===0)?"#FF8888":null;
+                $c12_text = ($course->first_suggest2->c12_pass===0)?"不符合":null;
+            }
+        }
             if($course->special_suggest){
-                $c13_bg = ($course->special_suggest->c13_pass)?null:"#FF8888";
-                $c13_text = ($course->special_suggest->c13_pass)?null:"不符合";
-                $c13_1_bg = ($course->special_suggest->c13_1_pass)?null:"#FF8888";
-                $c13_1_text = ($course->special_suggest->c13_1_pass)?null:"不符合";
+                $c13_bg = ($course->special_suggest->c13_pass===0)?"#FF8888":null;
+                $c13_text = ($course->special_suggest->c13_pass===0)?"不符合":null;
+                $c13_1_bg = ($course->special_suggest->c13_1_pass===0)?"#FF8888":null;
+                $c13_1_text = ($course->special_suggest->c13_1_pass===0)?"不符合":null;
             }
         ?>
         @include('schools.b1')

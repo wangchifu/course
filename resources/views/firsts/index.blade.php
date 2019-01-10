@@ -74,7 +74,9 @@
                                         @elseif($course->first_result1=="excellent")
                                         <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良</span>
                                         @endif
+                                        @if($course->first_result2 == null)
                                             [<a href="{{ route('firsts.edit1',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
+                                        @endif
                                     @endif
                                 </td>
                                 <td>
@@ -91,11 +93,19 @@
                                         @elseif($course->first_result2=="back")
                                             <span class="text-warning">退回</span>
                                         @endif
-                                        [<a href="{{ route('firsts.edit2',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
+                                        @if($course->first_result3 == null)
+                                            [<a href="{{ route('firsts.edit2',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
+                                        @endif
                                     @endif
                                 </td>
                                 <td>
-
+                                    @if($course->first_result3==null)
+                                        @if($course->first_result2=="back")
+                                            <span class="text-danger">未送審</span>
+                                        @endif
+                                    @elseif($course->first_result3=="submit")
+                                        <span class="text-primary">已修正</span>
+                                    @endif
                                 </td>
                                 <td>
                                     @if($course->first_result1 != null and $course->first_result1 != "submit")

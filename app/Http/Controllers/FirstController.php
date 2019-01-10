@@ -85,24 +85,26 @@ class FirstController extends Controller
         return view('firsts.create2',$data);
     }
 
-    public function store(Request $request)
+    public function store1(Request $request)
     {
         $att = $request->all();
         $att['user_id'] = auth()->user()->id;
 
-        $course = Course::where('id',$request->input('course_id'))->first();
-        if($course->first_result1 == "submit"){
-            $first_suggest1 = FirstSuggest1::create($att);
-            $att2['first_result1'] = $request->input('first_result');
-            $first_suggest1->course->update($att2);
-        }
-        if($course->first_result1 =="back" and $course->first_result2 == "submit"){
-            $first_suggest2 = FirstSuggest2::create($att);
-            $att2['first_result2'] = $request->input('first_result');
-            $first_suggest2->course->update($att2);
-        }
+        $first_suggest1 = FirstSuggest1::create($att);
+        $att2['first_result1'] = $request->input('first_result1');
+        $first_suggest1->course->update($att2);
 
+        return redirect('firsts/index?page='.$request->input('page'));
+    }
 
+    public function store2(Request $request)
+    {
+        $att = $request->all();
+        $att['user_id'] = auth()->user()->id;
+
+        $first_suggest2 = FirstSuggest2::create($att);
+        $att2['first_result2'] = $request->input('first_result2');
+        $first_suggest2->course->update($att2);
 
         return redirect('firsts/index?page='.$request->input('page'));
     }
@@ -134,8 +136,6 @@ class FirstController extends Controller
     public function edit1($course_id,$page)
     {
         $course = Course::where('id',$course_id)->first();
-        $year = Year::where('year',$course->year)->first();
-
 
         if($course->first_user_id != auth()->user()->id){
             return back();
@@ -157,7 +157,31 @@ class FirstController extends Controller
         return view('firsts.edit1',$data);
     }
 
-    public function update(Request $request)
+    public function edit2($course_id,$page)
+    {
+        $course = Course::where('id',$course_id)->first();
+
+        if($course->first_user_id != auth()->user()->id){
+            return back();
+        }
+
+        $school = School::where('school_code',$course->school_code)->first();
+
+        $schools = config('course.schools');
+
+        $data = [
+            'course'=>$course,
+            'select_year'=>$course->year,
+            'school_name'=>$school->school_name,
+            'school_code'=>$school->school_code,
+            'school_group'=>$school->school_type,
+            'page'=>$page,
+            'schools'=>$schools,
+        ];
+        return view('firsts.edit2',$data);
+    }
+
+    public function update1(Request $request)
     {
         $att = $request->all();
         $att['user_id'] = auth()->user()->id;
@@ -167,6 +191,19 @@ class FirstController extends Controller
         $att2['first_result1'] = $request->input('first_result1');
         $first_suggest1->course->update($att2);
 
+
+        return redirect('firsts/index?page='.$request->input('page'));
+    }
+
+    public function update2(Request $request)
+    {
+        $att = $request->all();
+        $att['user_id'] = auth()->user()->id;
+        $first_suggest2 = FirstSuggest2::where('course_id',$att['course_id'])->first();
+        $first_suggest2->update($att);
+
+        $att2['first_result2'] = $request->input('first_result2');
+        $first_suggest2->course->update($att2);
 
         return redirect('firsts/index?page='.$request->input('page'));
     }

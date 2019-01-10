@@ -2,7 +2,7 @@
     <td width="200" bgcolor="#FFEE99">
     初審1：{!! show_pass($course->first_suggest1->c1_1_pass) !!}<br>
         <small>{{ $course->first_suggest1->c1_1 }}</small><br>
-        @if($course->first_suggest1->c1_1_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c1_1_pass) !!}<br>
             <small>{{ $course->first_suggest2->c1_1 }}</small><br>
         @endif
@@ -13,7 +13,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c1_2_pass) !!}<br>
         <small>{{ $course->first_suggest1->c1_2 }}</small><br>
-        @if($course->first_suggest1->c1_2_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c1_2_pass) !!}<br>
             <small>{{ $course->first_suggest2->c1_2 }}</small><br>
         @endif
@@ -24,7 +24,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c2_pass) !!}<br>
         <small>{{ $course->first_suggest1->c2 }}</small><br>
-        @if($course->first_suggest1->c2_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c2_pass) !!}<br>
             <small>{{ $course->first_suggest2->c2 }}</small><br>
         @endif
@@ -35,7 +35,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c3_1_pass) !!}<br>
         <small>{{ $course->first_suggest1->c3_1 }}</small><br>
-        @if($course->first_suggest1->c3_1_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c3_1_pass) !!}<br>
             <small>{{ $course->first_suggest2->c3_1 }}</small><br>
         @endif
@@ -46,7 +46,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c3_2_pass) !!}<br>
         <small>{{ $course->first_suggest1->c3_2 }}</small><br>
-        @if($course->first_suggest1->c3_2_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c3_2_pass) !!}<br>
             <small>{{ $course->first_suggest2->c3_2 }}</small><br>
         @endif
@@ -57,7 +57,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c3_3_pass) !!}<br>
         <small>{{ $course->first_suggest1->c3_3 }}</small><br>
-        @if($course->first_suggest1->c3_3_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c3_3_pass) !!}<br>
             <small>{{ $course->first_suggest2->c3_3 }}</small><br>
         @endif
@@ -68,7 +68,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c4_pass) !!}<br>
         <small>{{ $course->first_suggest1->c4 }}</small><br>
-        @if($course->first_suggest1->c4_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c4_pass) !!}<br>
             <small>{{ $course->first_suggest2->c4 }}</small><br>
         @endif
@@ -79,7 +79,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c6_pass) !!}<br>
         <small>{{ $course->first_suggest1->c6 }}</small><br>
-        @if($course->first_suggest1->c6_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c6_pass) !!}<br>
             <small>{{ $course->first_suggest2->c6 }}</small><br>
         @endif
@@ -90,7 +90,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c7_1_pass) !!}<br>
         <small>{{ $course->first_suggest1->c7_1 }}</small><br>
-        @if($course->first_suggest1->c7_1_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c7_1_pass) !!}<br>
             <small>{{ $course->first_suggest2->c7_1 }}</small><br>
         @endif
@@ -101,7 +101,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c7_2_pass) !!}<br>
         <small>{{ $course->first_suggest1->c7_2 }}</small><br>
-        @if($course->first_suggest1->c7_2_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c7_2_pass) !!}<br>
             <small>{{ $course->first_suggest2->c7_2 }}</small><br>
         @endif
@@ -112,7 +112,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c8_1_pass) !!}<br>
         <small>{{ $course->first_suggest1->c8_1 }}</small><br>
-        @if($course->first_suggest1->c8_1_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c8_1_pass) !!}<br>
             <small>{{ $course->first_suggest2->c8_1 }}</small><br>
         @endif
@@ -123,7 +123,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c8_2_pass) !!}<br>
         <small>{{ $course->first_suggest1->c8_2 }}</small><br>
-        @if($course->first_suggest1->c8_2_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c8_2_pass) !!}<br>
             <small>{{ $course->first_suggest2->c8_2 }}</small><br>
         @endif
@@ -134,7 +134,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c9_pass) !!}<br>
         <small>{{ $course->first_suggest1->c9 }}</small><br>
-        @if($course->first_suggest1->c9_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c9_pass) !!}<br>
             <small>{{ $course->first_suggest2->c9 }}</small><br>
         @endif
@@ -145,7 +145,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c10_1_pass) !!}<br>
         <small>{{ $course->first_suggest1->c10_1 }}</small><br>
-        @if($course->first_suggest1->c10_1_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c10_1_pass) !!}<br>
             <small>{{ $course->first_suggest2->c10_1 }}</small><br>
         @endif
@@ -156,7 +156,7 @@
     <td rowspan="5" bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c10_2_pass) !!}<br>
         <small>{{ $course->first_suggest1->c10_2 }}</small><br>
-        @if($course->first_suggest1->c10_2_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c10_2_pass) !!}<br>
             <small>{{ $course->first_suggest2->c10_2 }}</small><br>
         @endif
@@ -167,7 +167,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c11_pass) !!}<br>
         <small>{{ $course->first_suggest1->c11 }}</small><br>
-        @if($course->first_suggest1->c11_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c11_pass) !!}<br>
             <small>{{ $course->first_suggest2->c11 }}</small><br>
         @endif
@@ -178,7 +178,7 @@
     <td bgcolor="#FFEE99">
         初審1：{!! show_pass($course->first_suggest1->c12_pass) !!}<br>
         <small>{{ $course->first_suggest1->c12 }}</small><br>
-        @if($course->first_suggest1->c12_pass==0)
+        @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c12_pass) !!}<br>
             <small>{{ $course->first_suggest2->c12 }}</small><br>
         @endif

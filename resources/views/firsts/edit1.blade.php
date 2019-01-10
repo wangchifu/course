@@ -84,7 +84,7 @@ $c12 = $course->first_suggest1->c12;
                     <li class="breadcrumb-item active" aria-current="page">審查 {{ $schools[$course->school_code] }}</li>
                 </ol>
             </nav>
-            {{ Form::open(['route'=>'firsts.update','method'=>'post']) }}
+            {{ Form::open(['route'=>'firsts.update1','method'=>'post']) }}
             @include('layouts.school_course')
             <table class="table">
                 <tr bgcolor="#cccccc">

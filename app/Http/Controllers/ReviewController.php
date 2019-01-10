@@ -43,6 +43,8 @@ class ReviewController extends Controller
             $second_name[$course->school_code] = ($course->second_user_id)?$usersId2Names[$course->second_user_id]:null;
             $open[$course->school_code] = $course->open;
             $first_result1[$course->school_code] = $course->first_result1;
+            $first_result2[$course->school_code] = $course->first_result2;
+            $first_result3[$course->school_code] = $course->first_result3;
             $special_result[$course->school_code] = $course->special_result;
         }
 
@@ -56,6 +58,8 @@ class ReviewController extends Controller
             'second_name'=>$second_name,
             'open'=>$open,
             'first_result1'=>$first_result1,
+            'first_result2'=>$first_result2,
+            'first_result3'=>$first_result3,
             'special_result'=>$special_result,
         ];
         return view('reviews.index',$data);

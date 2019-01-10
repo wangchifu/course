@@ -68,7 +68,7 @@ $c12 = null;
                     <li class="breadcrumb-item active" aria-current="page">審查 {{ $schools[$course->school_code] }} 再傳</li>
                 </ol>
             </nav>
-            {{ Form::open(['route'=>'firsts.store','method'=>'post']) }}
+            {{ Form::open(['route'=>'firsts.store2','method'=>'post']) }}
             @include('layouts.school_course')
             <table class="table">
                 <tr bgcolor="#cccccc">
@@ -81,7 +81,7 @@ $c12 = null;
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <select name="first_result" class="form-control" required>
+                        <select name="first_result2" class="form-control" required>
                             <option value="" disabled selected>
                                 -----請選擇初審結果-----
                             </option>

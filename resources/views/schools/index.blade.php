@@ -31,8 +31,10 @@
                     @if($select_year)
                         @if($course->first_result1 == null or $course->first_result1 == "back")
                             @if($course->first_result2 == null or $course->first_result2 == "back")
+                                @if($course->first_result3 == null or $course->first_result3 == "back")
                                 <a href="{{ route('schools.edit',$select_year) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> 編輯本年度課程計畫</a>
                                 <hr>
+                                @endif
                             @endif
                         @endif
                         <h4>上傳檢核</h4>
@@ -85,7 +87,11 @@
                                     @endif
                                 </td>
                                 <td>
-
+                                    @if($course->first_result2=="back" and $course->first_result3 == null)
+                                        <span class="text-danger">尚未送審</span>
+                                    @elseif($course->first_result3 == "submit")
+                                        <span class="text-primary">已修正</span>
+                                    @endif
                                 </td>
                                 <td>
 
