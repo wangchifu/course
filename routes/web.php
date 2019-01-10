@@ -54,6 +54,9 @@ Route::group(['middleware' => 'auth'],function(){
 
     //打開檔案
     Route::get('file/{file_path}/open' , 'FileController@open')->name('file.open');
+
+    //結束模擬
+    Route::get('sims/impersonate_leave', 'SimulationController@impersonate_leave')->name('sims.impersonate_leave');
 });
 
 //管理者可用
@@ -110,6 +113,13 @@ Route::group(['middleware' => 'admin'],function(){
     Route::get('reviews/{select_year}/{school_code}/select_open' , 'ReviewController@select_open')->name('reviews.select_open');
     Route::get('reviews/{select_year}/{school_code}/select_close' , 'ReviewController@select_close')->name('reviews.select_close');
     Route::get('reviews/{select_year}/open' , 'ReviewController@open')->name('reviews.open');
+
+    //匯出表單
+    Route::get('exports/index' , 'ExportController@index')->name('exports.index');
+
+    //模擬登入
+    Route::get('sims/index' , 'SimulationController@index')->name('sims.index');
+    Route::get('sims/{user}/impersonate', 'SimulationController@impersonate')->name('sims.impersonate');
 
 });
 
