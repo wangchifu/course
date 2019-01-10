@@ -45,6 +45,7 @@ class ReviewController extends Controller
             $first_result1[$course->school_code] = $course->first_result1;
             $first_result2[$course->school_code] = $course->first_result2;
             $first_result3[$course->school_code] = $course->first_result3;
+            $second_result[$course->school_code] = $course->second_result;
             $special_result[$course->school_code] = $course->special_result;
         }
 
@@ -61,6 +62,7 @@ class ReviewController extends Controller
             'first_result2'=>$first_result2,
             'first_result3'=>$first_result3,
             'special_result'=>$special_result,
+            'second_result'=>$second_result,
         ];
         return view('reviews.index',$data);
     }

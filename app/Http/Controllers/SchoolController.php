@@ -754,6 +754,22 @@ class SchoolController extends Controller
         return view('schools.first_suggest',$data);
     }
 
+    public function show_second_suggest($select_year)
+    {
+        $course = Course::where('year',$select_year)
+            ->where('school_code',auth()->user()->code)
+            ->first();
+
+        $data = [
+            'course'=>$course,
+            'select_year'=>$select_year,
+            'school_name'=>auth()->user()->school,
+            'school_code'=>auth()->user()->code,
+            'school_group'=>auth()->user()->group_id,
+        ];
+
+        return view('schools.second_suggest',$data);
+    }
 
     //國小九年一貫節數規定
     protected $section_e9 = [

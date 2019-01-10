@@ -171,8 +171,6 @@ Route::group(['middleware' => 'school'],function(){
     Route::post('schools/submit' , 'SchoolController@submit')->name('schools.submit');
 
     Route::get('schools/{select_year}/show_first_suggest' , 'SchoolController@show_first_suggest')->name('schools.show_first_suggest');
-    //Route::get('schools/{select_year}/show_first_suggest2' , 'SchoolController@show_first_suggest2')->name('schools.show_first_suggest2');
-
 
 });
 
@@ -206,6 +204,8 @@ Route::group(['middleware' => 'first'],function(){
 
 //複審委員
 Route::group(['middleware' => 'second'],function(){
-
-
+    Route::match(['get','post'],'seconds/index' , 'SecondController@index')->name('seconds.index');
+    Route::get('seconds/{course_id}/{page}/create' , 'SecondController@create')->name('seconds.create');
+    Route::post('seconds' , 'SecondController@store')->name('seconds.store');
+    Route::patch('seconds/{course}' , 'SecondController@update')->name('seconds.update');
 });

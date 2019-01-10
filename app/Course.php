@@ -61,4 +61,8 @@ class Course extends Model
     {
         return $this->hasOne(FirstSuggest3::class);
     }
+    public function second_suggest()
+    {
+        return $this->hasOne(SecondSuggest::class);
+    }
 }

@@ -38,6 +38,11 @@
                             <a class="nav-link" href="{{ route('firsts.index') }}">[ 初審作業 ]</a>
                         </li>
                     @endif
+                    @if(auth()->user()->group_id==5)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('seconds.index') }}">[ 複審作業 ]</a>
+                        </li>
+                    @endif
                     @if(auth()->user()->group_id==9)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}">[ 後台管理 ]</a>

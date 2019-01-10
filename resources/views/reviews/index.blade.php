@@ -129,7 +129,13 @@
                                     <a href="javascript:open_window('{{ route('reviews.second_user',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}','新視窗')"><i class="fas fa-list-ul"></i></a>
                                 </td>
                                 <td>
-
+                                    @if($first_result1[$school->school_code] == "excellent" and $second_result[$school->school_code] == null)
+                                        <span class="text-danger">未審</span>
+                                    @elseif($second_result[$school->school_code] == "ok")
+                                        <span class="text-dark">不列</span>
+                                    @elseif($second_result[$school->school_code] == "excellent")
+                                        <span class="text-info">優良</span>
+                                    @endif
                                 </td>
                                 <td>
                                     @if($open[$school->school_code])

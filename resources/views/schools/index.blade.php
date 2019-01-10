@@ -94,7 +94,15 @@
                                     @endif
                                 </td>
                                 <td>
-
+                                    @if($course->second_result=="ok")
+                                        不列入
+                                    @elseif($course->second_result=="excellent")
+                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良學校課程計畫！</span>
+                                    @endif
+                                    <br>
+                                    <small>
+                                        {{ $course->second_suggest->reason }}
+                                    </small>
                                 </td>
                             </tr>
                         </table>

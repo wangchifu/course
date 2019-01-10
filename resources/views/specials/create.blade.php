@@ -1,6 +1,6 @@
 @extends('layouts.master',['bg'=>'bg-dark'])
 
-@section('title','特教審核')
+@section('title','特教審查')
 
 @section('content')
 <br>
