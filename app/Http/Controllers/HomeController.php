@@ -50,6 +50,11 @@ class HomeController extends Controller
             ->where('school_code',$school_code)
             ->first();
 
+        if($course->open != 1){
+            echo "<body onload=alert('尚未公開！');window.close();>";
+            die();
+        }
+
         $school = School::where('school_code',$course->school_code)
             ->first();
 
@@ -63,10 +68,25 @@ class HomeController extends Controller
         return view('share_one',$data);
     }
 
-    public function excellent()
+    public function excellent(Request $request)
     {
-        $data = [
+        //年度選單
+        $years = Year::orderBy('year','DESC')->pluck('year','year')->toArray();
+        //選擇的年度
+        $select_year = ($request->input('year'))?$request->input('year'):current($years);
 
+        $courses =Course::where('year',$select_year)
+            ->where('open',1)
+            ->where('second_result','excellent')
+            ->get();
+
+        $schools = config('course.schools');
+
+        $data = [
+            'years'=>$years,
+            'select_year'=>$select_year,
+            'courses'=>$courses,
+            'schools'=>$schools,
         ];
         return view('excellent',$data);
     }

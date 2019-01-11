@@ -8,16 +8,33 @@
     <br>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-9">
+            <div class="col-md-12">
+                <h2>
+                    <img src="{{ asset('images/thumbs-up.svg') }}" height="24">
+                    優良學校
+                </h2>
                 <div class="card">
                     <div class="card-header">
-                        <h5>
-                            <img src="{{ asset('images/thumbs-up.svg') }}" height="24">
-                            優良學校
-                        </h5>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="{{ asset('images/check.svg') }}" height="24">
+                                </td>
+                                <td>
+                                    選擇年度：
+                                </td>
+                                <td>
+                                    {{ Form::open(['route'=>'excellent','method'=>'post']) }}
+                                    {{ Form::select('year',$years,$select_year,['onchange'=>'submit()']) }}
+                                    {{ Form::close() }}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="card-body">
-
+                        @foreach($courses as $course)
+                            <a href="{{ route('share_one',['select_year'=>$select_year,'school_code'=>$course->school_code]) }}" class="btn btn-success btn-sm" target="_blank">{{ $schools[$course->school_code] }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
