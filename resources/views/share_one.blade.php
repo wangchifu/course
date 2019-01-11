@@ -16,6 +16,11 @@
                         </h5>
                     </div>
                     <div class="card-body">
+                        @if($course->second_result=="excellent")
+                            <h3>
+                                <img src="{{ asset('images/crown.svg') }}" width="50"><span class="text-danger">優秀課程計畫得獎學校！</span><br>
+                            </h3>
+                        @endif
                         @include('layouts.school_course')
                     </div>
                 </div>
