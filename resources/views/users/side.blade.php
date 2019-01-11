@@ -9,7 +9,7 @@
         教科書版本管理
     </a>
     <a href="{{ route('reviews.index') }}" class="list-group-item list-group-item-action">
-        審核管理
+        審查管理
     </a>
     <a href="{{ route('exports.index') }}" class="list-group-item list-group-item-action">
         匯出表單

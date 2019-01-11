@@ -242,5 +242,49 @@ class ReviewController extends Controller
         return back();
     }
 
+    public function unsent1($select_year)
+    {
+        $courses = Course::where('year',$select_year)
+            ->where('first_result1',null)
+            ->get();
+        $schools = config('course.schools');
+        $data = [
+            'select_year'=>$select_year,
+            'courses'=>$courses,
+            'schools'=>$schools,
+        ];
+        return view('reviews.unsent1',$data);
+    }
+
+    public function unsent2($select_year)
+    {
+        $courses = Course::where('year',$select_year)
+            ->where('first_result1','back')
+            ->where('first_result2',null)
+            ->get();
+        $schools = config('course.schools');
+        $data = [
+            'select_year'=>$select_year,
+            'courses'=>$courses,
+            'schools'=>$schools,
+        ];
+        return view('reviews.unsent2',$data);
+    }
+
+    public function unsent3($select_year)
+    {
+        $courses = Course::where('year',$select_year)
+            ->where('first_result2','back')
+            ->where('first_result3','null')
+            ->get();
+        $schools = config('course.schools');
+        $data = [
+            'select_year'=>$select_year,
+            'courses'=>$courses,
+            'schools'=>$schools,
+        ];
+        return view('reviews.unsent3',$data);
+    }
+
 
 }

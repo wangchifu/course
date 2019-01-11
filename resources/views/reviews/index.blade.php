@@ -1,6 +1,6 @@
 @extends('layouts.master',['bg'=>'bg-secondary'])
 
-@section('title','審核管理')
+@section('title','審查管理')
 
 @section('content')
     <br>
@@ -47,7 +47,7 @@
                                     初審<br>委員
                                 </th>
                                 <th nowrap>
-                                    初審<br>狀況
+                                    初審<br>狀況<br><a href="{{ route('reviews.unsent1',$select_year) }}" class="badge badge-danger" target="_blank">未迗</a>
                                 </th>
                                 <th nowrap>
                                     特教<br>委員
@@ -56,10 +56,10 @@
                                     特審<br>結果
                                 </th>
                                 <th>
-                                    再傳<br>狀況
+                                    再傳<br>狀況<br><a href="{{ route('reviews.unsent2',$select_year) }}" class="badge badge-danger" target="_blank">未迗</a>
                                 </th>
                                 <th>
-                                    三傳<br>狀況
+                                    三傳<br>狀況<br><a href="{{ route('reviews.unsent3',$select_year) }}" class="badge badge-danger" target="_blank">未迗</a>
                                 </th>
                                 <th nowrap>
                                     複審<br>委員
@@ -151,30 +151,6 @@
                         </table>
                         {{ $schools->appends(['year' => request('year')])->links() }}
                         @endif
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        初審未送學校名單
-                    </div>
-                    <div class="card-body">
-
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        初審再傳未送學校名單
-                    </div>
-                    <div class="card-body">
-
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        初審三傳未送學校名單
-                    </div>
-                    <div class="card-body">
-
                     </div>
                 </div>
             </div>

@@ -2,46 +2,6 @@
 
 @section('title','更改密碼')
 
-@section('nav')
-    <li class="nav-item active">
-        <a class="nav-link" href="#">
-            <span class="sr-only">(current)</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">課程計畫分享</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">優良學校</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">關於本站</a>
-    </li>
-    @auth
-        @if(auth()->user()->group_id < 3)
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    [ 學校專區 ] <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('schools.index') }}">
-                        課程計畫
-                    </a>
-                    <a class="dropdown-item" href="">
-                        審查結果
-                    </a>
-                </div>
-            </li>
-        @endif
-        @if(auth()->user()->group_id==9)
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('users.index') }}">[ 後台管理 ]</a>
-            </li>
-        @endif
-    @endauth
-@endsection
-
 @section('content')
 <br>
 <br>

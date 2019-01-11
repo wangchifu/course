@@ -47,6 +47,10 @@ Route::get('posts/{post}' , 'PostController@show')->where('post', '[0-9]+')->nam
 //下載storage裡public的檔案
 Route::get('file/{file}', 'FileController@getFile');
 
+Route::match(['get','post'],'share' , 'HomeController@share')->name('share');
+Route::get('/share/{select_year}/{school_code}' , 'HomeController@share_one')->name('share_one');
+Route::match(['get','post'],'excellent' , 'HomeController@excellent')->name('excellent');
+
 //使用者可用
 Route::group(['middleware' => 'auth'],function(){
     Route::get('resetPwd' , 'HomeController@reset_pwd')->name('reset_pwd');
@@ -113,6 +117,10 @@ Route::group(['middleware' => 'admin'],function(){
     Route::get('reviews/{select_year}/{school_code}/select_open' , 'ReviewController@select_open')->name('reviews.select_open');
     Route::get('reviews/{select_year}/{school_code}/select_close' , 'ReviewController@select_close')->name('reviews.select_close');
     Route::get('reviews/{select_year}/open' , 'ReviewController@open')->name('reviews.open');
+    Route::get('reviews/{select_year}/unsent1' , 'ReviewController@unsent1')->name('reviews.unsent1');
+    Route::get('reviews/{select_year}/unsent2' , 'ReviewController@unsent2')->name('reviews.unsent2');
+    Route::get('reviews/{select_year}/unsent3' , 'ReviewController@unsent3')->name('reviews.unsent3');
+
 
     //匯出表單
     Route::get('exports/index' , 'ExportController@index')->name('exports.index');
