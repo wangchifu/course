@@ -72,11 +72,11 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    <strong>階段1：學校上傳：</strong><br>{{ $year->step1_date1 }}~{{ $year->step1_date2 }}<br>
-                    <strong>階段2：初審作業：</strong><br>{{ $year->step2_date1 }}~{{ $year->step2_date2 }}<br>
-                    <strong>階段3：複審作業：</strong><br>{{ $year->step3_date1 }}~{{ $year->step3_date2 }}<br>
-                    <strong>階段2-1：依初審意見修正再傳：</strong><br>{{ $year->step4_date1 }}~{{ $year->step4_date2 }}<br>
-                    <strong>階段2-2：初審未通過，第三次上傳：</strong><br>{{ $year->step5_date1 }}~{{ $year->step5_date2 }}<br>
+                    <strong>階段1：學校上傳：</strong><br>{{ $year->step1_date1 }}~{{ $year->step1_date2 }}<hr>
+                    <strong>階段2：初審作業：</strong><br>{{ $year->step2_date1 }}~{{ $year->step2_date2 }}<hr>
+                    <strong>階段3：複審作業：</strong><br>{{ $year->step3_date1 }}~{{ $year->step3_date2 }}<hr>
+                    <strong>階段2-1：依初審後再傳：</strong><br>{{ $year->step4_date1 }}~{{ $year->step4_date2 }}<hr>
+                    <strong>階段2-2：初審後，三傳：</strong><br>{{ $year->step5_date1 }}~{{ $year->step5_date2 }}<hr>
                     <strong>開放查詢：</strong><br>{{ $year->step6_date1 }}~{{ $year->step6_date2 }}
                 </div>
             </div>

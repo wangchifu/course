@@ -123,7 +123,8 @@ Route::group(['middleware' => 'admin'],function(){
 
 
     //匯出表單
-    Route::get('exports/index' , 'ExportController@index')->name('exports.index');
+    Route::match(['get','post'],'exports/index' , 'ExportController@index')->name('exports.index');
+    Route::get('exports/{select_year}/show_date' , 'ExportController@show_date')->name('exports.show_date');
 
     //模擬登入
     Route::get('sims/index' , 'SimulationController@index')->name('sims.index');
