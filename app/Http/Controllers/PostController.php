@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use App\Post;
+use App\Year;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -19,8 +20,11 @@ class PostController extends Controller
     {
         $posts = Post::orderBy('id','DESC')
             ->paginate(10);
+        $year = Year::orderBy('id','DESC')
+            ->first();
         $data = [
             'posts'=>$posts,
+            'year'=>$year,
         ];
         return view('posts.index',$data);
     }

@@ -37,9 +37,16 @@ class HomeController extends Controller
         //選擇的年度
         $select_year = ($request->input('year'))?$request->input('year'):current($years);
 
+        $courses = Course::where('year',$select_year)
+            ->get();
+        foreach($courses as $course){
+            $open[$course->school_code] = ($course->open)?"<i class='fas fa-check-circle'></i> ":"";
+        }
+
         $data = [
             'years'=>$years,
             'select_year'=>$select_year,
+            'open'=>$open,
         ];
         return view('share',$data);
     }

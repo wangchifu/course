@@ -255,7 +255,7 @@
                             <tr>
                                 <td>
                                     <div class="form-group">
-                                        <label for="step5_date1">階階段2-1：依初審意見修正，再次上傳開始日</label>
+                                        <label for="step5_date1">階段2-2：初審未通過，第三次上傳開始日</label>
                                         <input id="step5_date1" width="276" name="step5_date1" required maxlength="10" value="{{ old('step5_date1') }}">
                                         <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
                                         <script>
