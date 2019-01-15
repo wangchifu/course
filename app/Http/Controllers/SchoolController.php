@@ -40,6 +40,29 @@ class SchoolController extends Controller
             ->where('school_code',auth()->user()->code)
             ->first();
 
+        if($course->first_result1==null){
+            //檢驗日期是否超過
+            if(check_date($select_year,1)){
+                $words = check_date($select_year,1);
+                return view('layouts.page_error',compact('words'));
+            };
+        }
+        if($course->first_result2=="back"){
+            //檢驗日期是否超過
+            if(check_date($select_year,4)){
+                $words = check_date($select_year,4);
+                return view('layouts.page_error',compact('words'));
+            };
+        }
+        if($course->first_result3=="back"){
+            //檢驗日期是否超過
+            if(check_date($select_year,5)){
+                $words = check_date($select_year,5);
+                return view('layouts.page_error',compact('words'));
+            };
+        }
+
+
         if($course->first_result1 != null and $course->first_result1 != "back"){
             return back();
         }

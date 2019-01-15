@@ -37,6 +37,12 @@ class HomeController extends Controller
         //選擇的年度
         $select_year = ($request->input('year'))?$request->input('year'):current($years);
 
+
+        if(check_date($select_year,6)){
+            $words = check_date($select_year,6);
+            return view('layouts.page_error',compact('words'));
+        };
+
         $courses = Course::where('year',$select_year)
             ->get();
         foreach($courses as $course){

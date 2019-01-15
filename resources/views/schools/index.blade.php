@@ -42,8 +42,10 @@
                             <tr>
                                 <th colspan="3">
                                     初審委員
-                                    @if($course->first_result1 != null or $course->first_result1 != "submit")
-                                    <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="badge badge-primary">初審詳細意見</a>
+                                    @if($course->first_result1 != null)
+                                        @if($course->first_result1 != "submit")
+                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="badge badge-primary">初審詳細意見</a>
+                                        @endif
                                     @endif
                                 </th>
                                 <th rowspan="2">
@@ -100,9 +102,11 @@
                                         <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良學校課程計畫！</span>
                                     @endif
                                     <br>
+                                    @if($course->second_result)
                                     <small>
                                         {{ $course->second_suggest->reason }}
                                     </small>
+                                    @endif
                                 </td>
                             </tr>
                         </table>

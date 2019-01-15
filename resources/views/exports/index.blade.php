@@ -31,8 +31,8 @@
                         </table>
                     </div>
                     <div class="card-body">
-                        <a href="" class="btn btn-success btn-sm">匯出各校課程學習節數</a>
-                        <a href="{{ route('exports.show_date',$select_year) }}" class="btn btn-success btn-sm" target="_blank">匯出各校課程計畫通過日期</a>
+                        <a href="{{ route('exports.section',$select_year) }}" class="btn btn-success btn-sm"><i class="fas fa-download"></i> 匯出各校課程學習節數</a>
+                        <a href="{{ route('exports.show_date',$select_year) }}" class="btn btn-success btn-sm" target="_blank"><i class="fas fa-download"></i> 匯出各校課程計畫通過日期</a>
                     </div>
                 </div>
             </div>

@@ -13,10 +13,10 @@ class UsersTableSeeder extends Seeder
     {
         \App\User::truncate(); //清空資料庫
         \App\User::create([
-            'username' => 'admin',
+            'username' => 'chcg',
             'name' => '系統管理員',
             'group_id' => '9',
-            'password' => bcrypt('demo1234'),
+            'password' => bcrypt('7222151'),
             'admin'=>'1',
             'login_type'=>'local',
             'created_at'=>now(),

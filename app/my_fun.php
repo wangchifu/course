@@ -148,3 +148,37 @@ function show_pass($n){
     if($n===0) return "<span class='text-danger'>不符合</span>";
 
 }
+
+function check_date($select_year,$action){
+    $year = \App\Year::where('year',$select_year)->first();
+    $words = null;
+    $today = date('Ymd');
+    if($action==1){
+        $d1 = str_replace('-','',$year->step1_date1);
+        $d2 = str_replace('-','',$year->step1_date2);
+    }
+    if($action==2){
+        $d1 = str_replace('-','',$year->step2_date1);
+        $d2 = str_replace('-','',$year->step2_date2);
+    }
+    if($action==3){
+        $d1 = str_replace('-','',$year->step3_date1);
+        $d2 = str_replace('-','',$year->step3_date2);
+    }
+    if($action==4){
+        $d1 = str_replace('-','',$year->step4_date1);
+        $d2 = str_replace('-','',$year->step4_date2);
+    }
+    if($action==5){
+        $d1 = str_replace('-','',$year->step5_date1);
+        $d2 = str_replace('-','',$year->step5_date2);
+    }
+    if($action==6){
+        $d1 = str_replace('-','',$year->step6_date1);
+        $d2 = str_replace('-','',$year->step6_date2);
+    }
+    if($today < $d1 or $today >$d2){
+        $words = "開放時間為 ".$d1." 到 ".$d2;
+    }
+    return $words;
+}
