@@ -58,6 +58,8 @@
                         <a href="{{ url('share/'.$select_year.'/074614/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074614'] !!}忠孝國小</a>
                         <a href="{{ url('share/'.$select_year.'/074774/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074774'] !!}信義國(中)小(國小部)</a>
                         <a href="{{ url('share/'.$select_year.'/074775/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074775'] !!}大成國小</a>
+                        <a href="{{ url('share/'.$select_year.'/074599/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074599'] !!}測試國中</a>
+                        <a href="{{ url('share/'.$select_year.'/074799/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074799'] !!}測試國小</a>
                         <hr>
                         <h4><i class="fab fa-fort-awesome"></i> 芬園鄉</h4>
                         <a href="{{ url('share/'.$select_year.'/074509/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074509'] !!}芬園國中</a>

@@ -37,7 +37,7 @@
                     <div class="card-header"><h4>國中小學登入</h4></div>
 
                     <div class="card-body">
-                        <img src="{{ asset('images/gsuite_logo.png') }}">
+                        <a href="https://gsuite.chc.edu.tw" target="_blank"><img src="{{ asset('images/gsuite_logo.png') }}"></a>
                         <form id="form" method="POST" action="{{ route('gauth') }}">
                             @csrf
                             <div class="form-group row">
@@ -62,7 +62,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <button tabindex="3" type="submit" class="btn btn-primary">
                                         <i class="fas fa-sign-in-alt"></i> 登入
-                                    </button>(限職稱為「教學組長」)
+                                    </button><small>(限職稱為「教學(教務)組長」)</small>
                                 </div>
                             </div>
                             @if($errors->any())
