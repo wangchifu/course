@@ -60,6 +60,13 @@ class YearController extends Controller
             'step6_date2'=>'required|date_format:"Y-m-d"|after:step6_date1',
         ]);
         $att = $request->all();
+
+        $check_year = Year::where('year',$att['year'])->first();
+        if($check_year->id){
+            $words = "該年度已經設定，請先刪除！";
+            return view('layouts.page_error',compact('words'));
+        };
+
         $year = Year::create($att);
 
         $schools = config('course.schools');
