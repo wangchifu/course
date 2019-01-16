@@ -104,9 +104,14 @@ class YearController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Year $year)
     {
-        //
+        $courses = ['9year'=>'九年一貫課程','12year'=>'十二年國教課程'];
+        $data = [
+            'courses'=>$courses,
+            'year'=>$year,
+        ];
+        return view('years.edit',$data);
     }
 
     /**
@@ -116,9 +121,28 @@ class YearController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Year $year)
     {
-        //
+        $request->validate([
+            'step1_date1'=>'required|date_format:"Y-m-d"',
+            'step1_date2'=>'required|date_format:"Y-m-d"|after:step1_date1',
+            'step2_date1'=>'required|date_format:"Y-m-d"',
+            'step2_date2'=>'required|date_format:"Y-m-d"|after:step2_date1',
+            'step3_date1'=>'required|date_format:"Y-m-d"',
+            'step3_date2'=>'required|date_format:"Y-m-d"|after:step3_date1',
+            'step4_date1'=>'required|date_format:"Y-m-d"',
+            'step4_date2'=>'required|date_format:"Y-m-d"|after:step4_date1',
+            'step5_date1'=>'required|date_format:"Y-m-d"',
+            'step5_date2'=>'required|date_format:"Y-m-d"|after:step5_date1',
+            'step6_date1'=>'required|date_format:"Y-m-d"',
+            'step6_date2'=>'required|date_format:"Y-m-d"|after:step6_date1',
+        ]);
+        $att = $request->all();
+
+        $year->update($att);
+
+        return redirect()->route('years.index');
+
     }
 
     /**
