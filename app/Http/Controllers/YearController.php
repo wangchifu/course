@@ -122,6 +122,7 @@ class YearController extends Controller
      */
     public function destroy(Year $year)
     {
+        Course::where('year',$year->year)->delete();
         $year->delete();
         return redirect()->route('years.index');
     }

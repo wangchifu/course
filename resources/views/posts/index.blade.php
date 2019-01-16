@@ -72,6 +72,7 @@
                     </h5>
                 </div>
                 <div class="card-body">
+                    <h5>{{ $year->year }} 學年度</h5><hr>
                     <strong>階段1：學校上傳：</strong><br>{{ $year->step1_date1 }}~{{ $year->step1_date2 }}<hr>
                     <strong>階段2：初審作業：</strong><br>{{ $year->step2_date1 }}~{{ $year->step2_date2 }}<hr>
                     <strong>階段3：複審作業：</strong><br>{{ $year->step3_date1 }}~{{ $year->step3_date2 }}<hr>
