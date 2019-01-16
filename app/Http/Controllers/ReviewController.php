@@ -37,6 +37,7 @@ class ReviewController extends Controller
         $first_result1 = [];
         $first_result2 = [];
         $first_result3 = [];
+        $second_result = [];
         $special_result = [];
 
         foreach($courses as $course){
