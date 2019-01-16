@@ -62,7 +62,7 @@ class YearController extends Controller
         $att = $request->all();
 
         $check_year = Year::where('year',$att['year'])->first();
-        if($check_year->id){
+        if($check_year){
             $words = "該年度已經設定，請先刪除！";
             return view('layouts.page_error',compact('words'));
         };
