@@ -187,14 +187,20 @@
 
 @section('c13')
     <td bgcolor="#FFEE99">
-        特教審查：{!! show_pass($course->special_suggest->c13_pass) !!}<br>
-        <small>{{ $course->special_suggest->c13 }}</small><br>
+        特教審查：
+        @if($course->special_suggest)
+            {!! show_pass($course->special_suggest->c13_pass) !!}<br>
+            <small>{{ $course->special_suggest->c13 }}</small><br>
+        @endif
     </td>
 @endsection
 
 @section('c13_1')
     <td bgcolor="#FFEE99">
-        特教審查：{!! show_pass($course->special_suggest->c13_1_pass) !!}<br>
-        <small>{{ $course->special_suggest->c13_1 }}</small><br>
+        特教審查：
+        @if($course->special_suggest)
+            {!! show_pass($course->special_suggest->c13_1_pass) !!}<br>
+            <small>{{ $course->special_suggest->c13_1 }}</small><br>
+        @endif
     </td>
 @endsection
