@@ -67,7 +67,9 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @if(auth()->user()->group_id !="1" and auth()->user()->group_id !="2")
                             <a class="dropdown-item" href="{{ route('reset_pwd') }}">更改密碼</a>
+                            @endif
                             @impersonating
                                 <a class="dropdown-item" href="{{ route('sims.impersonate_leave') }}" onclick="return confirm('確定返回原本帳琥？')">結束模擬</a>
                             @endImpersonating
