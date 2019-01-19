@@ -34,7 +34,7 @@ class GLoginController extends Controller
                 return back()->withErrors('並非教職員');
             }
 
-            if($obj['title'] != "教學組長" or $obj['title'] != "教務組長" or $obj['title'] != "研發組長" or $obj['title'] != "教務主任" or $obj['title'] != "教導主任" or $obj['title'] != "校長"){
+            if(check_login($obj['title'])){
                 return back()->withErrors('並非相關業務人員');
             }
 

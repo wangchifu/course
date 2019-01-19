@@ -143,6 +143,18 @@ function getBrowserVer(){
         return 'unknow';
 }
 
+function check_login($n){
+    if($n==="資訊組長") return true;
+    if($n==="教學組長") return true;
+    if($n==="教務組長") return true;
+    if($n==="研發組長") return true;
+    if($n==="教務主任") return true;
+    if($n==="教導主任") return true;
+    if($n==="校長") return true;
+
+    return false;
+}
+
 function show_pass($n){
     if($n===1) return "<span class='text-success'>符合</span>";
     if($n===0) return "<span class='text-danger'>不符合</span>";
