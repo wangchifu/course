@@ -62,7 +62,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <button tabindex="3" type="submit" class="btn btn-primary">
                                         <i class="fas fa-sign-in-alt"></i> 登入
-                                    </button><small>(限職稱為「教學(教務)組長」)</small>
+                                    </button><small>(限職稱為「教學(教務)(教導)(研發)組長(主任)、校長」)</small>
                                 </div>
                             </div>
                             @if($errors->any())
