@@ -34,7 +34,7 @@ class GLoginController extends Controller
                 return back()->withErrors('並非教職員');
             }
 
-            if(check_login($obj['title'])){
+            if(!check_login($obj['title'])){
                 return back()->withErrors('並非相關業務人員');
             }
 
