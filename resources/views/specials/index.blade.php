@@ -28,7 +28,7 @@
                     </table>
                 </div>
                 <div class="card-body">
-                    <table class="table table-hover">
+                    <table class="table table-striped">
                         <thead>
                         <tr>
                             <th nowrap>
@@ -78,7 +78,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $courses->links() }}
+                    {{ $courses->appends(['year' => request('year')])->links() }}
                 </div>
             </div>
         </div>
