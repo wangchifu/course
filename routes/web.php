@@ -120,7 +120,9 @@ Route::group(['middleware' => 'admin'],function(){
     Route::get('reviews/{select_year}/unsent1' , 'ReviewController@unsent1')->name('reviews.unsent1');
     Route::get('reviews/{select_year}/unsent2' , 'ReviewController@unsent2')->name('reviews.unsent2');
     Route::get('reviews/{select_year}/unsent3' , 'ReviewController@unsent3')->name('reviews.unsent3');
+    Route::get('reviews/{select_year}/unsent_special' , 'ReviewController@unsent_special')->name('reviews.unsent_special');
 
+    Route::get('reviews/{select_year}/{school_code}/show_school_first_suggest' , 'ReviewController@show_school_first_suggest')->name('reviews.show_school_first_suggest');
 
     //匯出表單
     Route::match(['get','post'],'exports/index' , 'ExportController@index')->name('exports.index');
@@ -137,6 +139,7 @@ Route::group(['middleware' => 'admin'],function(){
 Route::group(['middleware' => 'school'],function(){
     Route::match(['get','post'],'schools' , 'SchoolController@index')->name('schools.index');
     Route::get('schools/{select_year}/edit' , 'SchoolController@edit')->name('schools.edit');
+    Route::get('schools/{select_year}/special_edit' , 'SchoolController@special_edit')->name('schools.special_edit');
     Route::post('schools/upload' , 'SchoolController@upload')->name('schools.upload');
 
     //下載課程計畫的檔案

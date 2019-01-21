@@ -204,3 +204,23 @@
         @endif
     </td>
 @endsection
+
+@section('c13_2')
+    <td bgcolor="#FFEE99">
+        特教審查：
+        @if($course->special_suggest)
+            {!! show_pass($course->special_suggest->c13_2_pass) !!}<br>
+            <small>{{ $course->special_suggest->c13_2 }}</small><br>
+        @endif
+    </td>
+@endsection
+
+@section('c13_3')
+    <td bgcolor="#FFEE99">
+        特教審查：
+        @if($course->special_suggest)
+            {!! show_pass($course->special_suggest->c13_3_pass) !!}<br>
+            <small>{{ $course->special_suggest->c13_3 }}</small><br>
+        @endif
+    </td>
+@endsection

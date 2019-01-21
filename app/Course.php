@@ -33,6 +33,8 @@ class Course extends Model
         'c12',
         'c13',
         'c13_1',
+        'c13_2',
+        'c13_3',
         'c14',
         'special_user_id',
         'special_result',

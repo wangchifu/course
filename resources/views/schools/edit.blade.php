@@ -51,6 +51,10 @@
             $c13_text = null;
             $c13_1_bg = null;
             $c13_1_text = null;
+            $c13_2_bg = null;
+            $c13_2_text = null;
+            $c13_3_bg = null;
+            $c13_3_text = null;
             if($course->first_suggest1){
                 if(!$course->first_suggest2){
                     $c1_1_bg = ($course->first_suggest1->c1_1_pass===0)?"#FF8888":null;
@@ -120,6 +124,10 @@
                 $c13_text = ($course->special_suggest->c13_pass===0)?"不符合":null;
                 $c13_1_bg = ($course->special_suggest->c13_1_pass===0)?"#FF8888":null;
                 $c13_1_text = ($course->special_suggest->c13_1_pass===0)?"不符合":null;
+                $c13_2_bg = ($course->special_suggest->c13_2_pass===0)?"#FF8888":null;
+                $c13_2_text = ($course->special_suggest->c13_2_pass===0)?"不符合":null;
+                $c13_3_bg = ($course->special_suggest->c13_3_pass===0)?"#FF8888":null;
+                $c13_3_text = ($course->special_suggest->c13_3_pass===0)?"不符合":null;
             }
         ?>
         @include('schools.b1')

@@ -2,9 +2,9 @@
     @if($course->c13_1)
         <i class="fas fa-check-circle text-success"></i>
     @else
-        <i class="fas fa-times-circle text-danger check_red"></i>
+        <i class="fas fa-times-circle text-warning"></i>
     @endif
-    13-1 特殊教育推動委員會
+    13-1 特殊類型教育課程「身障類」課程計畫(非必填)
     <br>
     {{ $c13_1_text }}
 </div>
@@ -16,5 +16,5 @@
     <a href="{{ route('schools.delfile',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c13_1']) }}" onclick="return confirm('確定刪除？')">
         <i class="far fa-trash-alt text-info"></i></a>
 @else
-    <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c13_1']) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
+    <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c13_1']) }}','新視窗')" class="badge badge-warning check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
 @endif

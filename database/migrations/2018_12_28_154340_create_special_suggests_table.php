@@ -21,6 +21,10 @@ class CreateSpecialSuggestsTable extends Migration
             $table->text('c13')->nullable();
             $table->tinyInteger('c13_1_pass')->nullable();//是否通過
             $table->text('c13_1')->nullable();
+            $table->tinyInteger('c13_2_pass')->nullable();//是否通過
+            $table->text('c13_2')->nullable();
+            $table->tinyInteger('c13_3_pass')->nullable();//是否通過
+            $table->text('c13_3')->nullable();
             $table->timestamps();
         });
     }

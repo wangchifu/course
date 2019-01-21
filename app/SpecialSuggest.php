@@ -13,6 +13,10 @@ class SpecialSuggest extends Model
         'c13',
         'c13_1_pass',
         'c13_1',
+        'c13_2_pass',
+        'c13_2',
+        'c13_3_pass',
+        'c13_3',
     ];
 
     public function user()

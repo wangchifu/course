@@ -38,6 +38,10 @@ class ReviewController extends Controller
         $first_result2 = [];
         $first_result3 = [];
         $second_result = [];
+        $special13=[];
+        $special13_1=[];
+        $special13_2=[];
+        $special13_3=[];
         $special_result = [];
 
         foreach($courses as $course){
@@ -49,6 +53,10 @@ class ReviewController extends Controller
             $first_result2[$course->school_code] = $course->first_result2;
             $first_result3[$course->school_code] = $course->first_result3;
             $second_result[$course->school_code] = $course->second_result;
+            $special13[$course->school_code] = $course->c13;
+            $special13_1[$course->school_code] = $course->c13_1;
+            $special13_2[$course->school_code] = $course->c13_2;
+            $special13_3[$course->school_code] = $course->c13_3;
             $special_result[$course->school_code] = $course->special_result;
         }
 
@@ -65,6 +73,10 @@ class ReviewController extends Controller
             'first_result2'=>$first_result2,
             'first_result3'=>$first_result3,
             'special_result'=>$special_result,
+            'special13'=>$special13,
+            'special13_1'=>$special13_1,
+            'special13_2'=>$special13_2,
+            'special13_3'=>$special13_3,
             'second_result'=>$second_result,
         ];
         return view('reviews.index',$data);
@@ -278,7 +290,7 @@ class ReviewController extends Controller
     {
         $courses = Course::where('year',$select_year)
             ->where('first_result2','back')
-            ->where('first_result3','null')
+            ->where('first_result3',null)
             ->get();
         $schools = config('course.schools');
         $data = [
@@ -287,6 +299,39 @@ class ReviewController extends Controller
             'schools'=>$schools,
         ];
         return view('reviews.unsent3',$data);
+    }
+
+    public function unsent_special($select_year)
+    {
+        $courses = Course::where('year',$select_year)
+            ->get();
+        $schools = config('course.schools');
+        $data = [
+            'select_year'=>$select_year,
+            'courses'=>$courses,
+            'schools'=>$schools,
+        ];
+        return view('reviews.unsent_special',$data);
+    }
+
+    public function show_school_first_suggest($select_year,$school_code)
+    {
+        $course = Course::where('year',$select_year)
+            ->where('school_code',$school_code)
+            ->first();
+
+        $school = School::where('school_code',$course->school_code)
+            ->first();
+
+        $data = [
+            'course'=>$course,
+            'select_year'=>$select_year,
+            'school_name'=>$school->school_name,
+            'school_code'=>$course->school_code,
+            'school_group'=>$school->school_type,
+        ];
+
+        return view('reviews.school_first_suggest',$data);
     }
 
 

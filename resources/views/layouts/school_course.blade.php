@@ -639,14 +639,14 @@
         </tr>
         <tr>
             <td colspan="2">
-                13.特殊教育課程計畫（如特殊教育班、資源班、藝才班）
+                13.特殊教育推動委員會({{ $select_year-1 }}學年度下學期期末會議紀錄及簽到表)(非必填)
             </td>
             <td>
                 @if($course->c13)
                     <?php $file_path = $select_year.'&'.$school_code.'&c13'; ?>
                     <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
-                    <span class="text-danger">未傳</span>
+                    <span class="text-warning">未傳</span>
                 @endif
             </td>
             @yield('c13')
@@ -654,17 +654,47 @@
         <tr>
             <td></td>
             <td>
-                13-1.特殊教育推動委員會
+                13-1.特殊類型教育課程「身障類」課程計畫(非必填)
             </td>
             <td>
                 @if($course->c13_1)
                     <?php $file_path = $select_year.'&'.$school_code.'&c13_1'; ?>
                     <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
-                    <span class="text-danger">未傳</span>
+                    <span class="text-warning">未傳</span>
                 @endif
             </td>
             @yield('c13_1')
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                13-2.特殊類型教育課程「資優類」課程計畫(非必填)
+            </td>
+            <td>
+                @if($course->c13_2)
+                    <?php $file_path = $select_year.'&'.$school_code.'&c13_2'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
+                @else
+                    <span class="text-warning">未傳</span>
+                @endif
+            </td>
+            @yield('c13_2')
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                13-3.特殊類型教育課程「藝才類」課程計畫(非必填)
+            </td>
+            <td>
+                @if($course->c13_3)
+                    <?php $file_path = $select_year.'&'.$school_code.'&c13_3'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
+                @else
+                    <span class="text-warning">未傳</span>
+                @endif
+            </td>
+            @yield('c13_3')
         </tr>
         <tr>
             <?php $files_c14 = get_files(storage_path('app/public/upload/'.$select_year.'/'.$school_code.'/c14')); ?>

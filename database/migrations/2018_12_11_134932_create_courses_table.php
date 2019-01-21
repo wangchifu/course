@@ -40,6 +40,8 @@ class CreateCoursesTable extends Migration
             $table->tinyInteger('c12')->nullable();//1有填，null則無
             $table->tinyInteger('c13')->nullable();//1有填，null則無
             $table->tinyInteger('c13_1')->nullable();//1有填，null則無
+            $table->tinyInteger('c13_2')->nullable();//1有填，null則無
+            $table->tinyInteger('c13_3')->nullable();//1有填，null則無
             $table->tinyInteger('c14')->nullable();//1有填，null則無
             $table->unsignedInteger('special_user_id')->nullable();//特審者
             $table->string('special_result')->nullable();//1有填，null則無

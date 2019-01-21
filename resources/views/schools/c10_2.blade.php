@@ -12,7 +12,7 @@
         @else
             <i class="fas fa-times-circle text-danger check_red"></i>
         @endif
-        學校課程發展委員會紀錄({{ $year->year }}學年度上學期第1次)
+        學校課程發展委員會紀錄({{ $year->year-1 }}學年度上學期第1次)
         @if($course->c10_2_1)
             <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_1']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
             <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_1']) }}" class="badge badge-primary">
@@ -30,7 +30,7 @@
         @else
             <i class="fas fa-times-circle text-danger check_red"></i>
         @endif
-        學校課程發展委員會紀錄({{ $year->year }}學年度上學期第2次)
+        學校課程發展委員會紀錄({{ $year->year-1 }}學年度上學期第2次)
         @if($course->c10_2_2)
             <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_2']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
             <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_2']) }}" class="badge badge-primary">
@@ -49,7 +49,7 @@
         @else
             <i class="fas fa-times-circle text-danger check_red"></i>
         @endif
-        學校課程發展委員會紀錄({{ $year->year }}學年度下學期第1次)
+        學校課程發展委員會紀錄({{ $year->year-1 }}學年度下學期第1次)
         @if($course->c10_2_3)
             <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_3']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
             <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_3']) }}" class="badge badge-primary">
@@ -68,7 +68,7 @@
         @else
             <i class="fas fa-times-circle text-danger check_red"></i>
         @endif
-        學校課程發展委員會紀錄({{ $year->year }}學年度下學期第2次)
+        學校課程發展委員會紀錄({{ $year->year-1 }}學年度下學期第2次)
         @if($course->c10_2_4)
             <a href="javascript:open_upload('{{ route('schools.normal_upload',['select_year'=>$year->year,'order'=>'c10_2_4']) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
             <a href="{{ route('schools.download',['year'=>$select_year,'school_code'=>auth()->user()->code,'file'=>'c10_2_4']) }}" class="badge badge-primary">

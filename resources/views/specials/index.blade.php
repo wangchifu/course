@@ -55,18 +55,23 @@
                                     {{ $schools[$course->school_code] }}
                                 </td>
                                 <td>
-                                    @if($course->first_result1==null)
-                                        <span class="text-danger">未送審</span>
-                                    @elseif($course->first_result1=="submit")
-                                        <span class="text-primary">已送審</span>
-                                    @endif
-                                    @if($course->special_result=="1")
-                                        <span class="text-success">已審</span>
+                                    @if($course->c13 =="1" or $course->c13_1 =="1" or $course->c13_2 =="1" or $course->c13_3 =="1")
+                                        @if($course->special_suggest)
+                                            <span class="text-success">已審核</span>
+                                        @else
+                                            @if($course->first_result1)
+                                                <span class="text-primary">已送審</span>
+                                            @endif
+                                        @endif
+                                    @else
+                                        未送
                                     @endif
                                 </td>
                                 <td>
-                                    @if($course->first_result1)
-                                        <a href="{{ route('specials.create',['course_id'=>$course->id,'page'=>$page]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i>進行審核</a>
+                                    @if($course->c13 =="1" or $course->c13_1 =="1" or $course->c13_2 =="1" or $course->c13_3 =="1")
+                                        @if($course->first_result1)
+                                            <a href="{{ route('specials.create',['course_id'=>$course->id,'page'=>$page]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i>編輯審核</a>
+                                        @endif
                                     @endif
                                 </td>
                             </tr>

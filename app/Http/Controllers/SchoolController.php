@@ -202,6 +202,20 @@ class SchoolController extends Controller
         return view('schools.edit',$data);
     }
 
+    public function special_edit($select_year)
+    {
+        $course = Course::where('year',$select_year)
+            ->where('school_code',auth()->user()->code)
+            ->first();
+        $year = Year::where('year',$select_year)->first();
+        $data = [
+            'course'=>$course,
+            'year'=>$year,
+            'select_year'=>$select_year,
+        ];
+        return view('schools.special_edit',$data);
+    }
+
     public function normal_upload($select_year,$order)
     {
         $data = [

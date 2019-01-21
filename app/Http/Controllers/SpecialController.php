@@ -61,6 +61,10 @@ class SpecialController extends Controller
         $att['c13'] = $request->input('c13');
         $att['c13_1_pass'] = ($request->input('c13_1_pass')=="1")?"1":"0";
         $att['c13_1'] = $request->input('c13_1');
+        $att['c13_2_pass'] = ($request->input('c13_2_pass')=="1")?"1":"0";
+        $att['c13_2'] = $request->input('c13_2');
+        $att['c13_3_pass'] = ($request->input('c13_3_pass')=="1")?"1":"0";
+        $att['c13_3'] = $request->input('c13_3');
         $special_suggest = SpecialSuggest::create($att);
 
         $att2['special_result'] = "1";
@@ -76,6 +80,10 @@ class SpecialController extends Controller
         $att['c13'] = $request->input('c13');
         $att['c13_1_pass'] = ($request->input('c13_1_pass')=="1")?"1":"0";
         $att['c13_1'] = $request->input('c13_1');
+        $att['c13_2_pass'] = ($request->input('c13_2_pass')=="1")?"1":"0";
+        $att['c13_2'] = $request->input('c13_2');
+        $att['c13_3_pass'] = ($request->input('c13_3_pass')=="1")?"1":"0";
+        $att['c13_3'] = $request->input('c13_3');
 
         $course->special_suggest->update($att);
 

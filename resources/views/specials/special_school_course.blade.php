@@ -1,5 +1,87 @@
 <div style="border:1px solid #96c2f1;background:#eff7ff;padding: 10px;">
     <table border="1">
+        <tr bgcolor="#cccccc">
+            <td>
+                壹
+            </td>
+            <td>
+                學校課程總體架構
+            </td>
+            <td width="90">
+                狀況
+            </td>
+            <th width="160">
+                符合
+            </th>
+            <th>
+                審查意見
+            </th>
+        </tr>
+        <tr>
+            <td colspan="5">
+                1.學校現沿與背景分析
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                1-1 描述學校現況與人力資源（至少含教師與學生數等）
+            </td>
+            <td>
+                @if($course->c1_1)
+                    <?php $file_path = $select_year.'&'.$school_code.'&c1_1'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
+                @else
+                    <span class="text-danger">未傳</span>
+                @endif
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                1-2 盤點分析學校課程發展的優劣條件、機會與威脅
+            </td>
+            <td>
+                @if($course->c1_2)
+                    <?php $file_path = $select_year.'&'.$school_code.'&c1_2'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
+                @else
+                    <span class="text-danger">未傳</span>
+                @endif
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                2.課程願景與目標
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                2-1 學校課程願景<br>
+                2-2 依學校課程願景擬定課程目標與發展重點
+            </td>
+            <td>
+                @if($course->c2)
+                    <?php $file_path = $select_year.'&'.$school_code.'&c2'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
+                @else
+                    <span class="text-danger">未傳</span>
+                @endif
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+
+
         <tr>
             <td colspan="5">
                 ...
@@ -122,7 +204,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                13.特殊教育課程計畫（如特殊教育班、資源班、藝才班）
+                13.特殊教育推動委員會({{ $select_year-1 }}學年度下學期期末會議紀錄及簽到表)
             </td>
             <td>
                 @if($course->c13)
@@ -143,7 +225,7 @@
         <tr>
             <td></td>
             <td>
-                13-1.特殊教育推動委員會
+                13-1.特殊類型教育課程「身障類」課程計畫
             </td>
             <td>
                 @if($course->c13_1)
@@ -159,6 +241,48 @@
             </td>
             <td>
                 <textarea name="c13_1">{{ $c13_1}}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                13-2.特殊類型教育課程「資優類」課程計畫
+            </td>
+            <td>
+                @if($course->c13_2)
+                    <?php $file_path = $select_year.'&'.$school_code.'&c13_2'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
+                @else
+                    <span class="text-danger">未傳</span>
+                @endif
+            </td>
+            <td>
+                <input type="radio" name="c13_2_pass" id="c13_2_pass1" {{ $checked13_2_ok }} value="1"> <label for="c13_2_pass1">符合</label>　
+                <input type="radio" name="c13_2_pass" id="c13_2_pass2" {{ $checked13_2_no }} value="0"> <label for="c13_2_pass2">不符合</label>
+            </td>
+            <td>
+                <textarea name="c13_2">{{ $c13_2}}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                13-3.特殊類型教育課程「藝才類」課程計畫
+            </td>
+            <td>
+                @if($course->c13_3)
+                    <?php $file_path = $select_year.'&'.$school_code.'&c13_3'; ?>
+                    <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
+                @else
+                    <span class="text-danger">未傳</span>
+                @endif
+            </td>
+            <td>
+                <input type="radio" name="c13_3_pass" id="c13_3_pass1" {{ $checked13_3_ok }} value="1"> <label for="c13_3_pass1">符合</label>　
+                <input type="radio" name="c13_3_pass" id="c13_3_pass2" {{ $checked13_3_no }} value="0"> <label for="c13_3_pass2">不符合</label>
+            </td>
+            <td>
+                <textarea name="c13_3">{{ $c13_3}}</textarea>
             </td>
         </tr>
     </table>

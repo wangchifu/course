@@ -44,6 +44,10 @@
         </div>
         <div class="col-10">
             @include('schools.c13_1')
+            <hr>
+            @include('schools.c13_2')
+            <hr>
+            @include('schools.c13_3')
         </div>
 
         <hr class="col-11">

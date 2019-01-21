@@ -30,6 +30,12 @@
 
                         $checked13_1_ok = ($course->special_suggest->c13_1_pass)?"checked":null;
                         $checked13_1_no = ($course->special_suggest->c13_1_pass)?null:"checked";
+
+                        $checked13_2_ok = ($course->special_suggest->c13_2_pass)?"checked":null;
+                        $checked13_2_no = ($course->special_suggest->c13_2_pass)?null:"checked";
+
+                        $checked13_3_ok = ($course->special_suggest->c13_3_pass)?"checked":null;
+                        $checked13_3_no = ($course->special_suggest->c13_3_pass)?null:"checked";
                         ?>
                     @else
                         {{ Form::open(['route'=>'specials.store','method'=>'post']) }}
@@ -39,6 +45,12 @@
 
                             $checked13_1_ok = "checked";
                             $checked13_1_no = null;
+
+                            $checked13_2_ok = "checked";
+                            $checked13_2_no = null;
+
+                            $checked13_3_ok = "checked";
+                            $checked13_3_no = null;
                         ?>
                     @endif
                     <?php
@@ -47,6 +59,8 @@
                     $group_id = $school_type;
                     $c13 = ($course->special_result)?$course->special_suggest->c13:null;
                     $c13_1 = ($course->special_result)?$course->special_suggest->c13_1:null;
+                    $c13_2 = ($course->special_result)?$course->special_suggest->c13_2:null;
+                    $c13_3 = ($course->special_result)?$course->special_suggest->c13_3:null;
                     ?>
                     @include('specials.special_school_course')
                     <br>

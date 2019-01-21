@@ -42,11 +42,9 @@
                             <tr>
                                 <th colspan="3">
                                     初審委員
-                                    @if($course->first_result1 != null)
-                                        @if($course->first_result1 != "submit")
-                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="badge badge-primary">初審詳細意見</a>
-                                        @endif
-                                    @endif
+                                </th>
+                                <th>
+                                    特教委員
                                 </th>
                                 <th rowspan="2">
                                     複審委員
@@ -62,6 +60,69 @@
                                 <th>
                                     初審-三傳
                                 </th>
+                                <td rowspan="2">
+                                    @if($course->special_suggest)
+                                        會議紀錄：
+                                        @if($course->special_suggest->c13_pass)
+                                            符合
+                                        @else
+                                            <span class="text-danger">不符合</span>
+                                        @endif
+                                        <br>
+                                        身障類課程計畫：
+                                        @if($course->special_suggest->c13_1_pass)
+                                            符合
+                                        @else
+                                            <span class="text-danger">不符合</span>
+                                        @endif
+                                        <br>
+                                        資優類課程計畫：
+                                        @if($course->special_suggest->c13_2_pass)
+                                            符合
+                                        @else
+                                            <span class="text-danger">不符合</span>
+                                        @endif
+                                        <br>
+                                        藝才類課程計畫：
+                                        @if($course->special_suggest->c13_3_pass)
+                                            符合
+                                        @else
+                                            <span class="text-danger">不符合</span>
+                                        @endif
+                                        <br>
+                                        [<a href="{{ route('schools.special_edit',$select_year) }}"><i class="fas fa-edit"></i> 重送特審</a>]
+                                    @else
+                                        @if($course->first_result1)
+                                            會議紀錄：
+                                            @if($course->c13)
+                                                <span class="text-primary">已送審中</span>
+                                            @else
+                                                未送審
+                                            @endif
+                                            <br>
+                                            身障類課程計畫：
+                                            @if($course->c13_1)
+                                                <span class="text-primary">已送審中</span>
+                                            @else
+                                                未送審
+                                            @endif
+                                            <br>
+                                            資優類課程計畫：
+                                            @if($course->c13_2)
+                                                <span class="text-primary">已送審中</span>
+                                            @else
+                                                未送審
+                                            @endif
+                                            <br>
+                                            藝才類課程計畫：
+                                            @if($course->c13_3)
+                                                <span class="text-primary">已送審中</span>
+                                            @else
+                                                未送審
+                                            @endif
+                                        @endif
+                                    @endif
+                                </td>
                             </tr>
                             <tr>
                                 <td>
@@ -95,7 +156,7 @@
                                         <span class="text-primary">已修正</span>
                                     @endif
                                 </td>
-                                <td>
+                                <td rowspan="2">
                                     @if($course->second_result=="ok")
                                         不列入
                                     @elseif($course->second_result=="excellent")
@@ -106,6 +167,15 @@
                                     <small>
                                         {{ $course->second_suggest->reason }}
                                     </small>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    @if($course->first_result1 != null)
+                                        @if($course->first_result1 != "submit")
+                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審特審詳細意見</a>
+                                        @endif
                                     @endif
                                 </td>
                             </tr>
