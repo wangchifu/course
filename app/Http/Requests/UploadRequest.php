@@ -24,7 +24,7 @@ class UploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'files.*' => 'mimes:pdf|max:5120',
+            'files.*' => 'mimes:pdf|max:10240',
         ];
     }
 }
