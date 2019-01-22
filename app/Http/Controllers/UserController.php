@@ -62,6 +62,7 @@ class UserController extends Controller
         $att['email'] = $request->input('email');
         $att['password'] = bcrypt(env('DEFAULT_PWD'));
         $att['group_id'] = $request->input('group_id');
+        if($att['group_id']==9) $att['admin'] =1 ;
         $att['login_type'] = "local";
 
         User::create($att);
