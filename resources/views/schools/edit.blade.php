@@ -119,16 +119,22 @@
                 $c12_text = ($course->first_suggest2->c12_pass===0)?"不符合":null;
             }
         }
-            if($course->special_suggest){
-                $c13_bg = ($course->special_suggest->c13_pass===0)?"#FF8888":null;
-                $c13_text = ($course->special_suggest->c13_pass===0)?"不符合":null;
-                $c13_1_bg = ($course->special_suggest->c13_1_pass===0)?"#FF8888":null;
-                $c13_1_text = ($course->special_suggest->c13_1_pass===0)?"不符合":null;
-                $c13_2_bg = ($course->special_suggest->c13_2_pass===0)?"#FF8888":null;
-                $c13_2_text = ($course->special_suggest->c13_2_pass===0)?"不符合":null;
-                $c13_3_bg = ($course->special_suggest->c13_3_pass===0)?"#FF8888":null;
-                $c13_3_text = ($course->special_suggest->c13_3_pass===0)?"不符合":null;
-            }
+        if($course->special_suggest13){
+            $c13_bg = ($course->special_suggest13->c13_pass===0)?"#FF8888":null;
+            $c13_text = ($course->special_suggest13->c13_pass===0)?"不符合":null;
+        }
+        if($course->special_suggest13_1){
+            $c13_1_bg = ($course->special_suggest13_1->c13_1_pass===0)?"#FF8888":null;
+            $c13_1_text = ($course->special_suggest13_1->c13_1_pass===0)?"不符合":null;
+        }
+        if($course->special_suggest13_2){
+            $c13_2_bg = ($course->special_suggest13_2->c13_2_pass===0)?"#FF8888":null;
+            $c13_2_text = ($course->special_suggest13_2->c13_2_pass===0)?"不符合":null;
+        }
+        if($course->special_suggest13_3){
+            $c13_3_bg = ($course->special_suggest13_3->c13_3_pass===0)?"#FF8888":null;
+            $c13_3_text = ($course->special_suggest13_3->c13_3_pass===0)?"不符合":null;
+        }
         ?>
         @include('schools.b1')
         <hr class="col-12">

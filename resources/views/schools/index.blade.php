@@ -41,13 +41,13 @@
                         <table border="1" cellpadding="5">
                             <tr>
                                 <th colspan="3">
-                                    初審委員
+                                    普教初審
                                 </th>
                                 <th>
-                                    特教委員
+                                    特教審查
                                 </th>
                                 <th rowspan="2">
-                                    複審委員
+                                    普教複審
                                 </th>
                             </tr>
                             <tr>
@@ -61,66 +61,70 @@
                                     初審-三傳
                                 </th>
                                 <td rowspan="2">
-                                    @if($course->special_suggest)
-                                        會議紀錄：
-                                        @if($course->special_suggest->c13_pass)
+                                    <?php $i=null; ?>
+                                    會議紀錄：
+                                    @if($course->special_suggest13)
+                                        @if($course->special_suggest13->c13_pass)
                                             符合
                                         @else
                                             <span class="text-danger">不符合</span>
+                                            <?php $i=1; ?>
                                         @endif
-                                        <br>
-                                        身障類課程計畫：
-                                        @if($course->special_suggest->c13_1_pass)
-                                            符合
-                                        @else
-                                            <span class="text-danger">不符合</span>
-                                        @endif
-                                        <br>
-                                        資優類課程計畫：
-                                        @if($course->special_suggest->c13_2_pass)
-                                            符合
-                                        @else
-                                            <span class="text-danger">不符合</span>
-                                        @endif
-                                        <br>
-                                        藝才類課程計畫：
-                                        @if($course->special_suggest->c13_3_pass)
-                                            符合
-                                        @else
-                                            <span class="text-danger">不符合</span>
-                                        @endif
-                                        <br>
-                                        [<a href="{{ route('schools.special_edit',$select_year) }}"><i class="fas fa-edit"></i> 重送特審</a>]
                                     @else
-                                        @if($course->first_result1)
-                                            會議紀錄：
-                                            @if($course->c13)
-                                                <span class="text-primary">已送審中</span>
-                                            @else
-                                                未送審
-                                            @endif
-                                            <br>
-                                            身障類課程計畫：
-                                            @if($course->c13_1)
-                                                <span class="text-primary">已送審中</span>
-                                            @else
-                                                未送審
-                                            @endif
-                                            <br>
-                                            資優類課程計畫：
-                                            @if($course->c13_2)
-                                                <span class="text-primary">已送審中</span>
-                                            @else
-                                                未送審
-                                            @endif
-                                            <br>
-                                            藝才類課程計畫：
-                                            @if($course->c13_3)
-                                                <span class="text-primary">已送審中</span>
-                                            @else
-                                                未送審
-                                            @endif
+                                        @if($course->c13=="1" and $course->first_result1 != null)
+                                            <span class="text-primary">送審中</span>
+                                        @else
+                                            <span class="text-danger">尚未送審</span>
                                         @endif
+                                    @endif
+                                    <br>身障類課程計畫：
+                                    @if($course->special_suggest13_1)
+                                        @if($course->special_suggest13_1->c13_1_pass)
+                                            符合
+                                        @else
+                                            <span class="text-danger">不符合</span>
+                                                <?php $i=1; ?>
+                                        @endif
+                                    @else
+                                        @if($course->c13_1=="1" and $course->first_result1 != null)
+                                            <span class="text-primary">送審中</span>
+                                        @else
+                                            <span class="text-danger">尚未送審</span>
+                                        @endif
+                                    @endif
+                                    <br>資優類課程計畫：
+                                    @if($course->special_suggest13_2)
+                                        @if($course->special_suggest13_2->c13_2_pass)
+                                            符合
+                                        @else
+                                            <span class="text-danger">不符合</span>
+                                                <?php $i=1; ?>
+                                        @endif
+                                    @else
+                                        @if($course->c13_2=="1" and $course->first_result1 != null)
+                                            <span class="text-primary">送審中</span>
+                                        @else
+                                            <span class="text-danger">尚未送審</span>
+                                        @endif
+                                    @endif
+                                    <br>藝才類課程計畫：
+                                    @if($course->special_suggest13_3)
+                                        @if($course->special_suggest13_3->c13_3_pass)
+                                            符合
+                                        @else
+                                            <span class="text-danger">不符合</span>
+                                                <?php $i=1; ?>
+                                        @endif
+                                    @else
+                                        @if($course->c13_3=="1" and $course->first_result1 != null)
+                                            <span class="text-primary">送審中</span>
+                                        @else
+                                            <span class="text-danger">尚未送審</span>
+                                        @endif
+                                    @endif
+
+                                    @if($i)
+                                        [<a href="{{ route('schools.special_edit',$select_year) }}"><i class="fas fa-edit"></i> 重送特審</a>]
                                     @endif
                                 </td>
                             </tr>
@@ -129,7 +133,7 @@
                                     @if($course->first_result1 == null)
                                         <span class="text-danger">尚未送審</span>
                                     @elseif($course->first_result1 == "submit")
-                                        <span class="text-primary">已送審中</span>
+                                        <span class="text-primary">送審中</span>
                                     @elseif($course->first_result1 == "ok")
                                         <i class="fas fa-check-circle text-success"></i> <span class="text-success">通過審查</span>
                                     @elseif($course->first_result1 == "back")
@@ -142,7 +146,7 @@
                                     @if($course->first_result1=="back" and $course->first_result2 == null)
                                         <span class="text-danger">尚未送審</span>
                                     @elseif($course->first_result2 == "submit")
-                                        <span class="text-primary">已送審中</span>
+                                        <span class="text-primary">送審中</span>
                                     @elseif($course->first_result2 == "ok")
                                         <i class="fas fa-check-circle text-success"></i> <span class="text-success">通過審查</span>
                                     @elseif($course->first_result2 == "back")

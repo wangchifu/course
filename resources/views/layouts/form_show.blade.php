@@ -188,9 +188,9 @@
 @section('c13')
     <td bgcolor="#FFEE99">
         特教審查：
-        @if($course->special_suggest)
-            {!! show_pass($course->special_suggest->c13_pass) !!}<br>
-            <small>{{ $course->special_suggest->c13 }}</small><br>
+        @if($course->special_suggest13)
+            {!! show_pass($course->special_suggest13->c13_pass) !!}<br>
+            <small>{{ $course->special_suggest13->c13 }}</small><br>
         @endif
     </td>
 @endsection
@@ -198,9 +198,9 @@
 @section('c13_1')
     <td bgcolor="#FFEE99">
         特教審查：
-        @if($course->special_suggest)
-            {!! show_pass($course->special_suggest->c13_1_pass) !!}<br>
-            <small>{{ $course->special_suggest->c13_1 }}</small><br>
+        @if($course->special_suggest13_1)
+            {!! show_pass($course->special_suggest13_1->c13_1_pass) !!}<br>
+            <small>{{ $course->special_suggest13_1->c13_1 }}</small><br>
         @endif
     </td>
 @endsection
@@ -208,9 +208,9 @@
 @section('c13_2')
     <td bgcolor="#FFEE99">
         特教審查：
-        @if($course->special_suggest)
-            {!! show_pass($course->special_suggest->c13_2_pass) !!}<br>
-            <small>{{ $course->special_suggest->c13_2 }}</small><br>
+        @if($course->special_suggest13_2)
+            {!! show_pass($course->special_suggest13_2->c13_2_pass) !!}<br>
+            <small>{{ $course->special_suggest13_2->c13_2 }}</small><br>
         @endif
     </td>
 @endsection
@@ -218,9 +218,9 @@
 @section('c13_3')
     <td bgcolor="#FFEE99">
         特教審查：
-        @if($course->special_suggest)
-            {!! show_pass($course->special_suggest->c13_3_pass) !!}<br>
-            <small>{{ $course->special_suggest->c13_3 }}</small><br>
+        @if($course->special_suggest13_3)
+            {!! show_pass($course->special_suggest13_3->c13_3_pass) !!}<br>
+            <small>{{ $course->special_suggest13_3->c13_3 }}</small><br>
         @endif
     </td>
 @endsection

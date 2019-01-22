@@ -82,30 +82,6 @@ class ReviewController extends Controller
         return view('reviews.index',$data);
     }
 
-    public function special_user($select_year,$school_code)
-    {
-        $users = User::where('group_id',3)->pluck('name','id')->toArray();
-        $school_array = config('course.schools');
-        $data = [
-            'users'=>$users,
-            'select_year'=>$select_year,
-            'school_code'=>$school_code,
-            'school_array'=>$school_array,
-        ];
-        return view('reviews.special_user',$data);
-    }
-
-    public function special_user_store(Request $request)
-    {
-        $course = Course::where('year',$request->input('select_year'))
-            ->where('school_code',$request->input('school_code'))
-            ->first();
-        $att['special_user_id'] = $request->input('special_user_id');
-        $course->update($att);
-
-        echo "<body onload='opener.location.reload();window.close();'>";
-    }
-
     public function first_user($select_year,$school_code)
     {
         $users = User::where('group_id',4)->pluck('name','id')->toArray();
@@ -154,30 +130,7 @@ class ReviewController extends Controller
         echo "<body onload='opener.location.reload();window.close();'>";
     }
 
-    public function special_by_user($select_year)
-    {
-        $users = User::where('group_id',3)->pluck('name','id')->toArray();
-        $schools = config('course.schools');
 
-        $data = [
-            'select_year'=>$select_year,
-            'users'=>$users,
-            'schools'=>$schools,
-        ];
-        return view('reviews.special_by_user',$data);
-    }
-
-    public function special_by_user_store(Request $request)
-    {
-        foreach($request->input('s') as $k=>$v){
-            $course = Course::where('year',$request->input('select_year'))
-                ->where('school_code',$k)
-                ->first();
-            $att['special_user_id'] = $request->input('user_id');
-            $course->update($att);
-        }
-        echo "<body onload='opener.location.reload();window.close();'>";
-    }
 
 
 
@@ -299,19 +252,6 @@ class ReviewController extends Controller
             'schools'=>$schools,
         ];
         return view('reviews.unsent3',$data);
-    }
-
-    public function unsent_special($select_year)
-    {
-        $courses = Course::where('year',$select_year)
-            ->get();
-        $schools = config('course.schools');
-        $data = [
-            'select_year'=>$select_year,
-            'courses'=>$courses,
-            'schools'=>$schools,
-        ];
-        return view('reviews.unsent_special',$data);
     }
 
     public function show_school_first_suggest($select_year,$school_code)

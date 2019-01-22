@@ -36,8 +36,10 @@ class Course extends Model
         'c13_2',
         'c13_3',
         'c14',
-        'special_user_id',
-        'special_result',
+        'special13_user_id',
+        'special13_1_user_id',
+        'special13_2_user_id',
+        'special13_3_user_id',
         'first_user_id',
         'first_result1',
         'first_result2',
@@ -47,10 +49,26 @@ class Course extends Model
         'open',
     ];
 
-    public function special_suggest()
+    public function special_suggest13()
     {
-        return $this->hasOne(SpecialSuggest::class);
+        return $this->hasOne(SpecialSuggest13::class);
     }
+
+    public function special_suggest13_1()
+    {
+        return $this->hasOne(SpecialSuggest131::class);
+    }
+
+    public function special_suggest13_2()
+    {
+        return $this->hasOne(SpecialSuggest132::class);
+    }
+
+    public function special_suggest13_3()
+    {
+        return $this->hasOne(SpecialSuggest133::class);
+    }
+
     public function first_suggest1()
     {
         return $this->hasOne(FirstSuggest1::class);

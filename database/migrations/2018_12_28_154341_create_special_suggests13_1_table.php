@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpecialSuggestsTable extends Migration
+class CreateSpecialSuggests131Table extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,12 @@ class CreateSpecialSuggestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('special_suggests', function (Blueprint $table) {
+        Schema::create('special_suggests13_1', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');//評審
             $table->unsignedInteger('course_id');//course關聯用
-            $table->tinyInteger('c13_pass')->nullable();//是否通過
-            $table->text('c13')->nullable();
             $table->tinyInteger('c13_1_pass')->nullable();//是否通過
             $table->text('c13_1')->nullable();
-            $table->tinyInteger('c13_2_pass')->nullable();//是否通過
-            $table->text('c13_2')->nullable();
-            $table->tinyInteger('c13_3_pass')->nullable();//是否通過
-            $table->text('c13_3')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +30,6 @@ class CreateSpecialSuggestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('special_suggests');
+        Schema::dropIfExists('special_suggests13_1');
     }
 }

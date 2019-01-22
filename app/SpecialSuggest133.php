@@ -4,17 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SpecialSuggest extends Model
+class SpecialSuggest133 extends Model
 {
+    protected $table = "special_suggests13_3";
+
     protected $fillable = [
         'user_id',
         'course_id',
-        'c13_pass',
-        'c13',
-        'c13_1_pass',
-        'c13_1',
-        'c13_2_pass',
-        'c13_2',
         'c13_3_pass',
         'c13_3',
     ];

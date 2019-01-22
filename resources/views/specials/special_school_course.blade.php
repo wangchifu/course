@@ -214,13 +214,7 @@
                     <span class="text-danger">未傳</span>
                 @endif
             </td>
-            <td>
-                <input type="radio" name="c13_pass" id="c13_pass1" {{ $checked13_ok }} value="1"> <label for="c13_pass1">符合</label>　
-                <input type="radio" name="c13_pass" id="c13_pass2" {{ $checked13_no }} value="0"> <label for="c13_pass2">不符合</label>
-            </td>
-            <td>
-                <textarea name="c13">{{ $c13 }}</textarea>
-            </td>
+            @yield('c13')
         </tr>
         <tr>
             <td></td>
@@ -235,13 +229,7 @@
                     <span class="text-danger">未傳</span>
                 @endif
             </td>
-            <td>
-                <input type="radio" name="c13_1_pass" id="c13_1_pass1" {{ $checked13_1_ok }} value="1"> <label for="c13_1_pass1">符合</label>　
-                <input type="radio" name="c13_1_pass" id="c13_1_pass2" {{ $checked13_1_no }} value="0"> <label for="c13_1_pass2">不符合</label>
-            </td>
-            <td>
-                <textarea name="c13_1">{{ $c13_1}}</textarea>
-            </td>
+            @yield('c13_1')
         </tr>
         <tr>
             <td></td>
@@ -256,13 +244,7 @@
                     <span class="text-danger">未傳</span>
                 @endif
             </td>
-            <td>
-                <input type="radio" name="c13_2_pass" id="c13_2_pass1" {{ $checked13_2_ok }} value="1"> <label for="c13_2_pass1">符合</label>　
-                <input type="radio" name="c13_2_pass" id="c13_2_pass2" {{ $checked13_2_no }} value="0"> <label for="c13_2_pass2">不符合</label>
-            </td>
-            <td>
-                <textarea name="c13_2">{{ $c13_2}}</textarea>
-            </td>
+            @yield('c13_2')
         </tr>
         <tr>
             <td></td>
@@ -277,13 +259,7 @@
                     <span class="text-danger">未傳</span>
                 @endif
             </td>
-            <td>
-                <input type="radio" name="c13_3_pass" id="c13_3_pass1" {{ $checked13_3_ok }} value="1"> <label for="c13_3_pass1">符合</label>　
-                <input type="radio" name="c13_3_pass" id="c13_3_pass2" {{ $checked13_3_no }} value="0"> <label for="c13_3_pass2">不符合</label>
-            </td>
-            <td>
-                <textarea name="c13_3">{{ $c13_3}}</textarea>
-            </td>
+            @yield('c13_3')
         </tr>
     </table>
 </div>

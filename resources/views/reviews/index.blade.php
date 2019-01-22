@@ -1,6 +1,6 @@
 @extends('layouts.master',['bg'=>'bg-secondary'])
 
-@section('title','審查管理')
+@section('title','普教審查管理')
 
 @section('content')
     <br>
@@ -32,7 +32,6 @@
                     </div>
                     <div class="card-body">
                         <a href="javascript:open_window2('{{ route('reviews.first_by_user',['select_year'=>$select_year]) }}','新視窗')" class="btn btn-info btn-sm"><i class="fas fa-user"></i> 依初委選學校</a>
-                        <a href="javascript:open_window2('{{ route('reviews.special_by_user',['select_year'=>$select_year]) }}','新視窗')" class="btn btn-info btn-sm"><i class="fas fa-user-tag"></i> 依特委選學校</a>
                         <a href="javascript:open_window2('{{ route('reviews.second_by_user',['select_year'=>$select_year]) }}','新視窗')" class="btn btn-info btn-sm"><i class="far fa-user"></i> 依複委選學校</a>
                         <a href="{{ route('reviews.open',$select_year) }}" class="btn btn-success btn-sm" onclick="confirm('確定？')"><i class="fas fa-share"></i> 全部公開</a>
                         @if(count($courses))
@@ -48,12 +47,6 @@
                                 </th>
                                 <th nowrap>
                                     初審<br>狀況<br><a href="{{ route('reviews.unsent1',$select_year) }}" class="badge badge-danger" target="_blank">未送名單</a>
-                                </th>
-                                <th nowrap>
-                                    特教<br>委員
-                                </th>
-                                <th nowrap>
-                                    特審<br>結果<br><a href="{{ route('reviews.unsent_special',$select_year) }}" class="badge badge-danger" target="_blank">傳送狀況</a>
                                 </th>
                                 <th>
                                     再傳<br>狀況<br><a href="{{ route('reviews.unsent2',$select_year) }}" class="badge badge-danger" target="_blank">未送名單</a>
@@ -88,7 +81,7 @@
                                     @if($first_result1[$school->school_code] == null)
                                         <span class="text-danger">未送</span>
                                     @elseif($first_result1[$school->school_code] == "submit")
-                                        <span class="text-primary">已送</span>
+                                        <span class="text-primary">已傳</span>
                                     @elseif($first_result1[$school->school_code] == "back")
                                         <a href="{{ route('reviews.show_school_first_suggest',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}" class="badge badge-danger" target="_blank">退回</a>
                                     @elseif($first_result1[$school->school_code] == "ok")
@@ -98,27 +91,10 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {{ $special_name[$school->school_code] }}
-                                    <a href="javascript:open_window('{{ route('reviews.special_user',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}','新視窗')"><i class="fas fa-list-ul"></i></a>
-                                </td>
-                                <td>
-                                    @if($special13[$school->school_code]=="1" or  $special13_1[$school->school_code]=="1" or $special13_2[$school->school_code]=="1" or $special13_3[$school->school_code]=="1")
-                                        @if($special_result[$school->school_code])
-                                            <span class="text-success">已審</span>
-                                        @else
-                                            @if($first_result1[$school->school_code] == "submit")
-                                                <span class="text-primary">已送</span>
-                                            @endif
-                                        @endif
-                                    @else
-                                        未送
-                                    @endif
-                                </td>
-                                <td>
                                     @if($first_result1[$school->school_code]=="back" and $first_result2[$school->school_code] == null)
                                         <span class="text-danger">未送</span>
                                     @elseif($first_result2[$school->school_code] == "submit")
-                                        <span class="text-primary">已送</span>
+                                        <span class="text-primary">已傳</span>
                                     @elseif($first_result2[$school->school_code] == "back")
                                         <span class="text-warning">退回</span>
                                     @elseif($first_result2[$school->school_code] == "ok")

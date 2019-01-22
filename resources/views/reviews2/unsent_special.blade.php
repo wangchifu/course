@@ -28,9 +28,6 @@
                                 <th>
                                     繳交情況
                                 </th>
-                                <th>
-                                    審查
-                                </th>
                             </tr>
                             <?php $i=1; ?>
                             @foreach($courses as $course)
@@ -46,13 +43,13 @@
                                 </td>
                                 <td>
                                     會議紀錄：
-                                    @if($course->c13)
-                                        <span class="text-success">已傳-></span>
-                                        @if($course->special_suggest)
-                                            @if($course->special_suggest->c13_pass)
-                                                <span>符合</span>
+                                    @if($course->c13 and $course->first_result1 != null)
+                                        <span class="text-success">已傳</span>
+                                        @if($course->special_suggest13)
+                                            @if($course->special_suggest13->c13_pass)
+                                                -><span>符合</span>
                                             @else
-                                                <span class="text-danger">不符合</span>
+                                                -><span class="text-danger">不符合</span>
                                             @endif
                                         @endif
                                     @else
@@ -60,13 +57,13 @@
                                     @endif
                                     <br>
                                     身障類課程計畫：
-                                    @if($course->c13_1)
-                                        <span class="text-success">已傳-></span>
-                                        @if($course->special_suggest)
-                                            @if($course->special_suggest->c13_1_pass)
-                                                <span>符合</span>
+                                    @if($course->c13_1 and $course->first_result1 != null)
+                                        <span class="text-success">已傳</span>
+                                        @if($course->special_suggest13_1)
+                                            @if($course->special_suggest13_1->c13_1_pass)
+                                                -><span>符合</span>
                                             @else
-                                                <span class="text-danger">不符合</span>
+                                                -><span class="text-danger">不符合</span>
                                             @endif
                                         @endif
                                     @else
@@ -74,13 +71,13 @@
                                     @endif
                                     <br>
                                     資優類課程計畫：
-                                    @if($course->c13_2)
-                                        <span class="text-success">已傳-></span>
-                                        @if($course->special_suggest)
-                                            @if($course->special_suggest->c13_2_pass)
-                                                <span>符合</span>
+                                    @if($course->c13_2 and $course->first_result1 != null)
+                                        <span class="text-success">已傳</span>
+                                        @if($course->special_suggest13_2)
+                                            @if($course->special_suggest13_2->c13_2_pass)
+                                                -><span>符合</span>
                                             @else
-                                                <span class="text-danger">不符合</span>
+                                                -><span class="text-danger">不符合</span>
                                             @endif
                                         @endif
                                     @else
@@ -88,24 +85,17 @@
                                     @endif
                                     <br>
                                     藝才類課程計畫：
-                                    @if($course->c13_3)
-                                        <span class="text-success">已傳-></span>
-                                        @if($course->special_suggest)
-                                            @if($course->special_suggest->c13_3_pass)
-                                                <span>符合</span>
+                                    @if($course->c13_3 and $course->first_result1 != null)
+                                        <span class="text-success">已傳</span>
+                                        @if($course->special_suggest13_3)
+                                            @if($course->special_suggest13_3->c13_3_pass)
+                                                -><span>符合</span>
                                             @else
-                                                <span class="text-danger">不符合</span>
+                                                -><span class="text-danger">不符合</span>
                                             @endif
                                         @endif
                                     @else
                                         <span class="text-danger">未傳</span>
-                                    @endif
-                                </td>
-                                <td>
-                                    @if($course->special_suggest)
-                                        <span class="text-success">已審</span>
-                                    @else
-                                        未審
                                     @endif
                                 </td>
                             </tr>

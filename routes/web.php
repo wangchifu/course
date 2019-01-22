@@ -98,17 +98,13 @@ Route::group(['middleware' => 'admin'],function(){
     Route::post('books/store' , 'BookController@store')->name('books.store');
     Route::delete('books/destroy' , 'BookController@destroy')->name('books.destroy');
 
-    //審核管理
+    //普教審核管理
     Route::match(['get','post'],'reviews/index' , 'ReviewController@index')->name('reviews.index');
-    Route::get('reviews/{select_year}/{school_code}/special_user' , 'ReviewController@special_user')->name('reviews.special_user');
-    Route::post('reviews/special_user_store' , 'ReviewController@special_user_store')->name('reviews.special_user_store');
     Route::get('reviews/{select_year}/{school_code}/first_user' , 'ReviewController@first_user')->name('reviews.first_user');
     Route::post('reviews/first_user_store' , 'ReviewController@first_user_store')->name('reviews.first_user_store');
     Route::get('reviews/{select_year}/{school_code}/second_user' , 'ReviewController@second_user')->name('reviews.second_user');
     Route::post('reviews/second_user_store' , 'ReviewController@second_user_store')->name('reviews.second_user_store');
 
-    Route::get('reviews/{select_year}/special_by_user' , 'ReviewController@special_by_user')->name('reviews.special_by_user');
-    Route::post('reviews/special_by_user_store' , 'ReviewController@special_by_user_store')->name('reviews.special_by_user_store');
     Route::get('reviews/{select_year}/first_by_user' , 'ReviewController@first_by_user')->name('reviews.first_by_user');
     Route::post('reviews/first_by_user_store' , 'ReviewController@first_by_user_store')->name('reviews.first_by_user_store');
     Route::get('reviews/{select_year}/second_by_user' , 'ReviewController@second_by_user')->name('reviews.second_by_user');
@@ -120,9 +116,16 @@ Route::group(['middleware' => 'admin'],function(){
     Route::get('reviews/{select_year}/unsent1' , 'ReviewController@unsent1')->name('reviews.unsent1');
     Route::get('reviews/{select_year}/unsent2' , 'ReviewController@unsent2')->name('reviews.unsent2');
     Route::get('reviews/{select_year}/unsent3' , 'ReviewController@unsent3')->name('reviews.unsent3');
-    Route::get('reviews/{select_year}/unsent_special' , 'ReviewController@unsent_special')->name('reviews.unsent_special');
 
     Route::get('reviews/{select_year}/{school_code}/show_school_first_suggest' , 'ReviewController@show_school_first_suggest')->name('reviews.show_school_first_suggest');
+
+    //特教審查管理
+    Route::match(['get','post'],'reviews2/index' , 'Review2Controller@index')->name('reviews2.index');
+    Route::get('reviews2/{select_year}/{school_code}/{c}/special_user' , 'Review2Controller@special_user')->name('reviews2.special_user');
+    Route::post('reviews2/special_user_store' , 'Review2Controller@special_user_store')->name('reviews2.special_user_store');
+    Route::get('reviews2/{select_year}/{c}/special_by_user' , 'Review2Controller@special_by_user')->name('reviews2.special_by_user');
+    Route::post('reviews2/special_by_user_store' , 'Review2Controller@special_by_user_store')->name('reviews2.special_by_user_store');
+    Route::get('reviews2/{select_year}/unsent_special' , 'Review2Controller@unsent_special')->name('reviews2.unsent_special');
 
     //匯出表單
     Route::match(['get','post'],'exports/index' , 'ExportController@index')->name('exports.index');
@@ -190,9 +193,21 @@ Route::group(['middleware' => 'school'],function(){
 //特教委員
 Route::group(['middleware' => 'special'],function(){
     Route::match(['get','post'],'specials/index' , 'SpecialController@index')->name('specials.index');
-    Route::get('specials/{course_id}/{page}/create' , 'SpecialController@create')->name('specials.create');
-    Route::post('specials' , 'SpecialController@store')->name('specials.store');
-    Route::patch('specials/{course}' , 'SpecialController@update')->name('specials.update');
+    Route::get('specials/{course_id}/{page}/edit13' , 'SpecialController@edit13')->name('specials.edit13');
+    Route::post('specials13' , 'SpecialController@store13')->name('specials.store13');
+    Route::patch('specials13/{course}' , 'SpecialController@update13')->name('specials.update13');
+
+    Route::get('specials/{course_id}/{page}/edit13_1' , 'SpecialController@edit13_1')->name('specials.edit13_1');
+    Route::post('specials13_1' , 'SpecialController@store13_1')->name('specials.store13_1');
+    Route::patch('specials13_1/{course}' , 'SpecialController@update13_1')->name('specials.update13_1');
+
+    Route::get('specials/{course_id}/{page}/edit13_2' , 'SpecialController@edit13_2')->name('specials.edit13_2');
+    Route::post('specials13_2' , 'SpecialController@store13_2')->name('specials.store13_2');
+    Route::patch('specials13_2/{course}' , 'SpecialController@update13_2')->name('specials.update13_2');
+
+    Route::get('specials/{course_id}/{page}/edit13_3' , 'SpecialController@edit13_3')->name('specials.edit13_3');
+    Route::post('specials13_3' , 'SpecialController@store13_3')->name('specials.store13_3');
+    Route::patch('specials13_3/{course}' , 'SpecialController@update13_3')->name('specials.update13_3');
 
 });
 

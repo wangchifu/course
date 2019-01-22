@@ -13,7 +13,7 @@
             複審委員
         </td>
         <td>
-            學校
+            學校 <label><input type="checkbox" id="checkAll"/> 全選</label>
         </td>
         <td>
             動作
@@ -47,4 +47,9 @@
 </table>
 <input type="hidden" name="select_year" value="{{ $select_year }}">
 {{ Form::close() }}
+<script>
+    $("#checkAll").change(function () {
+        $("input:checkbox").prop('checked', $(this).prop("checked"));
+    });
+</script>
 @endsection

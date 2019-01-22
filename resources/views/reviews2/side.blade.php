@@ -11,10 +11,10 @@
     <a href="{{ route('reviews.index') }}" class="list-group-item list-group-item-action">
         普教審查管理
     </a>
-    <a href="{{ route('reviews2.index') }}" class="list-group-item list-group-item-action">
+    <a href="{{ route('reviews2.index') }}" class="list-group-item list-group-item-action active">
         特教審查管理
     </a>
-    <a href="{{ route('exports.index') }}" class="list-group-item list-group-item-action active">
+    <a href="{{ route('exports.index') }}" class="list-group-item list-group-item-action">
         匯出表單
     </a>
     <a href="{{ route('sims.index') }}" class="list-group-item list-group-item-action">

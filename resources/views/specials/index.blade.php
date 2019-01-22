@@ -38,10 +38,16 @@
                                 校名
                             </th>
                             <th nowrap>
-                                狀況
+                                會議紀錄
                             </th>
                             <th nowrap>
-                                動作
+                                身障類課程計畫
+                            </th>
+                            <th nowrap>
+                                資優類課程計畫
+                            </th>
+                            <th nowrap>
+                                藝才類課程計畫
                             </th>
                         </tr>
                         </thead>
@@ -55,23 +61,59 @@
                                     {{ $schools[$course->school_code] }}
                                 </td>
                                 <td>
-                                    @if($course->c13 =="1" or $course->c13_1 =="1" or $course->c13_2 =="1" or $course->c13_3 =="1")
-                                        @if($course->special_suggest)
-                                            <span class="text-success">已審核</span>
+                                    @if($course->c13 and $course->first_result1 != null)
+                                        @if($course->special_suggest13)
+                                            <span class="text-success">已審查</span>
                                         @else
-                                            @if($course->first_result1)
-                                                <span class="text-primary">已送審</span>
-                                            @endif
+                                            已送審
+                                        @endif
+                                        @if($course->special13_user_id == auth()->user()->id)
+                                            [<a href="{{ route('specials.edit13',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 編輯</a>]
                                         @endif
                                     @else
                                         未送
                                     @endif
                                 </td>
                                 <td>
-                                    @if($course->c13 =="1" or $course->c13_1 =="1" or $course->c13_2 =="1" or $course->c13_3 =="1")
-                                        @if($course->first_result1)
-                                            <a href="{{ route('specials.create',['course_id'=>$course->id,'page'=>$page]) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i>編輯審核</a>
+                                    @if($course->c13_1 and $course->first_result1 != null)
+                                        @if($course->special_suggest13_1)
+                                            <span class="text-success">已審查</span>
+                                        @else
+                                            已送審
                                         @endif
+                                        @if($course->special13_1_user_id == auth()->user()->id)
+                                            [<a href="{{ route('specials.edit13_1',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 編輯</a>]
+                                        @endif
+                                    @else
+                                        未送
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($course->c13_2 and $course->first_result1 != null)
+                                        @if($course->special_suggest13_2)
+                                            <span class="text-success">已審查</span>
+                                        @else
+                                            已送審
+                                        @endif
+                                        @if($course->special13_2_user_id == auth()->user()->id)
+                                            [<a href="{{ route('specials.edit13_2',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 編輯</a>]
+                                        @endif
+                                    @else
+                                        未送
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($course->c13_3 and $course->first_result1 != null)
+                                        @if($course->special_suggest13_3)
+                                            <span class="text-success">已審查</span>
+                                        @else
+                                            已送審
+                                        @endif
+                                        @if($course->special13_3_user_id == auth()->user()->id)
+                                            [<a href="{{ route('specials.edit13_3',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 編輯</a>]
+                                        @endif
+                                    @else
+                                        未送
                                     @endif
                                 </td>
                             </tr>

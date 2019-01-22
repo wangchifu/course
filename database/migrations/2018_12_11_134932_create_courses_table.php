@@ -43,8 +43,10 @@ class CreateCoursesTable extends Migration
             $table->tinyInteger('c13_2')->nullable();//1有填，null則無
             $table->tinyInteger('c13_3')->nullable();//1有填，null則無
             $table->tinyInteger('c14')->nullable();//1有填，null則無
-            $table->unsignedInteger('special_user_id')->nullable();//特審者
-            $table->string('special_result')->nullable();//1有填，null則無
+            $table->unsignedInteger('special13_user_id')->nullable();//特審13者
+            $table->unsignedInteger('special13_1_user_id')->nullable();//特審13_1者
+            $table->unsignedInteger('special13_2_user_id')->nullable();//特審13_2者
+            $table->unsignedInteger('special13_3_user_id')->nullable();//特審13_3者
             $table->unsignedInteger('first_user_id')->nullable();//初審者
             $table->string('first_result1')->nullable();//submit已送出，back退回再修改，pass通過但修改，ok通過，excellent優秀進複審
             $table->string('first_result2')->nullable();//submit已送出，back退回三修，ok通過
