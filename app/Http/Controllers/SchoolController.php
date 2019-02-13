@@ -774,6 +774,32 @@ class SchoolController extends Controller
         return redirect()->route('schools.index');
     }
 
+    public function give_up_first_suggest1($select_year)
+    {
+        $course = Course::where('year',$select_year)
+            ->where('school_code',auth()->user()->code)
+            ->first();
+        if($course->first_result1=="submit"){
+            $att['first_result1'] = null;
+            $course->update($att);
+        }
+
+        return redirect()->route('schools.index');
+    }
+
+    public function give_up_first_suggest2($select_year)
+    {
+        $course = Course::where('year',$select_year)
+            ->where('school_code',auth()->user()->code)
+            ->first();
+        if($course->first_result2=="submit"){
+            $att['first_result2'] = null;
+            $course->update($att);
+        }
+
+        return redirect()->route('schools.index');
+    }
+
     public function show_first_suggest($select_year)
     {
         $course = Course::where('year',$select_year)

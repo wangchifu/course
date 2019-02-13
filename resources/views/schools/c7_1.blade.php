@@ -1,5 +1,7 @@
-<div class="centent-div">
+<div class="centent-div" style="background-color: {{ $c7_1_bg }}">
     7-1 跨領域/科目課程單元/主題，其課程統整須能有效促成相關領域/科目核心素養及精熟學習重點。(非必填)
+    <br>
+    {{ $c7_1_text }}
 </div>
 <br>
 <table border="1">

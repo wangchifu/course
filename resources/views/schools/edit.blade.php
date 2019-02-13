@@ -35,8 +35,14 @@
             $c4_text = null;
             $c6_bg = null;
             $c6_text = null;
+            $c7_1_bg = null;
+            $c7_1_text = null;
+            $c7_2_bg = null;
+            $c7_2_text = null;
             $c8_1_bg = null;
             $c8_1_text = null;
+            $c8_2_bg = null;
+            $c8_2_text = null;
             $c9_bg = null;
             $c9_text = null;
             $c10_1_bg = null;
@@ -73,8 +79,14 @@
                     $c4_text = ($course->first_suggest1->c4_pass===0)?"不符合":null;
                     $c6_bg = ($course->first_suggest1->c6_pass===0)?"#FF8888":null;
                     $c6_text = ($course->first_suggest1->c6_pass===0)?"不符合":null;
+                    $c7_1_bg = ($course->first_suggest1->c7_1_pass===0)?"#FF8888":null;
+                    $c7_1_text = ($course->first_suggest1->c7_1_pass===0)?"不符合":null;
+                    $c7_2_bg = ($course->first_suggest1->c7_2_pass===0)?"#FF8888":null;
+                    $c7_2_text = ($course->first_suggest1->c7_2_pass===0)?"不符合":null;
                     $c8_1_bg = ($course->first_suggest1->c8_1_pass===0)?"#FF8888":null;
                     $c8_1_text = ($course->first_suggest1->c8_1_pass===0)?"不符合":null;
+                    $c8_2_bg = ($course->first_suggest1->c8_2_pass===0)?"#FF8888":null;
+                    $c8_2_text = ($course->first_suggest1->c8_2_pass===0)?"不符合":null;
                     $c9_bg = ($course->first_suggest1->c9_pass===0)?"#FF8888":null;
                     $c9_text = ($course->first_suggest1->c9_pass===0)?"不符合":null;
                     $c10_1_bg = ($course->first_suggest1->c10_1_pass===0)?"#FF8888":null;
@@ -105,8 +117,14 @@
                 $c4_text = ($course->first_suggest2->c4_pass===0)?"不符合":null;
                 $c6_bg = ($course->first_suggest2->c6_pass===0)?"#FF8888":null;
                 $c6_text = ($course->first_suggest2->c6_pass===0)?"不符合":null;
+                $c7_1_bg = ($course->first_suggest2->c7_1_pass===0)?"#FF8888":null;
+                $c7_1_text = ($course->first_suggest2->c7_1_pass===0)?"不符合":null;
+                $c7_2_bg = ($course->first_suggest2->c7_2_pass===0)?"#FF8888":null;
+                $c7_2_text = ($course->first_suggest2->c7_2_pass===0)?"不符合":null;
                 $c8_1_bg = ($course->first_suggest2->c8_1_pass===0)?"#FF8888":null;
                 $c8_1_text = ($course->first_suggest2->c8_1_pass===0)?"不符合":null;
+                $c8_2_bg = ($course->first_suggest2->c8_2_pass===0)?"#FF8888":null;
+                $c8_2_text = ($course->first_suggest2->c8_2_pass===0)?"不符合":null;
                 $c9_bg = ($course->first_suggest2->c9_pass===0)?"#FF8888":null;
                 $c9_text = ($course->first_suggest2->c9_pass===0)?"不符合":null;
                 $c10_1_bg = ($course->first_suggest2->c10_1_pass===0)?"#FF8888":null;
@@ -164,7 +182,7 @@
         var numItems = $('.check_red').length;
         if(confirm('送出後，無法再更改！您確定嗎?')){
             if(numItems>0){
-                alert('有題目未填！');
+                alert('有必填題目未填！');
                 return false;
             }else{
                 document.getElementById('form_submit').submit();

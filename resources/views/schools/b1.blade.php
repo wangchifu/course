@@ -10,7 +10,7 @@
     <div class="row custom-div">
         <div class="col-2">
             <div class="section-div">
-                1.學校現沿與背景分析
+                1.學校現況與背景分析
             </div>
         </div>
         <div class="col-10">

@@ -1,10 +1,12 @@
-<div class="centent-div">
+<div class="centent-div" style="background-color: {{ $c7_2_bg }}">
     @if($course->c7_2)
         <i class="fas fa-check-circle text-success"></i>
     @else
         <i class="fas fa-times-circle text-warning"></i>
     @endif
     7-2 協同教學之師資、時數規劃及實施過程具可行性、合理性。(非必填)
+    <br>
+    {{ $c7_2_text }}
 </div>
 <br>
 <?php

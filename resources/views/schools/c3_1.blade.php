@@ -50,7 +50,7 @@
     {{ Form::open(['route'=>'schools.c3_1_delete','method'=>'delete']) }}
     <input type="hidden" name="select_year" value="{{ $year->year }}">
     <button type="submit" onclick="return confirm('確定清除？')" class="btn btn-info btn-sm">清除重設</button>
-    <a href="{{ route('schools.c3_1_print',$year->year) }}" class="btn btn-primary btn-sm" target="_blank"><i class="fas fa-print"></i> 表3-1列印，供第11項上傳</a>
+    <a href="{{ route('schools.c3_1_print',$year->year) }}" class="btn btn-primary btn-sm" target="_blank"><i class="fas fa-print"></i> 列印核章後存成PDF，供第11項上傳</a>
     {{ Form::close() }}
 @else
     {{ Form::open(['route'=>'schools.c3_1_store','id'=>'sections_store','method'=>'post','onsubmit'=>"if(confirm('您確定送出嗎?')) return check_total();else return false"]) }}

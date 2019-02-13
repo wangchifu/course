@@ -178,13 +178,21 @@
                                 <td colspan="4">
                                     @if($course->first_result1 != null)
                                         @if($course->first_result1 != "submit")
-                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審特審詳細意見</a>
+                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審各分項詳細意見</a>
                                         @endif
                                     @endif
                                 </td>
                             </tr>
                         </table>
                         <br>
+                        @if($course->first_result1 == "submit")
+                        <a href="{{ route('schools.give_up_first_suggest1',$select_year) }}" class="badge badge-danger" onclick="return confirm('確定嗎？')">撤回送審，再次修改</a>
+                        <br>
+                        @endif
+                        @if($course->first_result2 == "submit")
+                            <a href="{{ route('schools.give_up_first_suggest2',$select_year) }}" class="badge badge-danger" onclick="return confirm('確定嗎？')">撤回送審，再次修改</a>
+                            <br>
+                        @endif
                         @include('layouts.school_course')
                     @endif
                 </div>

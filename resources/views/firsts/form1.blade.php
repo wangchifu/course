@@ -66,7 +66,7 @@
         <input type="radio" name="c6_pass" id="c6_pass1" {{ $checked6_ok }} value="1"> <label for="c6_pass1">符合</label>　
         <input type="radio" name="c6_pass" id="c6_pass2" {{ $checked6_no }} value="0"> <label for="c6_pass2">不符合</label>
         <br>
-        <textarea name="c6">{{ $c6 }}</textarea>
+        <textarea name="c6" placeholder="若不符合，請清楚指出哪一學年哪一領域">{{ $c6 }}</textarea>
     </td>
 @endsection
 

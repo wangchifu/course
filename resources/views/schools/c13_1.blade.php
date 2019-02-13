@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-warning"></i>
     @endif
-    13-1 特殊類型教育課程「身障類」課程計畫(非必填)
+    13-1 特殊類型教育課程「身心障礙類」課程計畫(非必填)
     <br>
     {{ $c13_1_text }}
 </div>

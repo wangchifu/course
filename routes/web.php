@@ -188,6 +188,10 @@ Route::group(['middleware' => 'school'],function(){
 
     Route::get('schools/{select_year}/show_first_suggest' , 'SchoolController@show_first_suggest')->name('schools.show_first_suggest');
 
+    //撤回送審
+    Route::get('schools/{select_year}/give_up_first_suggest1' , 'SchoolController@give_up_first_suggest1')->name('schools.give_up_first_suggest1');
+    Route::get('schools/{select_year}/give_up_first_suggest2' , 'SchoolController@give_up_first_suggest2')->name('schools.give_up_first_suggest2');
+
 });
 
 //特教委員

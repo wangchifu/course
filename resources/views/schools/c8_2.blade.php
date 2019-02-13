@@ -1,10 +1,12 @@
-<div class="centent-div">
+<div class="centent-div" style="background-color: {{ $c8_2_bg }}">
     @if($course->c8_2)
         <i class="fas fa-check-circle text-success"></i>
     @else
         <i class="fas fa-times-circle text-warning"></i>
     @endif
     8-2 自編教材依課程綱要規定，經學校課發會審查通過。(非必填)
+    <br>
+    {{ $c8_2_text }}
 </div>
 <br>
 <?php
