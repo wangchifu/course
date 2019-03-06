@@ -1,5 +1,5 @@
 <div class="centent-div" style="background-color: {{ $c6_bg }}">
-    融入課綱議題(七大或19項)且內涵適合單元/主題內容。
+    5-3 融入課綱議題(七大或19項)且內涵適合單元/主題內容。
     <br>
     {{ $c6_text }}
 </div>

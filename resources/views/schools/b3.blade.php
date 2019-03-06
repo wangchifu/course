@@ -10,7 +10,7 @@
     <div class="row custom-div">
         <div class="col-2">
             <div class="section-div">
-                9.各年級彈性學習課程目標／核心素養與學習重點、評量
+                八.各年級彈性學習課程目標／核心素養與學習重點、評量
             </div>
         </div>
         <div class="col-10">

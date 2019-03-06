@@ -10,7 +10,7 @@
     <div class="row custom-div">
         <div class="col-2">
             <div class="section-div">
-                10.學校課程發展委員會組織要點與會議紀錄
+                九.學校課程發展委員會組織要點與會議紀錄
             </div>
         </div>
         <div class="col-10">

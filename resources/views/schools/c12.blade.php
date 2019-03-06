@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-danger check_red"></i>
     @endif
-    12.校長及教師公開授課<br>
+    十一.校長及教師公開授課<br>
     校長及所有專任教師依課程綱要規定每學年至少進行一次公開授課活動，其進行方式與內容能促進教學專業發展。
     學校須擬定實施計畫與每年規劃公開課期程表。
     <br>

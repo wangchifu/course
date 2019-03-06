@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-danger check_red"></i>
     @endif
-    8-1 各年級領域/科目選用之教書版本，經教育部審定通過。
+    7-1 各年級領域/科目選用之教書版本，經教育部審定通過。
     <br>
     {{ $c8_1_text }}
 </div>

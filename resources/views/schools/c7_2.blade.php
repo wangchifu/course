@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-warning"></i>
     @endif
-    7-2 協同教學之師資、時數規劃及實施過程具可行性、合理性。(非必填)
+    6-2 協同教學之師資、時數規劃及實施過程具可行性、合理性。(非必填)
     <br>
     {{ $c7_2_text }}
 </div>

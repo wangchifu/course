@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-warning"></i>
     @endif
-    13.特殊教育推動委員會({{ $select_year-1 }}學年度下學期期末會議紀錄及簽到表)(非必填)
+    十二.特殊教育推動委員會({{ $select_year-1 }}學年度下學期期末會議紀錄及簽到表)(非必填)
     <br>
     {{ $c13_text }}
 </div>

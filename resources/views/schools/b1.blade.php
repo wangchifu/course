@@ -10,7 +10,7 @@
     <div class="row custom-div">
         <div class="col-2">
             <div class="section-div">
-                1.學校現況與背景分析
+                一.學校現況與背景分析
             </div>
         </div>
         <div class="col-10">
@@ -23,7 +23,7 @@
 
         <div class="col-2">
             <div class="section-div">
-                2.課程願景與目標
+                二.課程願景與目標
             </div>
         </div>
         <div class="col-10">
@@ -34,7 +34,7 @@
 
         <div class="col-2">
             <div class="section-div">
-                3.課程架構
+                三.課程架構
             </div>
         </div>
         <div class="col-10">
@@ -49,7 +49,7 @@
 
         <div class="col-2">
             <div class="section-div">
-                4.課程實施與評鑑
+                四.課程實施與評鑑
             </div>
         </div>
         <div class="col-10">

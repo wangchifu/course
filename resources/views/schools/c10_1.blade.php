@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-danger check_red"></i>
     @endif
-    10-1 學校課程發展委員會組織要點符合課程綱要規定，成員符合規定。
+    9-1 學校課程發展委員會組織要點符合課程綱要規定，成員符合規定。
     <br>
     {{ $c10_1_text }}
 </div>

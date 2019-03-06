@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-danger check_red"></i>
     @endif
-    11.節數分配表<br>
+    十.節數分配表<br>
     各年級各領域/科目及各彈性學習課程名稱及節數符合課綱規定，並彙整成表格。（學校將表3-1列印，核章後上傳）
     <br>
     {{ $c11_text }}

@@ -4,7 +4,7 @@
     @else
         <i class="fas fa-times-circle text-warning"></i>
     @endif
-    8-2 自編教材依課程綱要規定，經學校課發會審查通過。(非必填)
+    7-2 自編教材依課程綱要規定，經學校課發會審查通過。(非必填)
     <br>
     {{ $c8_2_text }}
 </div>

@@ -10,21 +10,12 @@
     <div class="row custom-div">
         <div class="col-2">
             <div class="section-div">
-                5.各年級課程目標／核心素養與學習重點、學習評量
+                五.各年級領域學習課程計畫
             </div>
         </div>
         <div class="col-10">
             @include('schools.c5')
-        </div>
-
-        <hr class="col-11">
-
-        <div class="col-2">
-            <div class="section-div">
-                6.議題融入
-            </div>
-        </div>
-        <div class="col-10">
+            <hr>
             @include('schools.c6')
         </div>
 
@@ -32,8 +23,8 @@
 
         <div class="col-2">
             <div class="section-div">
-                7.跨領域／科目統整課程及協同教學<br>
-                （未實施跨領域／科目統整課程及協同教學者免填）
+                六.跨領域／科目統整課程及協同教學<br>
+                （未實施者免填）
             </div>
         </div>
         <div class="col-10">
@@ -46,7 +37,7 @@
 
         <div class="col-2">
             <div class="section-div">
-                8.教科書
+                七.教科書
             </div>
         </div>
         <div class="col-10">
