@@ -61,7 +61,7 @@
                                     {{ $schools[$course->school_code] }}
                                 </td>
                                 <td>
-                                    @if($course->c13 and $course->first_result1 != null)
+                                    @if($course->c13 )
                                         @if($course->special_suggest13)
                                             <span class="text-success">已審查</span>
                                         @else
@@ -75,7 +75,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if($course->c13_1 and $course->first_result1 != null)
+                                    @if($course->c13_1)
                                         @if($course->special_suggest13_1)
                                             <span class="text-success">已審查</span>
                                         @else
@@ -89,7 +89,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if($course->c13_2 and $course->first_result1 != null)
+                                    @if($course->c13_2)
                                         @if($course->special_suggest13_2)
                                             <span class="text-success">已審查</span>
                                         @else
@@ -103,7 +103,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if($course->c13_3 and $course->first_result1 != null)
+                                    @if($course->c13_3)
                                         @if($course->special_suggest13_3)
                                             <span class="text-success">已審查</span>
                                         @else
