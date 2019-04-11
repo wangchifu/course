@@ -189,8 +189,18 @@ function check_date($select_year,$action){
         $d1 = str_replace('-','',$year->step6_date1);
         $d2 = str_replace('-','',$year->step6_date2);
     }
+
+    $w = [
+        '1'=>'階段1：學校上傳',
+        '2'=>'階段2：初審作業',
+        '3'=>'階段3：複審作業',
+        '4'=>'階段2-1：依初審後再傳',
+        '5'=>'階段2-2：初審後，三傳',
+        '6'=>'查詢',
+    ];
+
     if($today < $d1 or $today >$d2){
-        $words = "開放時間為 ".$d1." 到 ".$d2;
+        $words = $w[$action]." 開放時間為 ".$d1." 到 ".$d2;
     }
     return $words;
 }
