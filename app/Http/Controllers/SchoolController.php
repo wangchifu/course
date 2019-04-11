@@ -47,14 +47,14 @@ class SchoolController extends Controller
                 return view('layouts.page_error',compact('words'));
             };
         }
-        if($course->first_result2=="back"){
+        if($course->first_result1=="back"){
             //檢驗日期是否超過
             if(check_date($select_year,4)){
                 $words = check_date($select_year,4);
                 return view('layouts.page_error',compact('words'));
             };
         }
-        if($course->first_result3=="back"){
+        if($course->first_result2=="back"){
             //檢驗日期是否超過
             if(check_date($select_year,5)){
                 $words = check_date($select_year,5);
