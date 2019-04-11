@@ -47,7 +47,7 @@ class SchoolController extends Controller
                 return view('layouts.page_error',compact('words'));
             };
         }
-        if($course->first_result1=="back"){
+        if($course->first_result1=="back" and $course->first_result2==null){
             //檢驗日期是否超過
             if(check_date($select_year,4)){
                 $words = check_date($select_year,4);
