@@ -204,3 +204,28 @@ function check_date($select_year,$action){
     }
     return $words;
 }
+
+//發email
+if(! function_exists('send_mail')){
+    function send_mail($to,$subject,$body)
+    {
+        $data = array("subject"=>$subject,"body"=>$body,"receipt"=>"{$to}");
+        $data_string = json_encode($data);
+        $ch = curl_init('https://school.chc.edu.tw/api/mail');
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($data_string),
+                'AUTHKEY: #chc7237182#')
+        );
+        $result = curl_exec($ch);
+        $obj = json_decode($result,true);
+        if( $obj["success"] == true) {
+            //echo "<body onload=alert('已mail通知')>";
+        };
+
+
+    }
+}

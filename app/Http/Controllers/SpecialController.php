@@ -8,6 +8,7 @@ use App\SpecialSuggest13;
 use App\SpecialSuggest131;
 use App\SpecialSuggest132;
 use App\SpecialSuggest133;
+use App\User;
 use App\Year;
 use Illuminate\Http\Request;
 
@@ -64,7 +65,20 @@ class SpecialController extends Controller
         $att['course_id'] = $request->input('course_id');
         $att['c13_pass'] = ($request->input('c13_pass')=="1")?"1":"0";
         $att['c13'] = $request->input('c13');
-        SpecialSuggest13::create($att);
+        $special_suggest13 = SpecialSuggest13::create($att);
+
+        $school_code = $special_suggest13->course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_pass')=="1")?"會議紀錄 符合":"會議紀錄 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('specials/index?page='.$request->input('page'));
 
@@ -77,6 +91,19 @@ class SpecialController extends Controller
         $att['c13'] = $request->input('c13');
 
         $course->special_suggest13->update($att);
+
+        $school_code = $course->special_suggest13->course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_pass')=="1")?"會議紀錄 符合":"會議紀錄 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('specials/index?page='.$request->input('page'));
 
@@ -105,7 +132,21 @@ class SpecialController extends Controller
         $att['course_id'] = $request->input('course_id');
         $att['c13_1_pass'] = ($request->input('c13_1_pass')=="1")?"1":"0";
         $att['c13_1'] = $request->input('c13_1');
-        SpecialSuggest131::create($att);
+        $special_suggest131 = SpecialSuggest131::create($att);
+
+
+        $school_code = $special_suggest131->course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_1_pass')=="1")?"「身心障礙類」課程計畫 符合":"「身心障礙類」課程計畫 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('specials/index?page='.$request->input('page'));
 
@@ -118,6 +159,19 @@ class SpecialController extends Controller
         $att['c13_1'] = $request->input('c13_1');
 
         $course->special_suggest13_1->update($att);
+
+        $school_code = $course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_1_pass')=="1")?"「身心障礙類」課程計畫 符合":"「身心障礙類」課程計畫 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('specials/index?page='.$request->input('page'));
 
@@ -145,7 +199,21 @@ class SpecialController extends Controller
         $att['course_id'] = $request->input('course_id');
         $att['c13_2_pass'] = ($request->input('c13_2_pass')=="1")?"1":"0";
         $att['c13_2'] = $request->input('c13_2');
-        SpecialSuggest132::create($att);
+        $special_suggest132 = SpecialSuggest132::create($att);
+
+        $school_code = $special_suggest132->course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_2_pass')=="1")?"「資優類」課程計畫 符合":"「資優類」課程計畫 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
+
 
         return redirect('specials/index?page='.$request->input('page'));
 
@@ -158,6 +226,19 @@ class SpecialController extends Controller
         $att['c13_2'] = $request->input('c13_2');
 
         $course->special_suggest13_2->update($att);
+
+        $school_code = $course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_2_pass')=="1")?"「資優類」課程計畫 符合":"「資優類」課程計畫 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('specials/index?page='.$request->input('page'));
 
@@ -185,7 +266,20 @@ class SpecialController extends Controller
         $att['course_id'] = $request->input('course_id');
         $att['c13_3_pass'] = ($request->input('c13_3_pass')=="1")?"1":"0";
         $att['c13_3'] = $request->input('c13_3');
-        SpecialSuggest133::create($att);
+        $special_suggest133 = SpecialSuggest133::create($att);
+
+        $school_code = $special_suggest133->course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_3_pass')=="1")?"「藝術才能班」課程計畫 符合":"「藝術才能班」課程計畫 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('specials/index?page='.$request->input('page'));
 
@@ -198,6 +292,19 @@ class SpecialController extends Controller
         $att['c13_3'] = $request->input('c13_3');
 
         $course->special_suggest13_3->update($att);
+
+        $school_code = $course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = ($request->input('c13_3_pass')=="1")?"「藝術才能班」課程計畫 符合":"「藝術才能班」課程計畫 不符合";
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫特教部分 審查結果通知----".$result;
+            $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('specials/index?page='.$request->input('page'));
 

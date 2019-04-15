@@ -103,4 +103,12 @@ class HomeController extends Controller
         ];
         return view('excellent',$data);
     }
+
+    public function email(Request $request)
+    {
+        $user = User::find($request->input('user_id'));
+        $att['email'] = $request->input('email');
+        $user->update($att);
+        return redirect()->route('index');
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\School;
 use App\SecondSuggest;
+use App\User;
 use App\Year;
 use Illuminate\Http\Request;
 
@@ -65,6 +66,23 @@ class SecondController extends Controller
         $att2['second_result'] = $request->input('second_result');
         $special_suggest->course->update($att2);
 
+        $school_code = $special_suggest->course->school_code;
+
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = [
+            'ok'=>'不列入優良學校課程計畫！',
+            'excellent'=>'讚！列入優良學校課程計畫！'
+        ];
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫複審結果通知----".$result[$request->input('second_result')];
+            $body = "課程計畫複審結果通知----".$result[$request->input('second_result')]." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
+
+
         return redirect('seconds/index?page='.$request->input('page'));
 
     }
@@ -77,6 +95,22 @@ class SecondController extends Controller
 
         $att2['second_result'] = $request->input('second_result');
         $course->update($att2);
+
+        $school_code = $course->school_code;
+
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = [
+            'ok'=>'不列入優良學校課程計畫！',
+            'excellent'=>'讚！列入優良學校課程計畫！'
+        ];
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫複審結果通知----".$result[$request->input('second_result')];
+            $body = "課程計畫複審結果通知----".$result[$request->input('second_result')]." 請登入 https://course108.chc.edu.tw 查看！" ;
+            send_mail($to,$subject,$body);
+        }
 
         return redirect('seconds/index?page='.$request->input('page'));
 

@@ -61,6 +61,9 @@ Route::group(['middleware' => 'auth'],function(){
 
     //結束模擬
     Route::get('sims/impersonate_leave', 'SimulationController@impersonate_leave')->name('sims.impersonate_leave');
+
+    //儲存email
+    Route::post('email', 'HomeController@email')->name('email');
 });
 
 //管理者可用
