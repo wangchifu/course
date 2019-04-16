@@ -220,7 +220,7 @@
         var URL = 'https://notify-bot.line.me/oauth/authorize?';
         URL += 'response_type=code';
         URL += '&client_id=m5dxEjhHvMrmwmqSFXfuKY';
-        URL += '&redirect_uri=http:\/\/course.localhost\/callback';
+        URL += '&redirect_uri=https:\/\/course108.chc.edu.tw\/callback';
         URL += '&scope=notify';
         URL += '&state=NO_STATE';
 
