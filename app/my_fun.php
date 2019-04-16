@@ -282,11 +282,7 @@ if(! function_exists('get_line_token')){
                 'header'=>"Content-Type: application/x-www-form-urlencoded\r\n"
                     . "Content-Length: ".strlen($data)  . "\r\n" ,
                 'content' => $data
-            ),
-            "ssl"=>array(
-                "verify_peer"=>false,
-                "verify_peer_name"=>false,
-            ),
+            )
         );
         $context = stream_context_create($options);
         $resultJson = file_get_contents(LINE_OAUTH_TOKEN_URL,FALSE,$context );
