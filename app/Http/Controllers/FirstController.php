@@ -107,9 +107,15 @@ class FirstController extends Controller
         ];
         foreach($users as $user){
             $to = $user->email;
+            $line = $user->access_token;
             $subject = "課程計畫初審結果通知----".$result[$request->input('first_result1')];
             $body = "課程計畫初審結果通知----".$result[$request->input('first_result1')]." 請登入 https://course108.chc.edu.tw 查看！" ;
-            send_mail($to,$subject,$body);
+            if($to){
+                send_mail($to,$subject,$body);
+            }
+            if($line){
+                line_to($line,$body);
+            }
         }
 
         return redirect('firsts/index?page='.$request->input('page'));
@@ -138,7 +144,14 @@ class FirstController extends Controller
             $to = $user->email;
             $subject = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')];
             $body = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')]." 請登入 https://course108.chc.edu.tw 查看！" ;
-            send_mail($to,$subject,$body);
+
+            $line = $user->access_token;
+            if($to){
+                send_mail($to,$subject,$body);
+            }
+            if($line){
+                line_to($line,$body);
+            }
         }
 
         return redirect('firsts/index?page='.$request->input('page'));
@@ -241,7 +254,13 @@ class FirstController extends Controller
             $to = $user->email;
             $subject = "課程計畫初審結果通知----".$result[$request->input('first_result1')];
             $body = "課程計畫初審結果通知----".$result[$request->input('first_result1')]." 請登入 https://course108.chc.edu.tw 查看！" ;
-            send_mail($to,$subject,$body);
+            $line = $user->access_token;
+            if($to){
+                send_mail($to,$subject,$body);
+            }
+            if($line){
+                line_to($line,$body);
+            }
         }
 
 
@@ -272,7 +291,13 @@ class FirstController extends Controller
             $to = $user->email;
             $subject = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')];
             $body = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')]." 請登入 https://course108.chc.edu.tw 查看！" ;
-            send_mail($to,$subject,$body);
+            $line = $user->access_token;
+            if($to){
+                send_mail($to,$subject,$body);
+            }
+            if($line){
+                line_to($line,$body);
+            }
         }
 
 

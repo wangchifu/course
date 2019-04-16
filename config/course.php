@@ -38,6 +38,10 @@ return [
         '5'=>'五年級',
         '6'=>'六年級',
     ],
+    'line'=>[
+        'client_id'=>'m5dxEjhHvMrmwmqSFXfuKY',
+        'client_secret'=>'TBXezeCs2ieRmNjhInEOUVHfmml1X5Mnsk97wAeT0Fo',
+    ],
     'schools'=>[
         '074308'=>'彰化藝術高中(國中部)',
         '074505'=>'陽明國中',

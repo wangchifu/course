@@ -229,3 +229,68 @@ if(! function_exists('send_mail')){
 
     }
 }
+
+if(! function_exists('line_to')){
+    function line_to($token,$message){
+        define('LINE_API_URL'  ,"https://notify-api.line.me/api/notify");
+        define('LINE_API_TOKEN',$token);
+
+        function post_message($message){
+
+            $data = array(
+                "message" => $message
+            );
+            $data = http_build_query($data, "", "&");
+
+            $options = array(
+                'http'=>array(
+                    'method'=>'POST',
+                    'header'=>"Authorization: Bearer " . LINE_API_TOKEN . "\r\n"
+                        . "Content-Type: application/x-www-form-urlencoded\r\n"
+                        . "Content-Length: ".strlen($data)  . "\r\n" ,
+                    'content' => $data
+                )
+            );
+            $context = stream_context_create($options);
+            $resultJson = file_get_contents(LINE_API_URL,FALSE,$context );
+            $resutlArray = json_decode($resultJson,TRUE);
+            if( $resutlArray['status'] != 200)  {
+                return false;
+            }
+            return true;
+        }
+        post_message($message);
+    }
+}
+
+if(! function_exists('get_line_token')){
+    function get_line_token($authorize_code){
+        define('LINE_OAUTH_TOKEN_URL'  ,"https://notify-bot.line.me/oauth/token");
+        $line = config('course.line');
+
+        $data = array(
+            "grant_type" => "authorization_code",
+            "code"=>$authorize_code,
+            "redirect_uri"=>"http://".$_SERVER['HTTP_HOST']."/callback",
+            "client_id"=>$line['client_id'],
+            "client_secret"=>$line['client_secret'],
+        );
+        $data = http_build_query($data, "", "&");
+        $options = array(
+            'http'=>array(
+                'method'=>'POST',
+                'header'=>"Content-Type: application/x-www-form-urlencoded\r\n"
+                    . "Content-Length: ".strlen($data)  . "\r\n" ,
+                'content' => $data
+            )
+        );
+        $context = stream_context_create($options);
+        $resultJson = file_get_contents(LINE_OAUTH_TOKEN_URL,FALSE,$context );
+        $resutlArray = json_decode($resultJson,TRUE);
+        if($resutlArray['status'] == 200){
+            return $resutlArray['access_token'];
+        }else{
+            return null;
+        }
+    }
+}

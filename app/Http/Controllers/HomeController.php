@@ -109,6 +109,32 @@ class HomeController extends Controller
         $user = User::find($request->input('user_id'));
         $att['email'] = $request->input('email');
         $user->update($att);
-        return redirect()->route('index');
+        return redirect()->route('schools.index');
+    }
+
+    public function callback(Request $request)
+    {
+        if($request->input('error')=="access_denied"){
+            echo "<body onload='opener.location.reload();window.close();'>";
+        }else{
+            $code = ($request->input('code'));
+            $token = get_line_token($code);
+            if($token){
+                $att['access_token'] = $token;
+                $user = User::find(auth()->user()->id);
+                $user->update($att);
+
+            }
+        }
+        echo "<body onload='opener.location.reload();window.close();'>";
+    }
+
+    public function cancel()
+    {
+        $att['access_token'] = null;
+        $user = User::find(auth()->user()->id);
+        $user->update($att);
+
+        return redirect()->route('schools.index');
     }
 }

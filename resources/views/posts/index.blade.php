@@ -21,13 +21,6 @@
                         @if(auth()->user()->admin==1)
                             <a href="{{ route('posts.create') }}" class="btn btn-success btn-sm"><i class="fas fa-plus"></i> 新增公告</a>
                         @endif
-                        @if(auth()->user()->group_id ==1 or auth()->user()->group_id ==2)
-                            <form method="post" action="{{ route('email') }}">
-                                @csrf
-                                登錄email取得審查結果通知：<input type="email" name="email" value="{{ auth()->user()->email }}" required><input type="submit" value="儲存" onclick="return confirm('確定嗎？')">
-                                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                            </form>
-                        @endif
                     @endauth
                     <table class="POST">
                         <thead>

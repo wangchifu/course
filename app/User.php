@@ -29,6 +29,7 @@ class User extends Authenticatable
         'title',
         'login_type',
         'disable',
+        'access_token',
     ];
 
     /**

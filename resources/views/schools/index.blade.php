@@ -28,6 +28,20 @@
                     </table>
                 </div>
                 <div class="card-body">
+                    @if(auth()->user()->group_id ==1 or auth()->user()->group_id ==2)
+                        <form method="post" action="{{ route('email') }}">
+                            @csrf
+                            登錄email取得審查結果通知：<input type="email" name="email" value="{{ auth()->user()->email }}" required><input type="submit" value="儲存" onclick="return confirm('確定嗎？')">
+                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                        </form>
+                        @if(auth()->user()->access_token)
+                            已訂閱 <i class="fab fa-line text-success"></i> LINE 通知 <a href="{{ route('cancel') }}" onclick="return confirm('確定取消訂閱？')"><i class="fas fa-times-circle text-danger"></i></a>
+                        @else
+                            <button type="button" onclick="open_line()"><i class="fab fa-line text-success"></i> 訂閱LINE通知</button>
+                        @endif
+                        <hr>
+                    @endif
+
                     @if($select_year)
                         @if($course->first_result1 == null or $course->first_result1 == "back")
                             @if($course->first_result2 == null or $course->first_result2 == "back")
@@ -200,4 +214,17 @@
         </div>
     </div>
 </div>
+<script>
+    function open_line()
+    {
+        var URL = 'https://notify-bot.line.me/oauth/authorize?';
+        URL += 'response_type=code';
+        URL += '&client_id=m5dxEjhHvMrmwmqSFXfuKY';
+        URL += '&redirect_uri=http:\/\/course.localhost\/callback';
+        URL += '&scope=notify';
+        URL += '&state=NO_STATE';
+
+        window.open(URL,name,'statusbar=no,scrollbars=yes,status=yes,resizable=yes,width=850,height=850');
+    }
+</script>
 @endsection

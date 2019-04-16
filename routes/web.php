@@ -64,6 +64,9 @@ Route::group(['middleware' => 'auth'],function(){
 
     //儲存email
     Route::post('email', 'HomeController@email')->name('email');
+
+    Route::get('callback', 'HomeController@callback')->name('callback');
+    Route::get('cancel', 'HomeController@cancel')->name('cancel');
 });
 
 //管理者可用
