@@ -243,7 +243,7 @@ if(! function_exists('line_to')){
             $data = http_build_query($data, "", "&");
 
             $options = array(
-                'http'=>array(
+                'https'=>array(
                     'method'=>'POST',
                     'header'=>"Authorization: Bearer " . LINE_API_TOKEN . "\r\n"
                         . "Content-Type: application/x-www-form-urlencoded\r\n"
@@ -277,7 +277,7 @@ if(! function_exists('get_line_token')){
         );
         $data = http_build_query($data, "", "&");
         $options = array(
-            'http'=>array(
+            'https'=>array(
                 'method'=>'POST',
                 'header'=>"Content-Type: application/x-www-form-urlencoded\r\n"
                     . "Content-Length: ".strlen($data)  . "\r\n" ,
