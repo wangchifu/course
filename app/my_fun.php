@@ -271,7 +271,7 @@ if(! function_exists('get_line_token')){
         $data = array(
             "grant_type" => "authorization_code",
             "code"=>$authorize_code,
-            "redirect_uri"=>"http://".$_SERVER['HTTP_HOST']."/callback",
+            "redirect_uri"=>"https://".$_SERVER['HTTP_HOST']."/callback",
             "client_id"=>$line['client_id'],
             "client_secret"=>$line['client_secret'],
         );
