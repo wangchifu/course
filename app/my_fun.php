@@ -243,7 +243,7 @@ if(! function_exists('line_to')){
             $data = http_build_query($data, "", "&");
 
             $options = array(
-                'https'=>array(
+                'http'=>array(
                     'method'=>'POST',
                     'header'=>"Authorization: Bearer " . LINE_API_TOKEN . "\r\n"
                         . "Content-Type: application/x-www-form-urlencoded\r\n"
@@ -271,13 +271,13 @@ if(! function_exists('get_line_token')){
         $data = array(
             "grant_type" => "authorization_code",
             "code"=>$authorize_code,
-            "redirect_uri"=>"https://".$_SERVER['HTTP_HOST']."/callback",
+            "redirect_uri"=>"http://".$_SERVER['HTTP_HOST']."/callback",
             "client_id"=>$line['client_id'],
             "client_secret"=>$line['client_secret'],
         );
         $data = http_build_query($data, "", "&");
         $options = array(
-            'https'=>array(
+            'http'=>array(
                 'method'=>'POST',
                 'header'=>"Content-Type: application/x-www-form-urlencoded\r\n"
                     . "Content-Length: ".strlen($data)  . "\r\n" ,
