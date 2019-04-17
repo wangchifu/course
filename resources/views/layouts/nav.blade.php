@@ -19,6 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('excellent') }}">優良學校</a>
                 </li>
+                <li>
+                    <a class="nav-link" href="https://www.youtube.com/watch?v=rGip8sNQVkA&list=PLuE6NN1e30YaOcRygenwV3ixjIJPsKMsv" target="_blank"><i class="fab fa-youtube"></i> 教學影片</a>
+                </li>
                 @auth
                     @if(auth()->user()->group_id < 3)
                         <li class="nav-item">
