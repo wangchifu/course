@@ -68,6 +68,8 @@ class FileController extends Controller
             return back();
         }
 
+        write_log('刪除 '.$file_name.' 檔案',$year);
+
         return redirect('schools/'. $year.'/edit');
     }
 

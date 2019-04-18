@@ -252,6 +252,8 @@ class SchoolController extends Controller
             }
         }
 
+        write_log('上傳 '.$order.' 題',$year);
+
         echo "<body onload='opener.location.reload();window.close();'>";
     }
 
@@ -331,6 +333,8 @@ class SchoolController extends Controller
         $att['c3_1'] = 1;
         $course->update($att);
 
+        write_log('儲存 c3_1 節數表',$course->year);
+
         return redirect('schools/'. $att['year'].'/edit');
     }
 
@@ -346,6 +350,8 @@ class SchoolController extends Controller
 
         $att['c3_1'] = null;
         $course->update($att);
+
+        write_log('清除 c3_1 節數表',$course->year);
 
         return redirect('schools/'. $request->input('select_year').'/edit');
     }
@@ -469,8 +475,10 @@ class SchoolController extends Controller
 
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code,$order."_".$grade."_".$subject.".pdf");
 
+                write_log('上傳 '.$grade .'年級'.' '.$subject.' 檔',$select_year);
             }
         }
+
 
         echo "<body onload='opener.location.reload();window.close();'>";
 
