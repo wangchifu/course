@@ -629,6 +629,7 @@
             </td>
             @yield('c12')
         </tr>
+        <!--
         <tr>
             <td colspan="2">
                 十二.特殊教育推行委員會({{ $select_year-1 }}學年度下學期期末會議紀錄及簽到表)(非必填)
@@ -688,6 +689,7 @@
             </td>
             @yield('c13_3')
         </tr>
+        -->
         <tr>
             <?php $files_c14 = get_files(storage_path('app/public/upload/'.$select_year.'/'.$school_code.'/c14')); ?>
             <td colspan="2">

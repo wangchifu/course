@@ -100,6 +100,7 @@ $c12 = $course->first_suggest2->c12;
                         <?php
                             $selected['ok']=null;
                             $selected['back']=null;
+                            $selected['excellent']=null;
                             $selected[$course->first_result2]="selected";
                         ?>
                         <select name="first_result2" class="form-control" required>
@@ -111,6 +112,9 @@ $c12 = $course->first_suggest2->c12;
                             </option>
                             <option value="back" {{ $selected['back'] }}>
                                 退回！修改後再審！
+                            </option>
+                            <option value="excellent" {{ $selected['excellent'] }}>
+                                優秀！進入複審！
                             </option>
                         </select>
                     </td>

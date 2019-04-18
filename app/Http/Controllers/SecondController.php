@@ -22,8 +22,11 @@ class SecondController extends Controller
         $schools = config('course.schools');
 
         $courses = Course::where('year',$select_year)
-            ->where('first_result1','excellent')
             ->where('second_user_id',auth()->user()->id)
+            ->where(function($q){
+                $q->where('first_result1','excellent')
+                    ->orWhere('first_result2','excellent');
+            })
             ->paginate('20');
 
         $data = [

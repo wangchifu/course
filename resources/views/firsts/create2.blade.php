@@ -91,6 +91,9 @@ $c12 = null;
                             <option value="back">
                                 退回！修改後再審！
                             </option>
+                            <option value="excellent">
+                                優秀！進入複審！
+                            </option>
                         </select>
                     </td>
                     <td colspan="3">

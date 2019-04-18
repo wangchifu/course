@@ -137,6 +137,7 @@ class FirstController extends Controller
         $result = [
             'ok'=>'符合！無需修改！',
             'back'=>'退回！修改後再傳！',
+            'excellent'=>'優秀！進入複審！',
         ];
 
 
