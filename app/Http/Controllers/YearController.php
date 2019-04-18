@@ -157,7 +157,8 @@ class YearController extends Controller
     {
         $courses = Course::where('year',$year->year)->get();
         foreach($courses as $course){
-            $course->first_suggest1->delete();
+            if($course->first_suggest1 ) $course->first_suggest1->delete();
+
             $course->first_suggest2->delete();
             $course->first_suggest3->delete();
             $course->second_suggest->delete();
