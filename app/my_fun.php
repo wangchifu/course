@@ -307,3 +307,39 @@ if(! function_exists('write_log')){
         \App\Log::create($att);
     }
 }
+
+//刪除某目錄下的任何東西
+if (! function_exists('delete_dir')) {
+    function delete_dir($dir)
+    {
+        if (!file_exists($dir))
+        {
+            return true;
+        }
+
+        if (!is_dir($dir) || is_link($dir))
+        {
+            return unlink($dir);
+        }
+
+        foreach (scandir($dir) as $item)
+        {
+            if ($item == '.' || $item == '..')
+            {
+                continue;
+            }
+
+            if (!delete_dir($dir . "/" . $item))
+            {
+                chmod($dir . "/" . $item, 0777);
+
+                if (!delete_dir($dir . "/" . $item))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return rmdir($dir);
+    }
+}

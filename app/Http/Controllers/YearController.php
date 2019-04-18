@@ -171,6 +171,9 @@ class YearController extends Controller
         C81Table::where('year',$year->year)->delete();
         $courses->delete();
         $year->delete();
+
+        $p = storage_path('app/public/upload/'.$year);
+        delete_dir($p);
         return redirect()->route('years.index');
     }
 }
