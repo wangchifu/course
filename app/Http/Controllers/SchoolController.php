@@ -475,7 +475,7 @@ class SchoolController extends Controller
 
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code,$order."_".$grade."_".$subject.".pdf");
 
-                write_log('上傳 '.$grade .'年級'.' '.$subject.' 檔',$select_year);
+                write_log('上傳 c5_3 '.$grade .'年級'.' '.$subject.' 檔',$select_year);
             }
         }
 
@@ -511,9 +511,10 @@ class SchoolController extends Controller
                 ];
 
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code,$order."_".$grade.".pdf");
-
+                write_log('上傳 c6_1 '.$grade.'年級 領域/科目課程單元/主題',$select_year);
             }
         }
+
 
         echo "<body onload='opener.location.reload();window.close();'>";
 
@@ -532,6 +533,9 @@ class SchoolController extends Controller
         $att['c7_2'] = $request->input('check_c7_2');
         $course->update($att);
 
+        $s = ($request->input('check_c7_2')==1)?"有":"無";
+        write_log('選定 c6_2 協同教學為 '.$s,$select_year);
+
         //處理檔案上傳
         if ($request->hasFile('files')) {
             $files = $request->file('files');
@@ -545,6 +549,7 @@ class SchoolController extends Controller
 
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code,$order.".pdf");
 
+                write_log('上傳 c6_2 協同教學檔案',$select_year);
             }
         }
 
@@ -624,6 +629,7 @@ class SchoolController extends Controller
         $att['c8_1'] = 1;
         $course->update($att);
 
+        write_log('儲存 c7_1 教科書版本',$course->year);
 
         return redirect('schools/'. $request->input('select_year').'/edit');
     }
@@ -641,6 +647,8 @@ class SchoolController extends Controller
         $att['c8_1'] = null;
         $course->update($att);
 
+        write_log('清除重設 c7_1 教科書版本',$course->year);
+
         return redirect('schools/'. $request->input('select_year').'/edit');
     }
 
@@ -657,6 +665,9 @@ class SchoolController extends Controller
         $att['c8_2'] = $request->input('check_c8_2');
         $course->update($att);
 
+        $s = ($request->input('check_c8_2')==1)?"有":"無";
+        write_log('選定 c7_2 協同教學為 '.$s,$select_year);
+
         //處理檔案上傳
         if ($request->hasFile('files')) {
             $files = $request->file('files');
@@ -670,6 +681,7 @@ class SchoolController extends Controller
 
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code,$order.".pdf");
 
+                write_log('上傳 c7_2 自編教材審查記錄',$select_year);
             }
         }
 
@@ -703,6 +715,8 @@ class SchoolController extends Controller
                 ];
 
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code.'/'.$order.'_'.$grade,$info['original_filename']);
+
+                write_log('上傳 c8 '.$grade.'年級檔案 '.$info['original_filename'],$select_year);
             }
         }
 

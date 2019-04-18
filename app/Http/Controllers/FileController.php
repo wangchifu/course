@@ -67,7 +67,13 @@ class FileController extends Controller
         }else{
             return back();
         }
+        if(substr($file_name,0,4) == "c6_"){
+            $file_name = str_replace('c6_','c5_3_',$file_name);
+        }
 
+        if(substr($file_name,0,2) == "c7"){
+            $file_name = str_replace('c7','c6',$file_name);
+        }
         write_log('刪除 '.$file_name.' 檔案',$year);
 
         return redirect('schools/'. $year.'/edit');
@@ -79,6 +85,12 @@ class FileController extends Controller
         $file = storage_path('app/public/upload/'.$file_path);
 
         unlink($file);
+
+        $f = explode('/',$file_path);
+        if(substr($f[2],0,2)=="c9"){
+            $c = str_replace('c9','c8',$f[2]);
+        }
+        write_log('刪除 '.$c." ".$f[3].' 檔案',$f[0]);
 
         return back();
     }

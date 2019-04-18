@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\C31Table;
+use App\C81Table;
 use App\Course;
 use App\Year;
 use Illuminate\Http\Request;
@@ -153,7 +155,21 @@ class YearController extends Controller
      */
     public function destroy(Year $year)
     {
-        Course::where('year',$year->year)->delete();
+        $courses = Course::where('year',$year->year)->get();
+        foreach($courses as $course){
+            $course->first_suggest1->delete();
+            $course->first_suggest2->delete();
+            $course->first_suggest3->delete();
+            $course->second_suggest->delete();
+            $course->special_suggest13->delete();
+            $course->special_suggest13_1->delete();
+            $course->special_suggest13_2->delete();
+            $course->special_suggest13_3->delete();
+        }
+
+        C31Table::where('year',$year->year)->delete();
+        C81Table::where('year',$year->year)->delete();
+        $courses->delete();
         $year->delete();
         return redirect()->route('years.index');
     }
