@@ -158,14 +158,13 @@ class YearController extends Controller
         $courses = Course::where('year',$year->year)->get();
         foreach($courses as $course){
             if($course->first_suggest1 ) $course->first_suggest1->delete();
-
-            $course->first_suggest2->delete();
-            $course->first_suggest3->delete();
-            $course->second_suggest->delete();
-            $course->special_suggest13->delete();
-            $course->special_suggest13_1->delete();
-            $course->special_suggest13_2->delete();
-            $course->special_suggest13_3->delete();
+            if($course->first_suggest2 ) $course->first_suggest2->delete();
+            if($course->first_suggest3 ) $course->first_suggest3->delete();
+            if($course->second_suggest ) $course->second_suggest->delete();
+            if($course->special_suggest13 ) $course->special_suggest13->delete();
+            if($course->special_suggest13_1 ) $course->special_suggest13_1->delete();
+            if($course->special_suggest13_2 ) $course->special_suggest13_2->delete();
+            if($course->special_suggest13_3 ) $course->special_suggest13_3->delete();
         }
 
         C31Table::where('year',$year->year)->delete();
