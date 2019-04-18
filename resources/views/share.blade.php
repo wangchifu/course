@@ -42,6 +42,8 @@
                         <a href="{{ url('share/'.$select_year.'/074538/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074538'] !!}彰興國中</a>
                         <a href="{{ url('share/'.$select_year.'/074540/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074540'] !!}彰泰國中</a>
                         <a href="{{ url('share/'.$select_year.'/074541/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074541'] !!}信義國中小(國中部)</a>
+                        <a href="{{ url('share/'.$select_year.'/071311/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['071311'] !!}私立精誠高中(國中部)</a>
+                        <a href="{{ url('share/'.$select_year.'/071318/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['071318'] !!}私立正德高中(國中部)</a>
                         <a href="{{ url('share/'.$select_year.'/074601/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074601'] !!}中山國小</a>
                         <a href="{{ url('share/'.$select_year.'/074602/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074602'] !!}民生國小</a>
                         <a href="{{ url('share/'.$select_year.'/074603/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074603'] !!}平和國小</a>
@@ -207,6 +209,7 @@
                         <hr>
                         <h4><i class="fab fa-fort-awesome"></i> 田中鎮</h4>
                         <a href="{{ url('share/'.$select_year.'/074328/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074328'] !!}田中高中(國中部) </a>
+                        <a href="{{ url('share/'.$select_year.'/071317/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['071317'] !!}私立文興高中(國中部)</a>
                         <a href="{{ url('share/'.$select_year.'/074698/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074698'] !!}田中國小</a>
                         <a href="{{ url('share/'.$select_year.'/074699/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074699'] !!}三潭國小 </a>
                         <a href="{{ url('share/'.$select_year.'/074700/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074700'] !!}大安國小</a>

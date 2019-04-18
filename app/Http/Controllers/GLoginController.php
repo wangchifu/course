@@ -41,7 +41,7 @@ class GLoginController extends Controller
             //非國中小端，即跳開
             $school = ['5','6','7','8'];
             //完全中學
-            $per_j_school = ['071311','071317','074308','074313','074323','074328','074339'];
+            $per_j_school = ['071311','071317','071318','074308','074313','074323','074328','074339'];
             if(!in_array(substr($obj['code'],3,1),$school)
                 and !in_array($obj['code'],$per_j_school))
             {
