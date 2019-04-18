@@ -172,7 +172,7 @@ class YearController extends Controller
         Course::where('year',$year->year)->delete();
         $year->delete();
 
-        $p = storage_path('app/public/upload/'.$year);
+        $p = storage_path('app/public/upload/'.$year->year);
         delete_dir($p);
         return redirect()->route('years.index');
     }
