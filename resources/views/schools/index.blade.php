@@ -51,7 +51,7 @@
                                 @endif
                             @endif
                         @endif
-                        <h4>上傳檢核</h4>
+                        <h4>上傳檢核 <a href="{{ route('schools.show_log',$select_year) }}" class="btn btn-secondary btn-sm" target="_blank">檢視上傳歷程</a></h4>
                         <table border="1" cellpadding="5">
                             <tr>
                                 <th colspan="3">

@@ -19,8 +19,23 @@
     </thead>
     <tbody>
     <tr>
+        <?php
+        $s = $order;
+        if(substr($order,0,3) == "c10"){
+            $s = str_replace('c10','c9',$order);
+        }
+        if(substr($order,0,3) == "c11"){
+            $s = str_replace('c11','c10',$order);
+        }
+        if(substr($order,0,3) == "c12"){
+            $s = str_replace('c12','c11',$order);
+        }
+        if(substr($order,0,3) == "c13"){
+            $s = str_replace('c13','c12',$order);
+        }
+        ?>
         <td>
-            {{ $order }}
+            {{ $s }}
         </td>
         <td>
             <input type="file" name="files[]" required>

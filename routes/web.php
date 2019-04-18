@@ -199,6 +199,8 @@ Route::group(['middleware' => 'school'],function(){
     Route::get('schools/{select_year}/give_up_first_suggest1' , 'SchoolController@give_up_first_suggest1')->name('schools.give_up_first_suggest1');
     Route::get('schools/{select_year}/give_up_first_suggest2' , 'SchoolController@give_up_first_suggest2')->name('schools.give_up_first_suggest2');
 
+    Route::get('schools/{year}/logs','SchoolController@show_log')->name('schools.show_log');
+
 });
 
 //特教委員

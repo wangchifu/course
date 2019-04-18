@@ -74,6 +74,22 @@ class FileController extends Controller
         if(substr($file_name,0,2) == "c7"){
             $file_name = str_replace('c7','c6',$file_name);
         }
+
+        if(substr($file_name,0,3) == "c10"){
+            $file_name = str_replace('c10','c9',$file_name);
+        }
+
+        if(substr($file_name,0,3) == "c11"){
+            $file_name = str_replace('c11','c10',$file_name);
+        }
+
+        if(substr($file_name,0,3) == "c12"){
+            $file_name = str_replace('c12','c11',$file_name);
+        }
+
+        if(substr($file_name,0,3) == "c13"){
+            $file_name = str_replace('c13','c12',$file_name);
+        }
         write_log('刪除 '.$file_name.' 檔案',$year);
 
         return redirect('schools/'. $year.'/edit');
@@ -89,6 +105,10 @@ class FileController extends Controller
         $f = explode('/',$file_path);
         if(substr($f[2],0,2)=="c9"){
             $c = str_replace('c9','c8',$f[2]);
+        }
+
+        if(substr($f[2],0,3)=="c14"){
+            $c = str_replace('c14','c13',$f[2]);
         }
         write_log('刪除 '.$c." ".$f[3].' 檔案',$f[0]);
 

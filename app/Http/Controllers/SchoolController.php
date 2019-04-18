@@ -7,6 +7,7 @@ use App\C31Table;
 use App\C81Table;
 use App\Course;
 use App\Http\Requests\UploadRequest;
+use App\Log;
 use App\Year;
 use Illuminate\Http\Request;
 
@@ -250,6 +251,22 @@ class SchoolController extends Controller
 
                 $course->update($att);
             }
+        }
+
+        if(substr($order,0,3) == "c10"){
+            $order = str_replace('c10','c9',$order);
+        }
+
+        if(substr($order,0,3) == "c11"){
+            $order = str_replace('c11','c10',$order);
+        }
+
+        if(substr($order,0,3) == "c12"){
+            $order = str_replace('c12','c11',$order);
+        }
+
+        if(substr($order,0,3) == "c13"){
+            $order = str_replace('c13','c12',$order);
         }
 
         write_log('上傳 '.$order.' 題',$year);
@@ -734,6 +751,8 @@ class SchoolController extends Controller
 
         $course->update($att);
 
+        write_log('儲存 c9_2 課程計畫通過日期',$select_year);
+
         return back();
 
     }
@@ -776,6 +795,8 @@ class SchoolController extends Controller
                 ];
 
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code.'/'.$order,$info['original_filename']);
+
+                write_log('上傳 c13 檔案 '.$info['original_filename'],$select_year);
             }
         }
 
@@ -863,6 +884,19 @@ class SchoolController extends Controller
 
         return view('schools.second_suggest',$data);
     }
+
+    public function show_log($year)
+    {
+        $logs = Log::where('year',$year)
+            ->where('school_code',auth()->user()->code)
+            ->get();
+        $data = [
+            'logs'=>$logs,
+        ];
+        return view('schools.log',$data);
+    }
+
+
 
     //國小九年一貫節數規定
     protected $section_e9 = [
