@@ -169,7 +169,7 @@ class YearController extends Controller
 
         C31Table::where('year',$year->year)->delete();
         C81Table::where('year',$year->year)->delete();
-        $courses->delete();
+        Course::where('year',$year->year)->delete();
         $year->delete();
 
         $p = storage_path('app/public/upload/'.$year);
