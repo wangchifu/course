@@ -297,3 +297,13 @@ if(! function_exists('get_line_token')){
         }
     }
 }
+
+if(! function_exists('write_log')){
+    function write_log($event,$year){
+        $att['year'] = $year;
+        $att['school_code'] = auth()->user()->code;
+        $att['event'] = $event;
+        $att['user_id'] = auth()->user()->id;
+        \App\Log::create($att);
+    }
+}

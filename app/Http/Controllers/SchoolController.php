@@ -729,6 +729,14 @@ class SchoolController extends Controller
 
     }
 
+    public function c14_upload($select_year)
+    {
+        $data = [
+            'select_year'=>$select_year,
+        ];
+        return view('schools.c14_upload',$data);
+    }
+
     public function c14_store(UploadRequest $request)
     {
         $select_year = $request->input('select_year');
@@ -749,7 +757,7 @@ class SchoolController extends Controller
             }
         }
 
-        return back();
+        echo "<body onload='opener.location.reload();window.close();'>";
 
     }
 

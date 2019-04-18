@@ -188,6 +188,7 @@ Route::group(['middleware' => 'school'],function(){
     Route::post('schools/c10_2_date_store' , 'SchoolController@c10_2_date_store')->name('schools.c10_2_date_store');
     Route::get('schools/{select_year}/c10_2_date_delete' , 'SchoolController@c10_2_date_delete')->name('schools.c10_2_date_delete');
 
+    Route::get('schools/{select_year}/c14_upload' , 'SchoolController@c14_upload')->name('schools.c14_upload');
     Route::post('schools/c14_store' , 'SchoolController@c14_store')->name('schools.c14_store');
 
     Route::post('schools/submit' , 'SchoolController@submit')->name('schools.submit');

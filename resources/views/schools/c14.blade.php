@@ -10,10 +10,8 @@
         <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
         <br>
     @endforeach
+    <a href="javascript:open_upload('{{ route('schools.c14_upload',['select_year'=>$year->year]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+@else
+    <a href="javascript:open_upload('{{ route('schools.c14_upload',['select_year'=>$year->year]) }}','新視窗')" class="badge badge-warning"><i class="fas fa-times-circle"></i> 未上傳</a>
 @endif
-{{ Form::open(['route'=>'schools.c14_store','method'=>'post','files'=>true]) }}
-<input type="file" name="files[]" required multiple>
-<input type="hidden" name="select_year" value="{{ $year->year }}">
-<input type="hidden" name="order" value="c14">
-<button type="submit" onclick="return confirm('確定？')">上傳</button><small class="text-secondary">(多選，限PDF檔)</small>
-{{ Form::close() }}
+
