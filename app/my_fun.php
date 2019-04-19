@@ -147,7 +147,7 @@ function check_login($n){
     //if($n==="資訊組長") return true;
     if($n==="教學組長") return true;
     if($n==="研發組長") return true;
-    if($n==="教導組長") return true;
+    if($n==="教務組長") return true;
     if($n==="教務主任") return true;
     if($n==="教導主任") return true;
     if($n==="輔導主任") return true;
