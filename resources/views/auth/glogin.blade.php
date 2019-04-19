@@ -63,7 +63,7 @@
                                     <button tabindex="3" type="submit" class="btn btn-primary">
                                         <i class="fas fa-sign-in-alt"></i> 登入
                                     </button><br>
-                                    <small>(限職稱為「教學組長」、「研發組長」、「教導組長」、「教務主任」、「教導主任」、「輔導主任」、「特教組長」、「資料組長」、「校長」)</small>
+                                    <small>(限職稱為「教學組長」、「研發組長」、「教務組長」、「教務主任」、「教導主任」、「輔導主任」、「特教組長」、「資料組長」、「校長」)</small>
                                 </div>
                             </div>
                             @if($errors->any())
