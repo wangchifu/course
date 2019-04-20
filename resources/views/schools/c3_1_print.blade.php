@@ -47,8 +47,10 @@
         @endif
     </tr>
 </table>
+    @if($leading)
     <h5>
         註：本校為十二年國教前導學校，九年一貫課程年級節數不受規定。
+    @endif
     </h5>
     <hr>
     <div class="row">

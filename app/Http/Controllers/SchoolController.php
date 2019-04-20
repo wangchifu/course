@@ -452,11 +452,16 @@ class SchoolController extends Controller
             $has_section[$section->grade]['alternative'] = $section->alternative;
         }
 
+        $course = Course::where('year',$select_year)
+            ->where('school_code',auth()->user()->code)
+            ->first();
+
         $data = [
             'select_year'=>$select_year,
             'year9'=>$year9,
             'year12'=>$year12,
             'has_section'=>$has_section,
+            'leading'=>$course->leading,
         ];
         return view('schools.c3_1_print',$data);
 
