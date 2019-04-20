@@ -94,7 +94,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            藝術與人文
+            藝術
         </td>
         @foreach($year12 as $v)
             <td>

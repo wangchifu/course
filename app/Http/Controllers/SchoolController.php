@@ -1055,8 +1055,8 @@ class SchoolController extends Controller
     //國中九年一貫節數規定
     protected $section_j9 = [
         '一'=>[
-            'mandarin'=>['5'=>'5','6'=>'6'],
-            'english'=>['2'=>'2','3'=>'3'],
+            'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
+            'english'=>['2'=>'2','3'=>'3','4'=>'4'],
             'mathematics'=>['3'=>'3','4'=>'4'],
             'social_studies'=>['3'=>'3','4'=>'4'],
             'science_technology'=>['3'=>'3','4'=>'4'],
@@ -1066,8 +1066,8 @@ class SchoolController extends Controller
             'alternative'=>['4'=>'4','5'=>'5','6'=>'6'],
         ],
         '二'=>[
-            'mandarin'=>['5'=>'5','6'=>'6'],
-            'english'=>['2'=>'2','3'=>'3'],
+            'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
+            'english'=>['2'=>'2','3'=>'3','4'=>'4'],
             'mathematics'=>['3'=>'3','4'=>'4'],
             'social_studies'=>['3'=>'3','4'=>'4'],
             'science_technology'=>['3'=>'3','4'=>'4'],
@@ -1077,7 +1077,7 @@ class SchoolController extends Controller
             'alternative'=>['4'=>'4','5'=>'5','6'=>'6'],
         ],
         '三'=>[
-            'mandarin'=>['5'=>'5','6'=>'6'],
+            'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
             'english'=>['3'=>'3','4'=>'4'],
             'mathematics'=>['3'=>'3','4'=>'4'],
             'social_studies'=>['3'=>'3','4'=>'4'],

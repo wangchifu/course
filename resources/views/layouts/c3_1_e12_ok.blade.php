@@ -97,7 +97,7 @@
     </tr>
     <tr>
         <td>
-            藝術與人文
+            藝術
         </td>
         @foreach($year12 as $v)
             @if($v=="一" or $v=="二")
