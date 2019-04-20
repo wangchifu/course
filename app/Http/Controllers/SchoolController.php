@@ -348,6 +348,7 @@ class SchoolController extends Controller
             ->first();
 
         $att['c3_1'] = 1;
+        $att['leading'] = ($request->input('leading'))?1:null;
         $course->update($att);
 
         write_log('儲存 c3_1 節數表',$course->year);

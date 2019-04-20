@@ -166,6 +166,9 @@
     }
 
     function check_total(){
+        if(document.getElementById('leading').checked){
+            document.getElementById('sections_store').submit();
+        }
         var c=1;
         @if($year->j1=="9year")
             if(check(document.getElementById('language91').innerText) < 6 || check(document.getElementById('language91').innerText) > 8){

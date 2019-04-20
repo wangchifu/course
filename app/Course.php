@@ -9,6 +9,7 @@ class Course extends Model
     protected $fillable = [
         'year',
         'school_code',
+        'leading',
         'c1_1',
         'c1_2',
         'c2',

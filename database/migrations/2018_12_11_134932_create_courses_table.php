@@ -17,6 +17,7 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('year');
             $table->string('school_code');
+            $table->tinyInteger('leading')->nullable();//1前導學校，null則不是
             $table->tinyInteger('c1_1')->nullable();//1有填，null則無
             $table->tinyInteger('c1_2')->nullable();//1有填，null則無
             $table->tinyInteger('c2')->nullable();//1有填，null則無

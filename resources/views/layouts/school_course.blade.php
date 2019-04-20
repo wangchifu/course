@@ -198,6 +198,9 @@
         <tr>
             <td></td>
             <td colspan="2">
+                @if($course->leading)
+                    <h4 class="text-primary">本校為十二年國教前導學校，九年一貫課程年級節數不受規定。</h4>
+                @endif
                 <table>
                     <tr>
                         @if($school_group==1)
