@@ -171,13 +171,13 @@
         }
         var c=1;
         @if($year->j1=="9year")
-            if(check(document.getElementById('language91').innerText) < 6 || check(document.getElementById('language91').innerText) > 8){
-                alert('國中1年級語文領域小計節數應在6~8節之間');
+            if(check(document.getElementById('language97').innerText) < 6 || check(document.getElementById('language97').innerText) > 8){
+                alert('國中7年級語文領域小計節數應在6~8節之間');
                 c=0;
                 return false;
             }
-            if(check(document.getElementById('total_areas91').innerText) != 28){
-                alert('國中1年級領域總節數應為28節');
+            if(check(document.getElementById('total_areas97').innerText) != 28){
+                alert('國中7年級領域總節數應為28節');
                 c=0;
                 return false;
             }
@@ -185,13 +185,13 @@
 
 
         @if($year->j2=="9year")
-            if(check(document.getElementById('language92').innerText) < 6 || check(document.getElementById('language92').innerText) > 8){
-                alert('國中2年級語文領域小計節數應在6~8節之間');
+            if(check(document.getElementById('language98').innerText) < 6 || check(document.getElementById('language98').innerText) > 8){
+                alert('國中8年級語文領域小計節數應在6~8節之間');
                 c=0;
                 return false;
             }
-            if(check(document.getElementById('total_areas92').innerText) != 28){
-                alert('國中2年級領域總節數應為28節');
+            if(check(document.getElementById('total_areas98').innerText) != 28){
+                alert('國中8年級領域總節數應為28節');
                 c=0;
                 return false;
             }
@@ -199,13 +199,13 @@
 
 
         @if($year->j3=="9year")
-            if(check(document.getElementById('language93').innerText) < 6 || check(document.getElementById('language93').innerText) > 9){
-                alert('國中3年級語文領域小計節數應在6~9節之間');
+            if(check(document.getElementById('language99').innerText) < 6 || check(document.getElementById('language99').innerText) > 9){
+                alert('國中9年級語文領域小計節數應在6~9節之間');
                 c=0;
                 return false;
             }
-            if(check(document.getElementById('total_areas93').innerText) != 30){
-                alert('國中3年級領域總節數應為30節');
+            if(check(document.getElementById('total_areas99').innerText) != 30){
+                alert('國中9年級領域總節數應為30節');
                 c=0;
                 return false;
             }

@@ -38,19 +38,19 @@
         }
     }elseif($school_group==2){
         if($year->j1 == '9year'){
-            $year9[] = "一";
+            $year9[] = "七";
         }else{
-            $year12[] = "一";
+            $year12[] = "七";
         }
         if($year->j2 == '9year'){
-            $year9[] = "二";
+            $year9[] = "八";
         }else{
-            $year12[] = "二";
+            $year12[] = "八";
         }
         if($year->j3 == '9year'){
-            $year9[] = "三";
+            $year9[] = "九";
         }else{
-            $year12[] = "三";
+            $year12[] = "九";
         }
     }
 

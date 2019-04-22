@@ -22,6 +22,7 @@
         <td>
             年級
         </td>
+        @if(auth()->user()->group_id==1)
         <td width="14%">
             一年級
         </td>
@@ -31,15 +32,24 @@
         <td width="14%">
             三年級
         </td>
-        @if(auth()->user()->group_id==1)
+        <td width="14%">
+            四年級
+        </td>
+        <td width="14%">
+            五年級
+        </td>
+        <td width="14%">
+            六年級
+        </td>
+        @else
             <td width="14%">
-                四年級
+                七年級
             </td>
             <td width="14%">
-                五年級
+                八年級
             </td>
             <td width="14%">
-                六年級
+                九年級
             </td>
         @endif
     </tr>
@@ -47,52 +57,52 @@
         <td>
             彈性學習課程
         </td>
-        <td>
-            <?php $files_c9_1 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_1')); ?>
-            @if(count($files_c9_1))
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
-                <br>
-                @foreach($files_c9_1 as $v)
-                    <?php $file_path = $year->year."&".auth()->user()->code."&c9_1&".$v; ?>
-                    <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
-                    <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
-                    <br>
-                @endforeach
-            @else
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
-            @endif
-        </td>
-        <td>
-            <?php $files_c9_2 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_2')); ?>
-            @if(count($files_c9_2))
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
-                <br>
-                @foreach($files_c9_2 as $v)
-                    <?php $file_path = $year->year."&".auth()->user()->code."&c9_2&".$v; ?>
-                    <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
-                    <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
-                    <br>
-                @endforeach
-            @else
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
-            @endif
-        </td>
-        <td>
-            <?php $files_c9_3 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_3')); ?>
-            @if(count($files_c9_3))
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
-                <br>
-                @foreach($files_c9_3 as $v)
-                    <?php $file_path = $year->year."&".auth()->user()->code."&c9_3&".$v; ?>
-                    <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
-                    <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
-                    <br>
-                @endforeach
-            @else
-                <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
-            @endif
-        </td>
         @if(auth()->user()->group_id==1)
+            <td>
+                <?php $files_c9_1 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_1')); ?>
+                @if(count($files_c9_1))
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+                    <br>
+                    @foreach($files_c9_1 as $v)
+                        <?php $file_path = $year->year."&".auth()->user()->code."&c9_1&".$v; ?>
+                        <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
+                        <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
+                        <br>
+                    @endforeach
+                @else
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('一')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
+                @endif
+            </td>
+            <td>
+                <?php $files_c9_2 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_2')); ?>
+                @if(count($files_c9_2))
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+                    <br>
+                    @foreach($files_c9_2 as $v)
+                        <?php $file_path = $year->year."&".auth()->user()->code."&c9_2&".$v; ?>
+                        <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
+                        <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
+                        <br>
+                    @endforeach
+                @else
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('二')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
+                @endif
+            </td>
+            <td>
+                <?php $files_c9_3 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_3')); ?>
+                @if(count($files_c9_3))
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+                    <br>
+                    @foreach($files_c9_3 as $v)
+                        <?php $file_path = $year->year."&".auth()->user()->code."&c9_3&".$v; ?>
+                        <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
+                        <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
+                        <br>
+                    @endforeach
+                @else
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('三')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
+                @endif
+            </td>
             <td>
                 <?php $files_c9_4 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_4')); ?>
                 @if(count($files_c9_4))
@@ -136,6 +146,52 @@
                     @endforeach
                 @else
                     <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('六')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
+                @endif
+            </td>
+        @else
+            <td>
+                <?php $files_c9_7 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_7')); ?>
+                @if(count($files_c9_7))
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('七')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+                    <br>
+                    @foreach($files_c9_7 as $v)
+                        <?php $file_path = $year->year."&".auth()->user()->code."&c9_7&".$v; ?>
+                        <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
+                        <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
+                        <br>
+                    @endforeach
+                @else
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('七')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
+                @endif
+            </td>
+            <td>
+                <?php $files_c9_8 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_8')); ?>
+                @if(count($files_c9_8))
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('八')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+                    <br>
+                    @foreach($files_c9_8 as $v)
+                        <?php $file_path = $year->year."&".auth()->user()->code."&c9_8&".$v; ?>
+                        <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
+                        <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
+                        <br>
+                    @endforeach
+                @else
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('八')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
+                @endif
+            </td>
+            <td>
+                <?php $files_c9_9 = get_files(storage_path('app/public/upload/'.$year->year.'/'.auth()->user()->code.'/c9_9')); ?>
+                @if(count($files_c9_9))
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('九')]) }}','新視窗')" class="badge badge-success"><i class="fas fa-check-circle"></i> 再傳</a>
+                    <br>
+                    @foreach($files_c9_9 as $v)
+                        <?php $file_path = $year->year."&".auth()->user()->code."&c9_9&".$v; ?>
+                        <a href="{{ route('schools.download2',$file_path) }}"><small><i class="fas fa-download"></i> {{ $v }}</small></a>
+                        <a href="{{ route('schools.delfile2',$file_path) }}" onclick="return confirm('確定刪除嗎？')"><i class="far fa-trash-alt text-info"></i></a>
+                        <br>
+                    @endforeach
+                @else
+                    <a href="javascript:open_upload('{{ route('schools.c9_upload',['select_year'=>$year->year,'order'=>'c9','grade'=>cht2num('九')]) }}','新視窗')" class="badge badge-danger check_red"><i class="fas fa-times-circle"></i> 未上傳</a>
                 @endif
             </td>
         @endif

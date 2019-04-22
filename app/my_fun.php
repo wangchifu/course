@@ -78,19 +78,19 @@ if (! function_exists('get_year')) {
 
         }elseif($ej==2){
             if($year->j1 == '9year'){
-                $year_course[9][] = "一";
+                $year_course[9][] = "七";
             }else{
-                $year_course[12][] = "一";
+                $year_course[12][] = "七";
             }
             if($year->j2 == '9year'){
-                $year_course[9][] = "二";
+                $year_course[9][] = "八";
             }else{
-                $year_course[12][] = "二";
+                $year_course[12][] = "八";
             }
             if($year->j3 == '9year'){
-                $year_course[9][] = "三";
+                $year_course[9][] = "九";
             }else{
-                $year_course[12][] = "三";
+                $year_course[12][] = "九";
             }
         }
 
@@ -146,6 +146,8 @@ function getBrowserVer(){
 function check_login($n){
     if($n==="教學組長") return true;
     if($n==="研發組長") return true;
+    if($n==="課程研發組長") return true;
+    if($n==="教學研發組長") return true;
     if($n==="資訊組長") return true;
     if($n==="教務組長") return true;
     if($n==="教務主任") return true;

@@ -296,7 +296,7 @@ class SchoolController extends Controller
 
             //國中
         }elseif(auth()->user()->group_id ==2){
-            $grade_array = ['一','二','三'];
+            $grade_array = ['七','八','九'];
         }
 
         foreach($grade_array as $v){
@@ -600,7 +600,7 @@ class SchoolController extends Controller
 
             //國中
         }elseif(auth()->user()->group_id ==2){
-            $grade_array = ['一','二','三'];
+            $grade_array = ['七','八','九'];
         }
 
         foreach($grade_array as $v){
@@ -1054,7 +1054,7 @@ class SchoolController extends Controller
 
     //國中九年一貫節數規定
     protected $section_j9 = [
-        '一'=>[
+        '七'=>[
             'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
             'english'=>['2'=>'2','3'=>'3','4'=>'4'],
             'mathematics'=>['3'=>'3','4'=>'4'],
@@ -1065,7 +1065,7 @@ class SchoolController extends Controller
             'health_physical'=>['3'=>'3','4'=>'4'],
             'alternative'=>['4'=>'4','5'=>'5','6'=>'6'],
         ],
-        '二'=>[
+        '八'=>[
             'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
             'english'=>['2'=>'2','3'=>'3','4'=>'4'],
             'mathematics'=>['3'=>'3','4'=>'4'],
@@ -1076,7 +1076,7 @@ class SchoolController extends Controller
             'health_physical'=>['3'=>'3','4'=>'4'],
             'alternative'=>['4'=>'4','5'=>'5','6'=>'6'],
         ],
-        '三'=>[
+        '九'=>[
             'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
             'english'=>['3'=>'3','4'=>'4'],
             'mathematics'=>['3'=>'3','4'=>'4'],
@@ -1091,7 +1091,7 @@ class SchoolController extends Controller
 
     //國中十二年國教節數規定
     protected $section_j12 = [
-        '一'=>[
+        '七'=>[
             'mandarin'=>5,
             'english'=>3,
             'mathematics'=>4,
@@ -1103,7 +1103,7 @@ class SchoolController extends Controller
             'health_physical'=>3,
             'alternative'=>['3' => '3', '4' => '4', '5' => '5', '6' => '6'],
         ],
-        '二'=>[
+        '八'=>[
             'mandarin'=>5,
             'english'=>3,
             'mathematics'=>4,
@@ -1115,7 +1115,7 @@ class SchoolController extends Controller
             'health_physical'=>3,
             'alternative'=>['3' => '3', '4' => '4', '5' => '5', '6' => '6'],
         ],
-        '三'=>[
+        '九'=>[
             'mandarin'=>5,
             'english'=>3,
             'mathematics'=>4,
@@ -1131,9 +1131,9 @@ class SchoolController extends Controller
 
     //國中領域總節數
     protected $total_area_j12 = [
-        '一'=>29,
-        '二'=>29,
-        '三'=>29,
+        '七'=>29,
+        '八'=>29,
+        '九'=>29,
     ];
 
 
