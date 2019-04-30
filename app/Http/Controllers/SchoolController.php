@@ -949,7 +949,7 @@ class SchoolController extends Controller
             'alternative'=>['3'=>'3','4'=>'4','5'=>'5','6'=>'6'],
         ],
         '五'=>[
-            'mandarin'=>['4'=>'4','5'=>'5'],
+            'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
             'dialects'=>['1'=>'1'],
             'english'=>['1'=>'1','2'=>'2'],
             'mathematics'=>['3'=>'3','4'=>'4'],
@@ -961,7 +961,7 @@ class SchoolController extends Controller
             'alternative'=>['3'=>'3','4'=>'4','5'=>'5','6'=>'6'],
         ],
         '六'=>[
-            'mandarin'=>['4'=>'4','5'=>'5'],
+            'mandarin'=>['4'=>'4','5'=>'5','6'=>'6'],
             'dialects'=>['1'=>'1'],
             'english'=>['1'=>'1','2'=>'2'],
             'mathematics'=>['3'=>'3','4'=>'4'],
