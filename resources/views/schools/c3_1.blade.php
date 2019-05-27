@@ -54,7 +54,9 @@
     {{ Form::close() }}
 @else
     {{ Form::open(['route'=>'schools.c3_1_store','id'=>'sections_store','method'=>'post','onsubmit'=>"if(confirm('您確定送出嗎?')) return check_total();else return false"]) }}
+    <!--取消前導不受節數限制
     <input type="checkbox" name="leading" id="leading" value="1"> <label for="leading"><span class="text-primary">十二年國教前導學校請打勾</span><small>(九年一貫課程不受領域總節數限制)</small></label>
+    -->
     <table>
         <tr>
             @if(auth()->user()->group_id==1)
