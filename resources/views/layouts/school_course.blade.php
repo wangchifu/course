@@ -389,7 +389,7 @@
                 6-2 協同教學之師資、時數規劃及實施過程具可行性、合理性。(非必填)
             </td>
             <td>
-                @if($course->c7_2)
+                @if($course->c7_2==1)
                     <?php $file_path = $select_year.'&'.$school_code.'&c7_2'; ?>
                     <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
@@ -468,7 +468,7 @@
                 7-2 自編教材依課程綱要規定，經學校課發會審查通過。(非必填)
             </td>
             <td>
-                @if($course->c8_2)
+                @if($course->c8_2==1)
                     <?php $file_path = $select_year.'&'.$school_code.'&c8_2'; ?>
                     <a href="{{ route('file.open',$file_path) }}" target="_blank"><i class="fas fa-download"></i> 已傳</a>
                 @else
