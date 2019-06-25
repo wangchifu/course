@@ -145,6 +145,7 @@ function getBrowserVer(){
 
 function check_login($n){
     if($n==="教學組長") return true;
+    if($n==="教師兼教學組長") return true;
     if($n==="教學註冊組長") return true;
     if($n==="研發組長") return true;
     if($n==="課程研發組長") return true;
