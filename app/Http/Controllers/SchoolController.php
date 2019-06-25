@@ -737,6 +737,9 @@ class SchoolController extends Controller
                     'size' => $file->getClientSize(),
                 ];
 
+                $info['original_filename'] = str_replace('{','',$info['original_filename']);
+                $info['original_filename'] = str_replace('}','',$info['original_filename']);
+
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code.'/'.$order.'_'.$grade,$info['original_filename']);
 
                 write_log('上傳 c8 '.$grade.'年級檔案 '.$info['original_filename'],$select_year);
