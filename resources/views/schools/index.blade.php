@@ -202,7 +202,7 @@
                         </table>
                         <br>
                         <?php
-                            $year = \App\Year::where('year',$select_year)->get();
+                            $year = \App\Year::where('year',$select_year)->first();
                         ?>
                         @if($course->first_result1 == "submit")
                             @if(str_replace('-','',$year->step1_date2) > date('Ymd'))
