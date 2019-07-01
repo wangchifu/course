@@ -120,6 +120,7 @@ Route::group(['middleware' => 'admin'],function(){
     Route::get('reviews/{select_year}/{school_code}/select_close' , 'ReviewController@select_close')->name('reviews.select_close');
     Route::get('reviews/{select_year}/open' , 'ReviewController@open')->name('reviews.open');
     Route::get('reviews/{select_year}/unsent1' , 'ReviewController@unsent1')->name('reviews.unsent1');
+    Route::get('reviews/{select_year}/set_unsent' , 'ReviewController@set_unsent')->name('reviews.set_unsent');
     Route::get('reviews/{select_year}/unsent2' , 'ReviewController@unsent2')->name('reviews.unsent2');
     Route::get('reviews/{select_year}/unsent3' , 'ReviewController@unsent3')->name('reviews.unsent3');
 

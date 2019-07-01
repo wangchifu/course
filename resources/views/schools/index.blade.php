@@ -43,7 +43,7 @@
                     @endif
 
                     @if($select_year)
-                        @if($course->first_result1 == null or $course->first_result1 == "back")
+                        @if($course->first_result1 == null or $course->first_result1 == "back" or $course->first_result1 =="late")
                             @if($course->first_result2 == null or $course->first_result2 == "back")
                                 @if($course->first_result3 == null or $course->first_result3 == "back")
                                 <a href="{{ route('schools.edit',$select_year) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> 編輯本年度課程計畫</a>
