@@ -61,7 +61,9 @@ class FileController extends Controller
             ->first();
         if($course->school_code == auth()->user()->code){
             $file = storage_path('app/public/upload/'.$year.'/'.$school_code.'/'.$file_name.".pdf");
-            unlink($file);
+            if(file_exists($file)){
+                unlink($file);
+            }
             $att[$file_name] = null;
             $course->update($att);
         }else{
@@ -100,7 +102,9 @@ class FileController extends Controller
         $file_path = str_replace('&','/',$file_path);
         $file = storage_path('app/public/upload/'.$file_path);
 
-        unlink($file);
+        if(file_exists($file)){
+            unlink($file);
+        }
 
         $f = explode('/',$file_path);
         if(substr($f[2],0,2)=="c9"){
