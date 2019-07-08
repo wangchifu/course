@@ -4,7 +4,7 @@
     初審1：{!! show_pass($course->first_suggest1->c1_1_pass) !!}<br>
         <small>{{ $course->first_suggest1->c1_1 }}</small><br>
     @else
-        <span class="text-danger">逾期</span><br>
+            初審1：<span class="text-danger">逾期</span><br>
     @endif
         @if($course->first_suggest2)
             初審2：{!! show_pass($course->first_suggest2->c1_1_pass) !!}<br>
