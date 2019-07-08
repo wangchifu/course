@@ -3,6 +3,9 @@
 @section('title','課程計畫管理')
 
 @section('content')
+    <?php
+    $year = \App\Year::where('year',$select_year)->first();
+    ?>
 <br>
 <br>
 <br>
@@ -43,13 +46,22 @@
                     @endif
 
                     @if($select_year)
-                        @if($course->first_result1 == null or $course->first_result1 == "back" or $course->first_result1 =="late")
-                            @if($course->first_result2 == null or $course->first_result2 == "back")
-                                @if($course->first_result3 == null or $course->first_result3 == "back")
-                                <a href="{{ route('schools.edit',$select_year) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> 編輯本年度課程計畫</a>
-                                <hr>
-                                @endif
-                            @endif
+                        <?php $check_write = 0; ?>
+                        @if($course->first_result1 == null and date('Ymd') >= str_replace('-','',$year->step1_date1) and date('Ymd') <= str_replace('-','',$year->step1_date2))
+                            <?php $check_write=1; ?>
+                        @endif
+
+                        @if(($course->first_result1 == "back" or $course->first_result1 =="late") and $course->first_result2 == null and date('Ymd') >= str_replace('-','',$year->step4_date1) and date('Ymd') <= str_replace('-','',$year->step4_date2))
+                            <?php $check_write=1; ?>
+                        @endif
+
+                        @if(($course->first_result2 == "back" or $course->first_result2 =="late") and $course->first_result3 == null and date('Ymd') >= str_replace('-','',$year->step5_date1) and date('Ymd') <= str_replace('-','',$year->step5_date2))
+                            <?php $check_write=1; ?>
+                        @endif
+
+                        @if($check_write==1)
+                            <a href="{{ route('schools.edit',$select_year) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> 編輯本年度課程計畫</a>
+                            <hr>
                         @endif
                         <h4>上傳檢核 <a href="{{ route('schools.show_log',$select_year) }}" class="btn btn-secondary btn-sm" target="_blank">檢視上傳歷程</a></h4>
                         <table border="1" cellpadding="5">
@@ -154,6 +166,8 @@
                                         <i class="fas fa-times-circle text-danger"></i> 退回
                                     @elseif($course->first_result1 == "excellent")
                                         <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優秀，進入複審</span>
+                                    @elseif($course->first_result1 == "late")
+                                        <span class="text-danger">逾期未交，待再傳時間({{ $year->step4_date1 }})補交！</span>
                                     @endif
                                 </td>
                                 <td>
@@ -193,7 +207,12 @@
                             <tr>
                                 <td colspan="4">
                                     @if($course->first_result1 != null)
-                                        @if($course->first_result1 != "submit")
+                                        @if($course->first_result1 != "submit" and $course->first_result1 != "late")
+                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審各分項詳細意見</a>
+                                        @endif
+                                    @endif
+                                    @if($course->first_result2 != null)
+                                        @if($course->first_result2 != "submit")
                                             <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審各分項詳細意見</a>
                                         @endif
                                     @endif
@@ -201,9 +220,7 @@
                             </tr>
                         </table>
                         <br>
-                        <?php
-                            $year = \App\Year::where('year',$select_year)->first();
-                        ?>
+
                         @if($course->first_result1 == "submit")
                             @if(str_replace('-','',$year->step1_date2) > date('Ymd'))
                                 <a href="{{ route('schools.give_up_first_suggest1',$select_year) }}" class="badge badge-danger" onclick="return confirm('確定嗎？')">撤回送審，再次修改</a>

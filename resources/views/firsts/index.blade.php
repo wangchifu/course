@@ -66,6 +66,8 @@
                                     @elseif($course->first_result1=="submit")
                                         <span class="text-primary">已送審</span>
                                         [<a href="{{ route('firsts.create1',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i>審核</a>]
+                                    @elseif($course->first_result1=="late")
+                                        <span class="text-danger">逾期未交</span>
                                     @else
                                         @if($course->first_result1=="ok")
                                         <span class="text-success">通過</span>

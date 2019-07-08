@@ -11,7 +11,7 @@ class SimulationController extends Controller
 
     public function index()
     {
-        $users = User::orderBy('group_id')->paginate('10');
+        $users = User::orderBy('group_id')->paginate('30');
         $all_groups = config('course.all_groups');
 
         $data = [
