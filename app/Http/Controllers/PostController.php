@@ -27,7 +27,7 @@ class PostController extends Controller
                 ->where('first_result1',null)
                 ->get();
             foreach($courses as $course){
-                if(date('Ymd')>$check_year->step1_date2){
+                if(date('Ymd')>str_replace('-','',$check_year->step1_date2)){
                     $course->update($att1);
                 }
             }
@@ -36,8 +36,9 @@ class PostController extends Controller
             $courses = Course::where('year',$check_year->year)
                 ->where('first_result2',null)
                 ->get();
+
             foreach($courses as $course){
-                if(date('Ymd')>$check_year->step4_date2){
+                if(date('Ymd')>str_replace('-','',$check_year->step4_date2)){
                     $course->update($att2);
                 }
             }
