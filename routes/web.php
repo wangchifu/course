@@ -142,7 +142,7 @@ Route::group(['middleware' => 'admin'],function(){
     //模擬登入
     Route::get('sims/index' , 'SimulationController@index')->name('sims.index');
     Route::get('sims/{user}/impersonate', 'SimulationController@impersonate')->name('sims.impersonate');
-
+    Route::post('sims/search' , 'SimulationController@search')->name('sims.search');
 });
 
 //學校可用

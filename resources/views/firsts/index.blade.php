@@ -83,7 +83,7 @@
                                 </td>
                                 <td>
                                     @if($course->first_result2==null)
-                                        @if($course->first_result1=="back")
+                                        @if($course->first_result1=="back" or $course->first_result1=="late")
                                             <span class="text-danger">未送審</span>
                                         @endif
                                     @elseif($course->first_result2=="submit")

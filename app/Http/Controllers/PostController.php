@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Year;
@@ -18,6 +19,30 @@ class PostController extends Controller
      */
     public function index()
     {
+        //檢查若遲交者，自動設為遲交
+        $check_years = Year::all();
+        foreach($check_years as $check_year){
+            $att1['first_result1'] = "late";
+            $courses = Course::where('year',$check_year->year)
+                ->where('first_result1',null)
+                ->get();
+            foreach($courses as $course){
+                if(date('Ymd')>$check_year->step1_date2){
+                    $course->update($att1);
+                }
+            }
+
+            $att2['first_result2'] = "late";
+            $courses = Course::where('year',$check_year->year)
+                ->where('first_result2',null)
+                ->get();
+            foreach($courses as $course){
+                if(date('Ymd')>$check_year->step4_date2){
+                    $course->update($att2);
+                }
+            }
+        }
+
         $posts = Post::orderBy('id','DESC')
             ->paginate(10);
         $year = Year::orderBy('id','DESC')

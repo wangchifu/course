@@ -1,6 +1,6 @@
 @extends('layouts.master',['bg'=>'bg-secondary'])
 
-@section('title','模擬登入')
+@section('title','模擬登入-搜尋')
 
 @section('content')
     <br>
@@ -14,7 +14,7 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">
-                        <h5>模擬登入</h5>
+                        <h5>搜尋「{{ $target }}」</h5>
                         <form action="{{ route('sims.search') }}" method="post">
                             @csrf
                             <input type="text" name="target" required>

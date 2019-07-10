@@ -78,13 +78,16 @@
                             </tr>
                             <tr>
                                 <th>
-                                    初審
+                                    初審<br>
+                                    <small>{{ $year->step1_date1 }}~{{$year->step1_date2}}</small>
                                 </th>
                                 <th>
-                                    初審-再傳
+                                    初審-再傳<br>
+                                    <small>{{ $year->step4_date1 }}~{{$year->step4_date2}}</small>
                                 </th>
                                 <th>
-                                    初審-三傳
+                                    初審-三傳<br>
+                                    <small>{{ $year->step5_date1 }}~{{$year->step5_date2}}</small>
                                 </th>
                                 <td rowspan="2">
                                     <?php $i=null; ?>
@@ -167,7 +170,7 @@
                                     @elseif($course->first_result1 == "excellent")
                                         <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優秀，進入複審</span>
                                     @elseif($course->first_result1 == "late")
-                                        <span class="text-danger">逾期未交，待再傳時間({{ $year->step4_date1 }})補交！</span>
+                                        <span class="text-danger">逾期未交，<br>待再傳時間({{ $year->step4_date1 }})補交！</span>
                                     @endif
                                 </td>
                                 <td>
@@ -181,6 +184,8 @@
                                         <i class="fas fa-times-circle text-danger"></i> 退回
                                     @elseif($course->first_result2 == "excellent")
                                         <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優秀，進入複審</span>
+                                    @elseif($course->first_result2 == "late")
+                                        <span class="text-danger">逾期未交，<br>待三傳時間({{ $year->step5_date1 }})補交！</span>
                                     @endif
                                 </td>
                                 <td>
@@ -206,15 +211,19 @@
                             </tr>
                             <tr>
                                 <td colspan="4">
+                                    <?php $show =0; ?>
                                     @if($course->first_result1 != null)
-                                        @if($course->first_result1 != "submit" and $course->first_result1 != "late")
-                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審各分項詳細意見</a>
+                                        @if($course->first_result1 != "submit")
+                                            <?php $show=1; ?>
                                         @endif
                                     @endif
                                     @if($course->first_result2 != null)
                                         @if($course->first_result2 != "submit")
-                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審各分項詳細意見</a>
+                                                <?php $show=1; ?>
                                         @endif
+                                    @endif
+                                    @if($show==1)
+                                            <a href="{{ route('schools.show_first_suggest',$course->year) }}" target="_blank" class="btn btn-primary btn-sm">初審各分項詳細意見</a>
                                     @endif
                                 </td>
                             </tr>

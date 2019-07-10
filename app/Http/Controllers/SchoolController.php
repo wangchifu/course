@@ -67,7 +67,7 @@ class SchoolController extends Controller
         if($course->first_result1 != null and $course->first_result1 != "back" and $course->first_result1 != "late"){
             return back();
         }
-        if($course->first_result2 != null and $course->first_result2 != "back"){
+        if($course->first_result2 != null and $course->first_result2 != "back" and $course->first_result2 != "late"){
             return back();
         }
 
