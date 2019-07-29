@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\FirstSuggest1;
 use App\FirstSuggest2;
+use App\FirstSuggest3;
 use App\School;
 use App\User;
 use App\Year;
@@ -86,6 +87,31 @@ class FirstController extends Controller
         return view('firsts.create2',$data);
     }
 
+    public function create3($course_id,$page)
+    {
+        $course = Course::where('id',$course_id)->first();
+
+        if($course->first_user_id != auth()->user()->id){
+            return back();
+        }
+
+        $school = School::where('school_code',$course->school_code)->first();
+
+        $schools = config('course.schools');
+
+
+        $data = [
+            'course'=>$course,
+            'select_year'=>$course->year,
+            'school_name'=>$school->school_name,
+            'school_code'=>$school->school_code,
+            'school_group'=>$school->school_type,
+            'page'=>$page,
+            'schools'=>$schools,
+        ];
+        return view('firsts.create3',$data);
+    }
+
     public function store1(Request $request)
     {
         $att = $request->all();
@@ -145,6 +171,42 @@ class FirstController extends Controller
             $to = $user->email;
             $subject = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')];
             $body = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')]." 請登入 https://course108.chc.edu.tw 查看！" ;
+
+            $line = $user->access_token;
+            if($to){
+                send_mail($to,$subject,$body);
+            }
+            if($line){
+                line_to($line,$body);
+            }
+        }
+
+        return redirect('firsts/index?page='.$request->input('page'));
+    }
+
+    public function store3(Request $request)
+    {
+        $att = $request->all();
+        $att['user_id'] = auth()->user()->id;
+
+        $first_suggest3 = FirstSuggest3::create($att);
+        $att3['first_result3'] = $request->input('first_result3');
+        $first_suggest3->course->update($att3);
+
+        $school_code = $first_suggest3->course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = [
+            'ok'=>'符合！無需修改！',
+            'back'=>'退回！修改後再傳！',
+        ];
+
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result3')];
+            $body = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result3')]." 請登入 https://course108.chc.edu.tw 查看！" ;
 
             $line = $user->access_token;
             if($to){
@@ -230,6 +292,30 @@ class FirstController extends Controller
         return view('firsts.edit2',$data);
     }
 
+    public function edit3($course_id,$page)
+    {
+        $course = Course::where('id',$course_id)->first();
+
+        if($course->first_user_id != auth()->user()->id){
+            return back();
+        }
+
+        $school = School::where('school_code',$course->school_code)->first();
+
+        $schools = config('course.schools');
+
+        $data = [
+            'course'=>$course,
+            'select_year'=>$course->year,
+            'school_name'=>$school->school_name,
+            'school_code'=>$school->school_code,
+            'school_group'=>$school->school_type,
+            'page'=>$page,
+            'schools'=>$schools,
+        ];
+        return view('firsts.edit3',$data);
+    }
+
     public function update1(Request $request)
     {
         $att = $request->all();
@@ -292,6 +378,43 @@ class FirstController extends Controller
             $to = $user->email;
             $subject = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')];
             $body = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result2')]." 請登入 https://course108.chc.edu.tw 查看！" ;
+            $line = $user->access_token;
+            if($to){
+                send_mail($to,$subject,$body);
+            }
+            if($line){
+                line_to($line,$body);
+            }
+        }
+
+
+        return redirect('firsts/index?page='.$request->input('page'));
+    }
+
+    public function update3(Request $request)
+    {
+        $att = $request->all();
+        $att['user_id'] = auth()->user()->id;
+        $first_suggest3 = FirstSuggest3::where('course_id',$att['course_id'])->first();
+        $first_suggest3->update($att);
+
+        $att3['first_result3'] = $request->input('first_result3');
+        $first_suggest3->course->update($att3);
+
+        $school_code = $first_suggest3->course->school_code;
+        $users = User::where('code',$school_code)
+            ->get();
+
+        $result = [
+            'ok'=>'符合！無需修改！',
+            'back'=>'退回！修改後再傳！',
+        ];
+
+
+        foreach($users as $user){
+            $to = $user->email;
+            $subject = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result3')];
+            $body = "課程計畫初審 再傳結果通知----".$result[$request->input('first_result3')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             $line = $user->access_token;
             if($to){
                 send_mail($to,$subject,$body);

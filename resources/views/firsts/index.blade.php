@@ -104,11 +104,23 @@
                                 </td>
                                 <td>
                                     @if($course->first_result3==null)
-                                        @if($course->first_result2=="back")
+                                        @if($course->first_result2=="back" or $course->first_result1=="late")
                                             <span class="text-danger">未送審</span>
                                         @endif
                                     @elseif($course->first_result3=="submit")
-                                        <span class="text-primary">已修正</span>
+                                        @if($course->first_suggest3)
+                                            <span class="text-primary">再次送審</span>
+                                            [<a href="{{ route('firsts.edit3',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
+                                        @else
+                                            <span class="text-primary">已送審</span>
+                                            [<a href="{{ route('firsts.create3',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i>審核</a>]
+                                        @endif
+                                    @elseif($course->first_result3=="ok")
+                                        <span class="text-success">通過</span>
+                                        [<a href="{{ route('firsts.edit3',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
+                                    @elseif($course->first_result3=="back")
+                                        <span class="text-warning">退回</span>
+                                        [<a href="{{ route('firsts.edit3',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
                                     @endif
                                 </td>
                                 <td>

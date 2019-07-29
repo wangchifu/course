@@ -59,6 +59,25 @@
                             @endif
                         </td>
                     </tr>
+                    <tr>
+                        <td nowrap>
+                            初審-三傳
+                        </td>
+                        <td nowrap>
+                            @if($course->first_result3 == "ok")
+                                <span class="text-success">符合！無需修改！</span>
+                            @elseif($course->first_result3 == "back")
+                                <span class="text-danger">退回！修改後再審！</span>
+                            @else
+                                -
+                            @endif
+                        </td>
+                        <td style="word-break: break-all;">
+                            @if($course->first_suggest3)
+                                {{ $course->first_suggest3->reason }}
+                            @endif
+                        </td>
+                    </tr>
                 </table>
                 <br>
                 @include('layouts.school_course')

@@ -230,15 +230,19 @@ Route::group(['middleware' => 'first'],function(){
     Route::match(['get','post'],'firsts/index' , 'FirstController@index')->name('firsts.index');
     Route::post('firsts/store1' , 'FirstController@store1')->name('firsts.store1');
     Route::post('firsts/store2' , 'FirstController@store2')->name('firsts.store2');
+    Route::post('firsts/store3' , 'FirstController@store3')->name('firsts.store3');
 
     Route::get('firsts/{course_id}/{page}/create1' , 'FirstController@create1')->name('firsts.create1');
     Route::get('firsts/{course_id}/{page}/create2' , 'FirstController@create2')->name('firsts.create2');
+    Route::get('firsts/{course_id}/{page}/create3' , 'FirstController@create3')->name('firsts.create3');
     Route::get('firsts/{course_id}/{page}/show' , 'FirstController@show')->name('firsts.show');
     Route::get('firsts/{course_id}/{page}/edit1' , 'FirstController@edit1')->name('firsts.edit1');
     Route::get('firsts/{course_id}/{page}/edit2' , 'FirstController@edit2')->name('firsts.edit2');
+    Route::get('firsts/{course_id}/{page}/edit3' , 'FirstController@edit3')->name('firsts.edit3');
 
     Route::post('firsts/update1' , 'FirstController@update1')->name('firsts.update1');
     Route::post('firsts/update2' , 'FirstController@update2')->name('firsts.update2');
+    Route::post('firsts/update3' , 'FirstController@update3')->name('firsts.update3');
 
 
 

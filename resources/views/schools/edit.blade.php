@@ -137,6 +137,42 @@
                 $c12_text = ($course->first_suggest2->c12_pass===0)?"不符合":null;
             }
         }
+        if($course->first_suggest3){
+            $c1_1_bg = ($course->first_suggest3->c1_1_pass===0)?"#FF8888":null;
+            $c1_1_text = ($course->first_suggest3->c1_1_pass===0)?"不符合":null;
+            $c1_2_bg = ($course->first_suggest3->c1_2_pass===0)?"#FF8888":null;
+            $c1_2_text = ($course->first_suggest3->c1_2_pass===0)?"不符合":null;
+            $c2_bg = ($course->first_suggest3->c2_pass===0)?"#FF8888":null;
+            $c2_text = ($course->first_suggest3->c2_pass===0)?"不符合":null;
+            $c3_1_bg = ($course->first_suggest3->c3_1_pass===0)?"#FF8888":null;
+            $c3_1_text = ($course->first_suggest3->c3_1_pass===0)?"不符合":null;
+            $c3_2_bg = ($course->first_suggest3->c3_2_pass===0)?"#FF8888":null;
+            $c3_2_text = ($course->first_suggest3->c3_2_pass===0)?"不符合":null;
+            $c3_3_bg = ($course->first_suggest3->c3_3_pass===0)?"#FF8888":null;
+            $c3_3_text = ($course->first_suggest3->c3_3_pass===0)?"不符合":null;
+            $c4_bg = ($course->first_suggest3->c4_pass===0)?"#FF8888":null;
+            $c4_text = ($course->first_suggest3->c4_pass===0)?"不符合":null;
+            $c6_bg = ($course->first_suggest3->c6_pass===0)?"#FF8888":null;
+            $c6_text = ($course->first_suggest3->c6_pass===0)?"不符合":null;
+            $c7_1_bg = ($course->first_suggest3->c7_1_pass===0)?"#FF8888":null;
+            $c7_1_text = ($course->first_suggest3->c7_1_pass===0)?"不符合":null;
+            $c7_2_bg = ($course->first_suggest3->c7_2_pass===0)?"#FF8888":null;
+            $c7_2_text = ($course->first_suggest3->c7_2_pass===0)?"不符合":null;
+            $c8_1_bg = ($course->first_suggest3->c8_1_pass===0)?"#FF8888":null;
+            $c8_1_text = ($course->first_suggest3->c8_1_pass===0)?"不符合":null;
+            $c8_2_bg = ($course->first_suggest3->c8_2_pass===0)?"#FF8888":null;
+            $c8_2_text = ($course->first_suggest3->c8_2_pass===0)?"不符合":null;
+            $c9_bg = ($course->first_suggest3->c9_pass===0)?"#FF8888":null;
+            $c9_text = ($course->first_suggest3->c9_pass===0)?"不符合":null;
+            $c10_1_bg = ($course->first_suggest3->c10_1_pass===0)?"#FF8888":null;
+            $c10_1_text = ($course->first_suggest3->c10_1_pass===0)?"不符合":null;
+            $c10_2_bg = ($course->first_suggest3->c10_2_pass===0)?"#FF8888":null;
+            $c10_2_text = ($course->first_suggest3->c10_2_pass===0)?"不符合":null;
+            $c11_bg = ($course->first_suggest3->c11_pass===0)?"#FF8888":null;
+            $c11_text = ($course->first_suggest3->c11_pass===0)?"不符合":null;
+            $c12_bg = ($course->first_suggest3->c12_pass===0)?"#FF8888":null;
+            $c12_text = ($course->first_suggest3->c12_pass===0)?"不符合":null;
+        }
         if($course->special_suggest13){
             $c13_bg = ($course->special_suggest13->c13_pass===0)?"#FF8888":null;
             $c13_text = ($course->special_suggest13->c13_pass===0)?"不符合":null;

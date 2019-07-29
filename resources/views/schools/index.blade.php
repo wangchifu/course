@@ -59,6 +59,10 @@
                             <?php $check_write=1; ?>
                         @endif
 
+                        @if($course->first_result3 == "back" or $course->first_result3 =="late")
+                            <?php $check_write=1; ?>
+                        @endif
+
                         @if($check_write==1)
                             <a href="{{ route('schools.edit',$select_year) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> 編輯本年度課程計畫</a>
                             <hr>
@@ -192,7 +196,11 @@
                                     @if($course->first_result2=="back" and $course->first_result3 == null)
                                         <span class="text-danger">尚未送審</span>
                                     @elseif($course->first_result3 == "submit")
-                                        <span class="text-primary">已修正</span>
+                                        <span class="text-primary">已送審</span>
+                                    @elseif($course->first_result3 == "back")
+                                        <i class="fas fa-times-circle text-danger"></i> 退回
+                                    @elseif($course->first_result3 == "ok")
+                                        <i class="fas fa-check-circle text-success"></i> <span class="text-success">通過審查</span>
                                     @endif
                                 </td>
                                 <td rowspan="2">

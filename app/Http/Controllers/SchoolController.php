@@ -829,6 +829,10 @@ class SchoolController extends Controller
         if($course->first_result2=="back" and $course->first_result3==null){
             $att['first_result3'] = 'submit';
         }
+
+        if($course->first_result3=="back"){
+            $att['first_result3'] = 'submit';
+        }
         $course->update($att);
 
         return redirect()->route('schools.index');
