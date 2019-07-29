@@ -99,6 +99,8 @@
                                         <span class="text-warning">退回</span>
                                     @elseif($first_result2[$school->school_code] == "ok")
                                         <span class="text-success">通過</span>
+                                    @elseif($first_result2[$school->school_code] == "excellent")
+                                        <a href="{{ route('reviews.show_school_first_suggest',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}" class="badge badge-info" target="_blank">優秀</a>
                                     @endif
                                 </td>
                                 <td>
