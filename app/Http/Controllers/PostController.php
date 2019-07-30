@@ -57,6 +57,7 @@ class PostController extends Controller
 
             $att2['first_result2'] = "late";
             $courses = Course::where('year',$check_year->year)
+                ->where('first_result1','late')
                 ->where('first_result2',null)
                 ->get();
 

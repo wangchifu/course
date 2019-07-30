@@ -88,6 +88,8 @@
                                         <a href="{{ route('reviews.show_school_first_suggest',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}" class="badge badge-success" target="_blank">通過</a>
                                     @elseif($first_result1[$school->school_code] == "excellent")
                                         <a href="{{ route('reviews.show_school_first_suggest',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}" class="badge badge-info" target="_blank">優秀</a>
+                                    @elseif($first_result1[$school->school_code] == "late")
+                                        <span class="text-danger">缺交</span>
                                     @endif
                                 </td>
                                 <td>
@@ -101,6 +103,8 @@
                                         <span class="text-success">通過</span>
                                     @elseif($first_result2[$school->school_code] == "excellent")
                                         <a href="{{ route('reviews.show_school_first_suggest',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}" class="badge badge-info" target="_blank">優秀</a>
+                                    @elseif($first_result2[$school->school_code] == "late")
+                                        <span class="text-danger">缺交</span>
                                     @endif
                                 </td>
                                 <td>
