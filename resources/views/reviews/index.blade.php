@@ -111,7 +111,11 @@
                                     @if($first_result2[$school->school_code]=="back" and $first_result3[$school->school_code] == null)
                                         <span class="text-danger">未送</span>
                                     @elseif($first_result3[$school->school_code] == "submit")
-                                        <span class="text-primary">已修</span>
+                                        <span class="text-primary">已送</span>
+                                    @elseif($first_result3[$school->school_code] == "ok")
+                                        <span class="text-success">通過</span>
+                                    @elseif($first_result3[$school->school_code] == "back")
+                                        <span class="text-warning">退回</span>
                                     @endif
                                 </td>
                                 <td>
