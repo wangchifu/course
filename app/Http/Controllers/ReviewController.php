@@ -244,9 +244,14 @@ class ReviewController extends Controller
     public function unsent2($select_year)
     {
         $courses = Course::where('year',$select_year)
-            ->where('first_result1','back')
-            ->where('first_result2',null)
-            ->get();
+            ->where(function($q){
+                $q->where('first_result2',null)
+                    ->orWhere('first_result2','late');
+            })
+            ->where(function($q){
+                $q->where('first_result1','back')
+                    ->orWhere('first_result1','late');
+            })->get();
         $schools = config('course.schools');
         $data = [
             'select_year'=>$select_year,
@@ -259,9 +264,11 @@ class ReviewController extends Controller
     public function unsent3($select_year)
     {
         $courses = Course::where('year',$select_year)
-            ->where('first_result2','back')
             ->where('first_result3',null)
-            ->get();
+            ->where(function($q){
+                $q->where('first_result2','back')
+                    ->orWhere('first_result2','late');
+            })->get();
         $schools = config('course.schools');
         $data = [
             'select_year'=>$select_year,

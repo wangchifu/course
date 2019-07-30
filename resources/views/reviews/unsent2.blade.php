@@ -15,7 +15,13 @@
                     </div>
                     <div class="card-body">
                         @foreach($courses as $course)
-                            <p>{{ $course->school_code }}-{{ $schools[$course->school_code] }}</p>
+                            <p>{{ $course->school_code }}-{{ $schools[$course->school_code] }}
+                                @if($course->first_result2==null)
+                                    尚未送出
+                                @elseif($course->first_result2=='late')
+                                    <span class="text-danger">已設為缺交</span>
+                                @endif
+                            </p>
                         @endforeach
                     </div>
                 </div>
