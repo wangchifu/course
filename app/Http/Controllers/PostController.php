@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\FirstSuggest1;
+use App\FirstSuggest2;
 use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Year;
@@ -29,6 +31,27 @@ class PostController extends Controller
             foreach($courses as $course){
                 if(date('Ymd')>str_replace('-','',$check_year->step1_date2)){
                     $course->update($att1);
+                    //新增first_suggests1
+                    $a['user_id']=1;
+                    $a['course_id'] = $course->id;
+                    $a['c1_1_pass'] = 0;
+                    $a['c1_2_pass'] = 0;
+                    $a['c2_pass'] = 0;
+                    $a['c3_1_pass'] = 0;
+                    $a['c3_2_pass'] = 0;
+                    $a['c3_3_pass'] = 0;
+                    $a['c4_pass'] = 0;
+                    $a['c6_pass'] = 0;
+                    $a['c7_1_pass'] = 0;
+                    $a['c7_2_pass'] = 0;
+                    $a['c8_1_pass'] = 0;
+                    $a['c8_2_pass'] = 0;
+                    $a['c9_pass'] = 0;
+                    $a['c10_1_pass'] = 0;
+                    $a['c10_2_pass'] = 0;
+                    $a['c11_pass'] = 0;
+                    $a['c12_pass'] = 0;
+                    FirstSuggest1::create($a);
                 }
             }
 
@@ -40,6 +63,28 @@ class PostController extends Controller
             foreach($courses as $course){
                 if(date('Ymd')>str_replace('-','',$check_year->step4_date2)){
                     $course->update($att2);
+
+                    $a['user_id']=1;
+                    $a['course_id'] = $course->id;
+                    $a['c1_1_pass'] = $course->first_suggest1->c1_1_pass;
+                    $a['c1_2_pass'] = $course->first_suggest1->c1_2_pass;
+                    $a['c2_pass'] = $course->first_suggest1->c2_pass;
+                    $a['c3_1_pass'] = $course->first_suggest1->c3_1_pass;
+                    $a['c3_2_pass'] = $course->first_suggest1->c3_2_pass;
+                    $a['c3_3_pass'] = $course->first_suggest1->c3_3_pass;
+                    $a['c4_pass'] = $course->first_suggest1->c4_pass;
+                    $a['c6_pass'] = $course->first_suggest1->c6_pass;
+                    $a['c7_1_pass'] = $course->first_suggest1->c7_1_pass;
+                    $a['c7_2_pass'] = $course->first_suggest1->c7_2_pass;
+                    $a['c8_1_pass'] = $course->first_suggest1->c8_1_pass;
+                    $a['c8_2_pass'] = $course->first_suggest1->c8_2_pass;
+                    $a['c9_pass'] = $course->first_suggest1->c9_pass;
+                    $a['c10_1_pass'] = $course->first_suggest1->c10_1_pass;
+                    $a['c10_2_pass'] = $course->first_suggest1->c10_2_pass;
+                    $a['c11_pass'] = $course->first_suggest1->c11_pass;
+                    $a['c12_pass'] = $course->first_suggest1->c12_pass;
+
+                    FirstSuggest2::create($a);
                 }
             }
         }
