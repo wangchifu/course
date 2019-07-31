@@ -240,14 +240,18 @@
 
                         @if($course->first_result1 == "submit")
                             @if(str_replace('-','',$year->step1_date2) > date('Ymd'))
+                                <!--
                                 <a href="{{ route('schools.give_up_first_suggest1',$select_year) }}" class="badge badge-danger" onclick="return confirm('確定嗎？')">撤回送審，再次修改</a>
                                 <br>
+                                -->
                             @endif
                         @endif
                         @if($course->first_result2 == "submit")
                             @if(str_replace('-','',$year->step2_date2) > date('Ymd'))
+                                <!--
                                 <a href="{{ route('schools.give_up_first_suggest2',$select_year) }}" class="badge badge-danger" onclick="return confirm('確定嗎？')">撤回送審，再次修改</a>
                                 <br>
+                                -->
                             @endif
                         @endif
                         @include('layouts.school_course')
