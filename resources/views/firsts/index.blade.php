@@ -121,6 +121,9 @@
                                     @elseif($course->first_result3=="back")
                                         <span class="text-warning">退回</span>
                                         [<a href="{{ route('firsts.edit3',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
+                                    @elseif($course->first_result3=="excellent")
+                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良</span>
+                                        [<a href="{{ route('firsts.edit3',['course_id'=>$course->id,'page'=>$page]) }}"><i class="fas fa-edit"></i> 修改</a>]
                                     @endif
                                 </td>
                                 <td>

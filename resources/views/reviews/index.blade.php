@@ -111,11 +111,13 @@
                                     @if($first_result2[$school->school_code]=="back" and $first_result3[$school->school_code] == null)
                                         <span class="text-danger">未送</span>
                                     @elseif($first_result3[$school->school_code] == "submit")
-                                        <span class="text-primary">已送</span>
+                                        <span class="text-primary">已傳</span>
                                     @elseif($first_result3[$school->school_code] == "ok")
                                         <span class="text-success">通過</span>
                                     @elseif($first_result3[$school->school_code] == "back")
                                         <span class="text-warning">退回</span>
+                                    @elseif($first_result3[$school->school_code] == "excellent")
+                                        <a href="{{ route('reviews.show_school_first_suggest',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}" class="badge badge-info" target="_blank">優秀</a>
                                     @endif
                                 </td>
                                 <td>
@@ -123,7 +125,7 @@
                                     <a href="javascript:open_window('{{ route('reviews.second_user',['select_year'=>$select_year,'school_code'=>$school->school_code]) }}','新視窗')"><i class="fas fa-list-ul"></i></a>
                                 </td>
                                 <td>
-                                    @if($first_result1[$school->school_code] == "excellent" and $second_result[$school->school_code] == null)
+                                    @if(($first_result1[$school->school_code] == "excellent" or $first_result2[$school->school_code] == "excellent" or $first_result3[$school->school_code] == "excellent") and $second_result[$school->school_code] == null)
                                         <span class="text-danger">未審</span>
                                     @elseif($second_result[$school->school_code] == "ok")
                                         <span class="text-dark">不列</span>

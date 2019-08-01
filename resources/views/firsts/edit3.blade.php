@@ -113,6 +113,9 @@ $c12 = $course->first_suggest3->c12;
                             <option value="back" {{ $selected['back'] }}>
                                 退回！修改後再審！
                             </option>
+                            <option value="excellent" {{ $selected['excellent'] }}>
+                                優秀！進入複審！
+                            </option>
                         </select>
                     </td>
                     <td colspan="3">

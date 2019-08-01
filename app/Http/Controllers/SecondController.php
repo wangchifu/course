@@ -25,7 +25,8 @@ class SecondController extends Controller
             ->where('second_user_id',auth()->user()->id)
             ->where(function($q){
                 $q->where('first_result1','excellent')
-                    ->orWhere('first_result2','excellent');
+                    ->orWhere('first_result2','excellent')
+                    ->orWhere('first_result3','excellent');
             })
             ->paginate('20');
 

@@ -49,6 +49,8 @@
                                 <span class="text-success">符合！無需修改！</span>
                             @elseif($course->first_result2 == "back")
                                 <span class="text-danger">退回！修改後再審！</span>
+                            @elseif($course->first_result2 == "excellent")
+                                <span class="text-success">優秀！進入複審！</span>
                             @else
                                 -
                             @endif
@@ -68,6 +70,8 @@
                                 <span class="text-success">符合！無需修改！</span>
                             @elseif($course->first_result3 == "back")
                                 <span class="text-danger">退回！修改後再審！</span>
+                            @elseif($course->first_result3 == "excellent")
+                                <span class="text-success">優秀！進入複審！</span>
                             @else
                                 -
                             @endif

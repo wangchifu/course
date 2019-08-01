@@ -201,6 +201,8 @@
                                         <i class="fas fa-times-circle text-danger"></i> 退回
                                     @elseif($course->first_result3 == "ok")
                                         <i class="fas fa-check-circle text-success"></i> <span class="text-success">通過審查</span>
+                                    @elseif($course->first_result3 == "excellent")
+                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優秀，進入複審</span>
                                     @endif
                                 </td>
                                 <td rowspan="2">
