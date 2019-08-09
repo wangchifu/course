@@ -126,6 +126,8 @@ Route::group(['middleware' => 'admin'],function(){
 
     Route::get('reviews/{select_year}/{school_code}/show_school_first_suggest' , 'ReviewController@show_school_first_suggest')->name('reviews.show_school_first_suggest');
 
+    Route::get('reviews/{select_year}/{school_code}/{action}' , 'ReviewController@back_null')->name('reviews.back_null');
+
     //特教審查管理
     Route::match(['get','post'],'reviews2/index' , 'Review2Controller@index')->name('reviews2.index');
     Route::get('reviews2/{select_year}/{school_code}/{c}/special_user' , 'Review2Controller@special_user')->name('reviews2.special_user');

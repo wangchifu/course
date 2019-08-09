@@ -298,5 +298,15 @@ class ReviewController extends Controller
         return view('reviews.school_first_suggest',$data);
     }
 
+    public function back_null($select_year,$school_code,$action)
+    {
+        $course = Course::where('year',$select_year)
+            ->where('school_code',$school_code)
+            ->first();
+        $att[$action] = null;
+        $course->update($att);
+        return redirect()->route('reviews.index');
+    }
+
 
 }
