@@ -113,7 +113,7 @@
                                     @elseif($first_result3[$school->school_code] == "submit")
                                         <span class="text-primary">已傳</span><a href="{{ route('reviews.back_null',["select_year"=>$select_year,"school_code"=>$school->school_code,"action"=>"first_result3"]) }}" onclick="return confirm('{{ $school->school_name }} 三傳確定取消上傳，改為未送？')"><i class="fas fa-times-circle text-danger"></i></a>
                                     @elseif($first_result3[$school->school_code] == "ok")
-                                        <span class="text-success">通過</span>
+                                        <span class="text-success">通過</span><a href="{{ route('reviews.back_null',["select_year"=>$select_year,"school_code"=>$school->school_code,"action"=>"first_result3"]) }}" onclick="return confirm('{{ $school->school_name }} 三傳確定取消上傳，改為未送？')"><i class="fas fa-times-circle text-danger"></i></a>
                                     @elseif($first_result3[$school->school_code] == "back")
                                         <span class="text-warning">退回</span>
                                     @elseif($first_result3[$school->school_code] == "excellent")
