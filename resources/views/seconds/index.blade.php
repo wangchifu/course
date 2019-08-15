@@ -63,7 +63,11 @@
                                     @if($course->second_result=="ok")
                                         <span class="text-warning">不列入優良</span>
                                     @elseif($course->second_result=="excellent")
-                                        <span class="text-success">優良學校課程計畫</span>
+                                        <span class="text-success">優良學校課程計畫(特優)</span>
+                                    @elseif($course->second_result=="good")
+                                        <span class="text-primary">優良學校課程計畫(優等)</span>
+                                    @elseif($course->second_result=="a")
+                                        <span class="text-info">優良學校課程計畫(甲等)</span>
                                     @endif
                                 </td>
                             </tr>

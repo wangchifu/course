@@ -18,7 +18,17 @@
                     <div class="card-body">
                         @if($course->second_result=="excellent")
                             <h3>
-                                <img src="{{ asset('images/crown.svg') }}" width="50"><span class="text-danger">優秀課程計畫得獎學校！</span><br>
+                                <img src="{{ asset('images/crown.svg') }}" width="50"><span class="text-danger">優秀課程計畫得獎學校！(特優)</span><br>
+                            </h3>
+                        @endif
+                        @if($course->second_result=="good")
+                            <h3>
+                                <img src="{{ asset('images/medal.svg') }}" width="50"><span class="text-danger">優秀課程計畫得獎學校！(優等)</span><br>
+                            </h3>
+                        @endif
+                        @if($course->second_result=="a")
+                            <h3>
+                                <img src="{{ asset('images/bronze-medal.svg') }}" width="50"><span class="text-danger">優秀課程計畫得獎學校！(甲等)</span><br>
                             </h3>
                         @endif
                         @include('layouts.school_course')

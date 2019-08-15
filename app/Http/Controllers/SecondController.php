@@ -78,7 +78,10 @@ class SecondController extends Controller
 
         $result = [
             'ok'=>'不列入優良學校課程計畫！',
-            'excellent'=>'讚！列入優良學校課程計畫！'
+            'excellent'=>'讚！列入優良學校課程計畫！(特優)',
+            'good'=>'讚！列入優良學校課程計畫！(優等)',
+            'a'=>'讚！列入優良學校課程計畫！(甲等)',
+
         ];
         foreach($users as $user){
             $to = $user->email;
@@ -86,10 +89,10 @@ class SecondController extends Controller
             $body = "課程計畫複審結果通知----".$result[$request->input('second_result')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             $line = $user->access_token;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 
@@ -114,7 +117,9 @@ class SecondController extends Controller
 
         $result = [
             'ok'=>'不列入優良學校課程計畫！',
-            'excellent'=>'讚！列入優良學校課程計畫！'
+            'excellent'=>'讚！列入優良學校課程計畫！(特優)',
+            'good'=>'讚！列入優良學校課程計畫！(優等)',
+            'a'=>'讚！列入優良學校課程計畫！(甲等)',
         ];
         foreach($users as $user){
             $to = $user->email;
@@ -122,10 +127,10 @@ class SecondController extends Controller
             $body = "課程計畫複審結果通知----".$result[$request->input('second_result')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             $line = $user->access_token;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 

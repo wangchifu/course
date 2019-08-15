@@ -33,7 +33,14 @@
                     </div>
                     <div class="card-body">
                         @foreach($courses as $course)
-                            <a href="{{ route('share_one',['select_year'=>$select_year,'school_code'=>$course->school_code]) }}" class="btn btn-success btn-sm" target="_blank">{{ $schools[$course->school_code] }}</a>
+                            <a href="{{ route('share_one',['select_year'=>$select_year,'school_code'=>$course->school_code]) }}" class="btn btn-success btn-sm" target="_blank">
+                                @if($course->second_result=="excellent")
+                                    <i class="fas fa-crown"></i>
+                                @elseif($course->second_result=="good")
+                                    <i class="fas fa-thumbs-up"></i>
+                                @endif
+                                {{ $schools[$course->school_code] }}
+                            </a>
                         @endforeach
                     </div>
                 </div>
