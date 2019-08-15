@@ -89,10 +89,10 @@ class SecondController extends Controller
             $body = "課程計畫複審結果通知----".$result[$request->input('second_result')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             $line = $user->access_token;
             if($to){
-                //send_mail($to,$subject,$body);
+                send_mail($to,$subject,$body);
             }
             if($line){
-                //line_to($line,$body);
+                line_to($line,$body);
             }
         }
 
@@ -127,10 +127,10 @@ class SecondController extends Controller
             $body = "課程計畫複審結果通知----".$result[$request->input('second_result')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             $line = $user->access_token;
             if($to){
-                //send_mail($to,$subject,$body);
+                send_mail($to,$subject,$body);
             }
             if($line){
-                //line_to($line,$body);
+                line_to($line,$body);
             }
         }
 
