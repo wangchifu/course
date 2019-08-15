@@ -209,7 +209,11 @@
                                     @if($course->second_result=="ok")
                                         不列入
                                     @elseif($course->second_result=="excellent")
-                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良學校課程計畫！</span>
+                                        <i class="fas fa-thumbs-up text-success"></i> <span class="text-success">優良學校課程計畫！(特優)</span>
+                                    @elseif($course->second_result=="good")
+                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-primary">優良學校課程計畫！(優等)</span>
+                                    @elseif($course->second_result=="a")
+                                        <i class="fas fa-thumbs-up text-info"></i> <span class="text-info">優良學校課程計畫！(特優)</span>
                                     @endif
                                     <br>
                                     @if($course->second_result)

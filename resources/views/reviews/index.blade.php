@@ -130,7 +130,11 @@
                                     @elseif($second_result[$school->school_code] == "ok")
                                         <span class="text-dark">不列</span>
                                     @elseif($second_result[$school->school_code] == "excellent")
-                                        <span class="text-info">優良</span>
+                                        <span class="text-success">特優</span>
+                                    @elseif($second_result[$school->school_code] == "good")
+                                        <span class="text-primary">優等</span>
+                                    @elseif($second_result[$school->school_code] == "a")
+                                        <span class="text-info">甲等</span>
                                     @endif
                                 </td>
                                 <td>
