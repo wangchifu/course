@@ -90,8 +90,12 @@ class HomeController extends Controller
 
         $courses =Course::where('year',$select_year)
             ->where('open',1)
-            ->where('second_result','excellent')
-            ->get();
+            ->where(function($q){
+                $q->where('second_result','excellent')
+                    ->orWhere('second_result','good')
+                    ->orWhere('second_result','a');
+
+            })->get();
 
         $schools = config('course.schools');
 

@@ -31,6 +31,8 @@
                         $select['no'] = null;
                         $select['ok'] = null;
                         $select['excellent'] = null;
+                        $select['good'] = null;
+                        $select['a'] = null;
                         if($course->second_result==null){
                             $select['no'] = "selected";
                         }else{
@@ -60,7 +62,13 @@
                                             不列入優良學校課程計畫！
                                         </option>
                                         <option value="excellent" {{ $select['excellent'] }}>
-                                            讚！列入優良學校課程計畫！
+                                            讚！列入優良學校課程計畫(特優)
+                                        </option>
+                                        <option value="good" {{ $select['good'] }}>
+                                            讚！列入優良學校課程計畫(優等)
+                                        </option>
+                                        <option value="a" {{ $select['a'] }}>
+                                            讚！列入優良學校課程計畫(甲等)
                                         </option>
                                     </select>
                                 </td>

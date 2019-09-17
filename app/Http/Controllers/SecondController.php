@@ -78,7 +78,10 @@ class SecondController extends Controller
 
         $result = [
             'ok'=>'不列入優良學校課程計畫！',
-            'excellent'=>'讚！列入優良學校課程計畫！'
+            'excellent'=>'讚！列入優良學校課程計畫！(特優)',
+            'good'=>'讚！列入優良學校課程計畫！(優等)',
+            'a'=>'讚！列入優良學校課程計畫！(甲等)',
+
         ];
         foreach($users as $user){
             $to = $user->email;
@@ -114,7 +117,9 @@ class SecondController extends Controller
 
         $result = [
             'ok'=>'不列入優良學校課程計畫！',
-            'excellent'=>'讚！列入優良學校課程計畫！'
+            'excellent'=>'讚！列入優良學校課程計畫！(特優)',
+            'good'=>'讚！列入優良學校課程計畫！(優等)',
+            'a'=>'讚！列入優良學校課程計畫！(甲等)',
         ];
         foreach($users as $user){
             $to = $user->email;

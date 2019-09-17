@@ -51,13 +51,13 @@ Route::match(['get','post'],'share' , 'HomeController@share')->name('share');
 Route::get('/share/{select_year}/{school_code}' , 'HomeController@share_one')->name('share_one');
 Route::match(['get','post'],'excellent' , 'HomeController@excellent')->name('excellent');
 
+//打開檔案
+Route::get('file/{file_path}/open' , 'FileController@open')->name('file.open');
+
 //使用者可用
 Route::group(['middleware' => 'auth'],function(){
     Route::get('resetPwd' , 'HomeController@reset_pwd')->name('reset_pwd');
     Route::patch('updatePWD' , 'HomeController@update_pwd')->name('update_pwd');
-
-    //打開檔案
-    Route::get('file/{file_path}/open' , 'FileController@open')->name('file.open');
 
     //結束模擬
     Route::get('sims/impersonate_leave', 'SimulationController@impersonate_leave')->name('sims.impersonate_leave');

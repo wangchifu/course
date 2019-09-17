@@ -301,7 +301,7 @@
                         <a href="{{ url('share/'.$select_year.'/074767/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074767'] !!}路上國小</a>
                         <hr>
                         <h4><i class="fab fa-fort-awesome"></i> 二水鄉</h4>
-                        <a href="{{ url('share/'.$select_year.'/074318/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074318'] !!}二水國中 </a>
+                        <a href="{{ url('share/'.$select_year.'/074318/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074529'] !!}二水國中 </a>
                         <a href="{{ url('share/'.$select_year.'/074709/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074709'] !!}二水國小 </a>
                         <a href="{{ url('share/'.$select_year.'/074710/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074710'] !!}復興國小</a>
                         <a href="{{ url('share/'.$select_year.'/074711/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074711'] !!}源泉國小</a>
