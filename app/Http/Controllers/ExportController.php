@@ -53,7 +53,7 @@ class ExportController extends Controller
                 $grades = ['一','二','三','四','五','六'];
             };
             if(strpos($schools[$course->school_code], '國中') !== false){
-                $grades = ['一','二','三'];
+                $grades = ['七','八','九'];
             };
             foreach($grades as $v){
                 $school_code = ($v=="一")?$course->school_code:null;
